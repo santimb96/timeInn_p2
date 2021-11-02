@@ -1,4 +1,4 @@
-# TIMEINN_P2
+# TIMEINN_P2 (en desarrollo /develop)
 
 ### AUTORES:
 - **Onika Kim Asiao Dumbrique**
