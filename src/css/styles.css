@@ -2,6 +2,9 @@
     --blanco: #ffffff;
     --negro: #000000;
 }
+body{
+    font-family: Arial, sans-serif;
+}
 
 .menu{
     display: flex;
