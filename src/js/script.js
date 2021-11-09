@@ -1,4 +1,3 @@
-import {cartelera} from './modules/cartelera.js';
 import {promociones} from './modules/promociones.js';
 import {novedades} from "./modules/novedades.js";
 
@@ -7,7 +6,6 @@ const app = {
 
     novedades: document.getElementById('novedades'),
     promociones: document.getElementById('promociones'),
-    cartelera,
 
     renderNovedades: function () {
         novedades.forEach(novedad => {
@@ -26,15 +24,7 @@ const app = {
                                             <p class="titulo">${promocion.Titulo}</p>
                                         </div>`;
         })
-    },
-
-    renderCartelera: function () {
-        /**
-         * TODO: CARTELERA (FALTA CONTENEDOR CARTELERA)
-         */
     }
-
 }
 app.renderNovedades();
 app.renderPromociones();
-app.renderCartelera();
