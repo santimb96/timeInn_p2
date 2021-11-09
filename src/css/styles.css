@@ -1,21 +1,19 @@
 :root{
-    /**
-    COLORES PRIMARIOS
-     */
-    --naranja-20: #ffd19b;
-    --naranja-30: #ffba6a;
+    --blanco: #ffffff;
+    --negro: #000000;
 }
 
 .menu{
     display: flex;
-    background-color: var(--naranja-20);
+    background-color: var(--negro);
     justify-content:center;
     height: 35px;
     margin-bottom: 2%;
 }
 
 .menu>input[type="button"]{
-    background-color: var(--naranja-20);
+    background-color: var(--negro);
+    color: var(--blanco);
     margin-left: 5%;
     margin-right: 5%;
     border: none;
