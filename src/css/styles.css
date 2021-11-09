@@ -1,0 +1,20 @@
+:root{
+    --naranja-20: #ffd19b;
+    --naranja-30: #ffba6a;
+}
+
+.menu{
+    display: flex;
+    background-color: var(--naranja-20);
+    justify-content:center;
+}
+
+.menu>input[type="button"]{
+    background-color: var(--naranja-20);
+    margin-left: 5%;
+    margin-right: 5%;
+    border: none;
+    font-size: large;
+    font-weight: bolder;
+}
+
