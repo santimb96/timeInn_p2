@@ -1,24 +1,17 @@
 import {cartelera} from './modules/cartelera.js';
 import {promociones} from './modules/promociones.js';
-import {novedades} from "./modules/novedades";
+import {novedades} from "./modules/novedades.js";
 
-function print() {
-    // language=HTML
-    document.getElementById('carta').innerHTML = `<img src="${cartelera[0].Poster}" alt="Avengers" width="200"
-                                                       height="300">`
-}
-
-print();
 
 const app = {
 
-    novedades: document.querySelector('.novedades'),
-    promociones: document.querySelector('.promociones'),
+    novedades: document.getElementById('novedades'),
+    promociones: document.getElementById('promociones'),
     cartelera,
 
     renderNovedades: function () {
         novedades.forEach(novedad => {
-            this.novedades.innerHTML += `<div class="novedades">
+            this.novedades.innerHTML += `<div class="novedad">
                                             <img src="${novedad.Poster}" alt="${novedad.Title}" width="200" height="300">
                                             <p class="titulo">${novedad.Title}</p>
                                             <p class="año">${novedad.Year}</p>
@@ -28,7 +21,10 @@ const app = {
 
     renderPromociones: function () {
         promociones.forEach(promocion => {
-            this.promociones.innerHTML += ``;
+            this.promociones.innerHTML += `<div class="promocion">
+                                            <img src="${promocion.Poster}" alt="${promocion.Titulo}" width="200" height="60">
+                                            <p class="titulo">${promocion.Titulo}</p>
+                                        </div>`;
         })
     },
 
@@ -39,3 +35,6 @@ const app = {
     }
 
 }
+app.renderNovedades();
+app.renderPromociones();
+app.renderCartelera();

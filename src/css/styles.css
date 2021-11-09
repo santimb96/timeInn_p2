@@ -5,6 +5,9 @@
     --naranja-20: #ffd19b;
     --naranja-30: #ffba6a;
 }
+body{
+    font-family: Arial, sans-serif;
+}
 
 .menu{
     display: flex;

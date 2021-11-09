@@ -2,7 +2,7 @@ const layout = {
         header: `<div class="contenedor">
     <div class="header">
         <div class="logo">
-            <img src="../img/logoPalmimax.png" alt="Logo" width="200" height="60">
+            <img src="../../src/img/logoPalmimax.png" alt="Logo" width="200" height="60">
         </div>
         <div class="menu">
             <input type="button" value="Novedades"/>
