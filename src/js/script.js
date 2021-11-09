@@ -1,11 +1,13 @@
-import {promociones} from './modules/promociones.js';
+import {promociones} from "./modules/promociones.js";
 import {novedades} from "./modules/novedades.js";
+import {calendario} from "./modules/calendario.js";
 
 
 const app = {
 
     novedades: document.getElementById('novedades'),
     promociones: document.getElementById('promociones'),
+    calendario: document.getElementById('calendario'),
 
     renderNovedades: function () {
         novedades.forEach(novedad => {
@@ -24,7 +26,11 @@ const app = {
                                             <p class="titulo">${promocion.Titulo}</p>
                                         </div>`;
         })
+    },
+    renderCalendario: function (){
+        this.calendario.innerHTML = calendario.calendario();
     }
 }
 app.renderNovedades();
 app.renderPromociones();
+app.renderCalendario();
