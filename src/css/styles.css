@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+
 }
 
 /*HEADER*/
@@ -39,6 +39,8 @@ body {
 .contenedorPadre > h1{
     display: flex;
     justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
 }
 
 /*NOVEDADES*/
@@ -62,8 +64,9 @@ body {
     margin-left: 17%; /*justify items solo afecta a los das últimas cartas (?!)*/
 }
 
-.titulo{
+.titulo, .year{
     font-weight: bold;
+    font-family: 'Carrois Gothic SC', sans-serif;
 }
 
 .year{
