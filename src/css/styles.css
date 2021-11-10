@@ -7,23 +7,19 @@
     --gris-40: #ddd;
 }
 
-body {
-
-}
-
 /*HEADER*/
 .logo > img{
     width:297px;
     height:98px;
 }
 .menu {
-    display: flex;
     background-color: var(--negro);
     justify-content: center;
     height: 66px;
     margin-bottom: 2%;
 }
 
+/*
 .menu > input[type="button"] {
     background-color: var(--negro);
     color: var(--blanco);
@@ -35,10 +31,50 @@ body {
     font-family: 'Carrois Gothic SC',cursive;
 }
 
-.menu > input[type="button"]:hover{
-    color: var(--blanco);
-    border-bottom: 5px solid var(--blanco);
+
+}*/
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 9px;
+    font-size: 1.3rem;
 }
+
+li {
+    font-family: 'Carrois Gothic SC',cursive;
+    color: var(--blanco);
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+a {
+    color: var(--negro);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    padding: 15px 20px;
+    position: relative;
+}
+
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+a:hover:after {
+    width: 100%;
+    left: 0;
+    height:5%;
+}
+
 
 /*CONTENEDOR*/
 .contenedorPadre{

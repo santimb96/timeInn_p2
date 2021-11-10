@@ -44,10 +44,18 @@ const layout = {
     </div>`
     ,
     renderMenu: function () {
-        let output="";
+        let output=`<ul>`;
         this.menu.forEach(section => {
-            output += `<input type="button" value="${section}"/>`;
+            if (section==="cartelera"){
+                output+=`<a href="../../src/templates/cartelera.html"><li>${section}</li></a>`
+            }
+            else
+            {
+                output += `<a href="#"><li>${section}</li></a>`;
+            }
+
         })
+        output += `</ul>`;
         return output;
     },
 
