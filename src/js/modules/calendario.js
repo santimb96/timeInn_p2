@@ -3,16 +3,11 @@ export const calendario = {
     meses: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"],
     dias:["Lu","Ma","Mi","Ju","Vi","Sa","Do"],
     calendario: function(){
-        return `<div class="month">      
-        <ul>
-            <li class="prev">&#10094;</li>
-            <li class="next">&#10095;</li>
+        return `
+        <div class="month">      
         ${this.meses[this.today.getMonth()-1]} <br>
-        <li><span style="font-size:18px">${this.today.getFullYear()}</span>
-        </li>
-        </ul>
+        <span style="font-size:18px">${this.today.getFullYear()}</span>
         </div>
-
         <ul class="weekdays">
             ${this.renderDias()}
         </ul>

@@ -84,7 +84,7 @@ export const novedades = [{
     },
     {
         "Title": "The Mandalorian",
-        "Year": "2019–",
+        "Year": "2019",
         "Rated": "TV-14",
         "Released": "12 Nov 2019",
         "Runtime": "40 min",

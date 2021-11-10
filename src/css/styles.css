@@ -1,21 +1,26 @@
-:root{
+:root {
     --blanco: #ffffff;
     --negro: #000000;
+    --gris-10: #777;
+    --gris-20: #eee;
+    --gris-30: #666;
+    --gris-40: #ddd;
 }
-body{
+
+body {
     font-family: Arial, sans-serif;
 }
 
 /*HEADER*/
-.menu{
+.menu {
     display: flex;
     background-color: var(--negro);
-    justify-content:center;
+    justify-content: center;
     height: 35px;
     margin-bottom: 2%;
 }
 
-.menu>input[type="button"]{
+.menu > input[type="button"] {
     background-color: var(--negro);
     color: var(--blanco);
     margin-left: 5%;
@@ -25,21 +30,124 @@ body{
     font-weight: bolder;
 }
 
+/*CONTENEDOR*/
+.contenedorPadre{
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorPadre > h1{
+    display: flex;
+    justify-content: center;
+}
+
+/*NOVEDADES*/
+.novedades{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    /*justify-items: center;*/
+}
+
+.novedad{
+    display: flex;
+    flex-direction: column;
+}
+
+.novedad > p{
+    text-align: -webkit-center;
+    word-break: break-word;
+}
+
+.novedad > img {
+    margin-left: 17%; /*justify items solo afecta a los das últimas cartas (?!)*/
+}
+
+.titulo{
+    font-weight: bold;
+}
+
+.year{
+    margin-top: 0;
+}
+
+/*PROMOCIONES*/
+.promociones{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 20%;
+    align-self: center;
+}
+
+.promocion > p{
+    word-break: break-word;
+}
+
+/*CALENDARIO*/
+.calendario {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    align-self: center;
+}
+
+.month {
+    background-color: var(--negro);
+    text-align: center;
+    color: var(--blanco)
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: var(--gris-40);
+}
+
+.weekdays > li {
+    display: inline-block;
+    width: 13.6%;
+    color: var(--gris-30);
+    text-align: center;
+}
+
+.days {
+    padding: 10px 0;
+    background: var(--gris-20);
+    margin: 0;
+}
+
+.days > li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: var(--gris-10);
+}
+
+.days > li .active {
+    padding: 5px;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
 /*FOOTER*/
-.footer{
+.footer {
     display: flex;
     background-color: black;
     color: white;
     margin-top: 2%;
 }
 
-.footer > div{
-    margin:1%;
+.footer > div {
+    margin: 1%;
 }
-.col-1-title{
+
+.col-1-title {
     font-weight: bolder;
 }
-.col-1-content{
+
+.col-1-content {
     font-size: small;
 }
 
@@ -49,88 +157,22 @@ body{
     justify-content: space-evenly;
 }
 
-.col-2 > input[type="button"], .col-3 > input[type="button"]{
+.col-2 > input[type="button"], .col-3 > input[type="button"] {
     display: flex;
     border: none;
     background-color: black;
     color: white;
 }
 
-.col-3-metodosPago, .col-2-redesSociales{
+.col-3-metodosPago, .col-2-redesSociales {
     display: flex;
 }
 
-.col-2-redesSociales > img , .col-3-metodosPago > img {
+.col-2-redesSociales > img, .col-3-metodosPago > img {
     width: 7%;
     background: white;
     border-radius: 45%;
     margin: 2%;
 }
 
-/*CALENDARIO*/
-ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
 
-.month {
-    padding: 70px 25px;
-    width: 100%;
-    background: #1abc9c;
-    text-align: center;
-}
-
-.month ul {
-    margin: 0;
-    padding: 0;
-}
-
-.month ul li {
-    color: white;
-    font-size: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.month .prev {
-    float: left;
-    padding-top: 10px;
-}
-
-.month .next {
-    float: right;
-    padding-top: 10px;
-}
-
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: #ddd;
-}
-
-.weekdays li {
-    display: inline-block;
-    width: 13.6%;
-    color: #666;
-    text-align: center;
-}
-
-.days {
-    padding: 10px 0;
-    background: #eee;
-    margin: 0;
-}
-
-.days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color: #777;
-}
-
-.days li .active {
-    padding: 5px;
-    background: #1abc9c;
-    color: white !important
-}

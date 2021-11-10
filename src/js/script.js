@@ -5,16 +5,16 @@ import {calendario} from "./modules/calendario.js";
 
 const app = {
 
-    novedades: document.getElementById('novedades'),
-    promociones: document.getElementById('promociones'),
-    calendario: document.getElementById('calendario'),
+    novedades: document.getElementsByClassName('novedades')[0],
+    promociones: document.getElementsByClassName('promociones')[0],
+    calendario: document.getElementsByClassName('calendario')[0],
 
     renderNovedades: function () {
         novedades.forEach(novedad => {
             this.novedades.innerHTML += `<div class="novedad">
                                             <img src="${novedad.Poster}" alt="${novedad.Title}" width="200" height="300">
                                             <p class="titulo">${novedad.Title}</p>
-                                            <p class="año">${novedad.Year}</p>
+                                            <p class="year">${novedad.Year}</p>
                                         </div>`;
         });
     },
@@ -28,7 +28,7 @@ const app = {
         })
     },
     renderCalendario: function (){
-        this.calendario.innerHTML = calendario.calendario();
+        this.calendario.innerHTML += calendario.calendario();
     }
 }
 app.renderNovedades();
