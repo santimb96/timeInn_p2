@@ -1,14 +1,14 @@
 const layout = {
-    header: `
+    menu: ["novedades", "cartelera", "promociones", "zona ocio"],
+    header: function () {
+        return `
         <div class="logo">
-            <img src="../../src/img/logoPalmimax.png" alt="Logo" width="200" height="60">
+            <img src="../../src/img/logoPalmimax.png" alt="Logo">
         </div>
         <div class="menu">
-            <input type="button" value="Novedades"/>
-            <input type="button" value="Cartelera"/>
-            <input type="button" value="Promociones"/>
-            <input type="button" value="Zona socio"/>
-        </div>`,
+            ${this.renderMenu()}
+        </div>`
+    },
     footer: `
         <div class="col-1">
         <div class="col-1-title">Sobre nosotros</div>
@@ -41,9 +41,18 @@ const layout = {
         </div>
         <input type="button" value="Preguntas frecuentes"/>
         <input type="button" value="Contacto"/>
-    </div>`,
+    </div>`
+    ,
+    renderMenu: function () {
+        let output="";
+        this.menu.forEach(section => {
+            output += `<input type="button" value="${section}"/>`;
+        })
+        return output;
+    },
+
     render: function () {
-        document.getElementsByClassName("header")[0].innerHTML = this.header;
+        document.getElementsByClassName("header")[0].innerHTML = this.header();
         document.getElementsByClassName("footer")[0].innerHTML = this.footer;
     }
 }
