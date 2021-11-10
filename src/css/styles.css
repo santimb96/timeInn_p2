@@ -136,14 +136,16 @@ body {
 
 /*FOOTER*/
 .footer {
-    display: flex;
+    display: grid;
     background-color: black;
+    grid-template-columns: 40% 12% 11%;
+    column-gap: 12%;
     color: white;
     margin-top: 2%;
 }
 
 .footer > div {
-    margin: 1%;
+    margin: 3%;
 }
 
 .col-1-title {
@@ -169,6 +171,8 @@ body {
 
 .col-3-metodosPago, .col-2-redesSociales {
     display: flex;
+    justify-content: space-around;
+    font-size: larger;
 }
 
 .col-2-redesSociales > img, .col-3-metodosPago > img {

@@ -25,19 +25,19 @@ const layout = {
         <input type="button" value="Aviso legal"/>
         <input type="button" value="Política de cookies"/>
         <div class="col-2-redesSociales">
-            <img src="../img/facebook.png"/>
-            <img src="../img/instagram.png"/>
-            <img src="../img/twitter.png"/>
-            <img src="../img/youtube.png"/>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-youtube"></i>
         </div>
     </div>
     <div class="col-3">
         <input type="button" value="Métodos de pago"/>
         <div class="col-3-metodosPago">
-            <img src="../img/american.png"/>
-            <img src="../img/visa.png"/>
-            <img src="../img/mastercard.png"/>
-            <img src="../img/paypal.png"/>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
         </div>
         <input type="button" value="Preguntas frecuentes"/>
         <input type="button" value="Contacto"/>
