@@ -26,7 +26,7 @@ export const calendario = {
     numDias: function(){
         let output = "";
         for (let i = 1; i <= 31; i++) {
-            if (i == this.today.getDate())
+            if (i === this.today.getDate())
             {
                 output +=`<li><span class="active">${i}</span></li>`;
             }
