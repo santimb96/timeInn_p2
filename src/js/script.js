@@ -5,16 +5,16 @@ import {calendario} from "./modules/calendario.js";
 
 const app = {
 
-    novedades: document.getElementsByClassName('novedades')[0],
-    promociones: document.getElementsByClassName('promociones')[0],
-    calendario: document.getElementsByClassName('calendario')[0],
+    novedades: document.querySelector('.novedades'),
+    promociones: document.querySelector('.promociones'),
+    calendario: document.querySelector('.calendario'),
 
     renderNovedades: function () {
         novedades.forEach(novedad => {
             this.novedades.innerHTML += `<div class="novedad">
-                                            <img src="${novedad.Poster}" alt="${novedad.Title}" width="200" height="300">
-                                            <p class="titulo">${novedad.Title}</p>
-                                            <p class="year">${novedad.Year}</p>
+                                            <img src="${novedad.Poster}" alt="${novedad.Title}">
+                                            <h1>${novedad.Title}</h1>
+                                            <p>${novedad.Year}</p>
                                         </div>`;
         });
     },
@@ -22,8 +22,8 @@ const app = {
     renderPromociones: function () {
         promociones.forEach(promocion => {
             this.promociones.innerHTML += `<div class="promocion">
-                                            <img src="${promocion.Poster}" alt="${promocion.Titulo}" width="200" height="60">
-                                            <p class="titulo">${promocion.Titulo}</p>
+                                            <img src="${promocion.Poster}" alt="${promocion.Titulo}">
+                                            <h1>${promocion.Titulo}</h1>
                                         </div>`;
         })
     },
