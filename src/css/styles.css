@@ -306,4 +306,37 @@ PROMOCIONES
     margin: 2%;
 }
 
+/*CARTELERA.HTML*/
+.pelicula {
+    display: flex;
+    background-color: var(--negro);
+    width: 60%;
+    border-radius: 40px;
+    color: var(--blanco);
+    flex-wrap: wrap;
+    margin: 5px;
+}
 
+.cartelera{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+}
+
+.pelicula > img, .pelicula > p {
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.text-content{
+    display: flex;
+    flex-direction: column;
+}
+.horarios{
+    display: flex;
+    flex-direction: row;
+}
+
+.horarios > button {
+    margin: 10%;
+}
