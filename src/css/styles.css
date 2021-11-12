@@ -8,6 +8,10 @@
 }
 
 /*HEADER*/
+.header{
+    grid-area:header;
+}
+
 .logo > img{
     width:297px;
     height:98px;
@@ -64,22 +68,33 @@ a:hover:after {
 
 /*CONTENEDOR*/
 .contenedorPadre{
-    display: flex;
-    flex-direction: column;
     font-weight: bold;
-    font-family: 'Carrois Gothic SC', sans-serif;
+    display: grid;
+    grid-template-rows: 10% 20% 30% 25% 25%;
+    grid-template-areas:
+        "header"
+        "video"
+        "novedades"
+        "promociones"
+        "calendario"
+        "footer";
 }
 
-.contenedorPadre > h1{
+h1{
     display: flex;
     justify-content: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 50px;
 }
-
+/*VIDEO*/
+.video{
+    grid-area:video;
+}
 /*NOVEDADES*/
-
 .novedades{
+}
+
+.cartas-novedades{
     width: 100%;
     max-width: 1200px;
     height: 430px;
@@ -88,13 +103,14 @@ a:hover:after {
     align-items: center;
     justify-content: space-between;
     margin: auto;
+    grid-area:novedades;
 
     /*flex-direction: column;*/
 }
 /**
 CARTAS
  */
-.novedades .novedad{
+.cartas-novedades .novedad{
     width: 250px;
     height: 430px;
     border-radius: 8px;
@@ -106,23 +122,24 @@ CARTAS
     transition: all 0.25s;
 }
 
-.novedades .novedad:hover{
+.cartas-novedades .novedad:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0 , 0, 0, 0.2);
 }
 
-.novedades .novedad img{
+.cartas-novedades .novedad img{
     margin: 0;
     width: 200px;
     height: 300px;
 }
 
-.novedades .novedad h1{
+.novedad > h2, .promocion > h2{
+    font-family: 'Carrois Gothic SC', sans-serif;
     font-weight: 600;
     font-size: 1.3rem;
 }
 
-.novedades .novedad p{
+.cartas-novedades .novedad p{
     font-size: 1rem;
     padding: 2px;
 }
@@ -130,7 +147,7 @@ CARTAS
 PROMOCIONES
  */
 
-.promociones{
+.cartas-promociones{
     width: 100%;
     max-width: 1200px;
     height: 100px;
@@ -139,9 +156,10 @@ PROMOCIONES
     align-items: center;
     justify-content: space-between;
     margin: auto;
+    grid-area:promociones;
 }
 
-.promociones .promocion{
+.cartas-promociones .promocion{
     width: 300px;
     height: 150px;
     border-radius: 8px;
@@ -153,20 +171,15 @@ PROMOCIONES
     transition: all 0.25s;
 }
 
-.promociones .promocion:hover{
+.cartas-promociones .promocion:hover{
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0 , 0, 0, 0.2);
 }
 
-.promociones .promocion img{
+.promocion img{
     margin: 0;
     width: 200px;
     height: 60px;
-}
-
-.promociones .promocion h1{
-    font-weight: 600;
-    font-size: 1.3rem;
 }
 
 
@@ -186,16 +199,24 @@ PROMOCIONES
 }
 
 .calendario {
+    grid-area:calendario;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 60%;
     align-self: center;
+    justify-self: center;
+    /*margin: auto;*/
 }
 
 .month {
     background-color: var(--negro);
     text-align: center;
-    color: var(--blanco)
+    color: var(--blanco);
+    height: 80px;
+}
+
+.month > h3{
+    align-self: center;
 }
 
 .weekdays {
@@ -209,12 +230,14 @@ PROMOCIONES
     width: 13.6%;
     color: var(--gris-30);
     text-align: center;
+    font-size: 20px;
 }
 
 .days {
     padding: 10px 0;
     background: var(--gris-20);
     margin: 0;
+    font-size:40px;
 }
 
 .days > li {
@@ -225,6 +248,7 @@ PROMOCIONES
     margin-bottom: 5px;
     font-size: 12px;
     color: var(--gris-10);
+    font-size: 20px;
 }
 
 .days > li .active {
@@ -241,6 +265,7 @@ PROMOCIONES
     column-gap: 12%;
     color: white;
     margin-top: 2%;
+    grid-area:footer;
 }
 
 .footer > div {

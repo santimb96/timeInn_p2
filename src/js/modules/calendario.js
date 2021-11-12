@@ -5,8 +5,9 @@ export const calendario = {
     calendario: function(){
         return `
         <div class="month">      
-        ${this.meses[this.today.getMonth()-1]} <br>
-        <span style="font-size:18px">${this.today.getFullYear()}</span>
+        <h3>${this.meses[this.today.getMonth()-1]}<br>
+        <span style="font-size:18px">${this.today.getFullYear()}</span></h3>
+        
         </div>
         <ul class="weekdays">
             ${this.renderDias()}
