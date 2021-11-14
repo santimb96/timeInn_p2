@@ -325,7 +325,7 @@ export let cartelera = [
         "Production": "N/A",
         "Website": "N/A",
         "Response": "True"
-    }
+    },
 ];
 
 
