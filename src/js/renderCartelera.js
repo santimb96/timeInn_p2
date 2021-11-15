@@ -6,7 +6,7 @@ const renderCartelera = {
     renderCartelera: function () {
         cartelera.forEach(pelicula => {
             this.cartelera.innerHTML += `<div class="pelicula">
-                                            <div class="img-container"><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
+                                            <div class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
                                             
                                             <div class="text-content">
                                                 <h2 class="titulo-pelicula">${(pelicula.Title).toUpperCase()}</h2>
@@ -17,9 +17,17 @@ const renderCartelera = {
                                                     <button>15:50</button>
                                                     <button>20:25</button>                                                
                                             </div>
+                                            <div class="edicion">
+                                            <button>EDITAR</button>
+                                            <button onclick="this.borrarCarta()">BORRAR</button>
+                                            </div>
                                             </div>
                                          </div>`;
         });
+    },
+
+    borrarCarta : function () {
+
     }
 }
 renderCartelera.renderCartelera();
