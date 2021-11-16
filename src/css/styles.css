@@ -17,7 +17,7 @@ body{
     grid-area: header;
 }
 
-.logo > img {
+.logo > a > img {
     width: 297px;
     height: 98px;
 }
@@ -36,6 +36,7 @@ body{
     justify-content: center;
     padding: 9px;
     font-size: 1.3rem;
+    align-items: center;
 }
 
 .li {
@@ -71,10 +72,6 @@ a:hover:after {
     height: 5%;
 }
 
-#addButton{
-    color: var(--blanco);
-    font-size: 3vw;
-}
 /*CONTENEDOR*/
 .contenedorPadre {
     font-weight: bold;
@@ -338,6 +335,18 @@ PROMOCIONES
     width: 60%;
     height: 100%;
     color: white;
+}
+
+.add-button {
+    position: fixed;
+    right: 30px;
+    outline: none;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+#add-button{
+    font-size: 2vw;
 }
 
 .img-container {

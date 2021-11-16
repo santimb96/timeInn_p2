@@ -3,7 +3,7 @@ const layout = {
     header: function () {
         return `
         <div class="logo">
-            <img src="../../src/img/logoPalmimax.png" alt="Logo">
+            <a href="../templates/index.html"><img src="../../src/img/logoPalmimax.png" alt="Logo"></a>
         </div>
         <div class="menu">
             ${this.renderMenu()}
@@ -51,14 +51,14 @@ const layout = {
             }
             else
             {
-                output += `<a href="#"><li>${section}</li></a>`;
+                output += `<a href="#${section}"><li>${section}</li></a>`;
             }
 
         })
-        if (window.location.pathname === "/timeInn_p2/src/templates/cartelera.html"){
-            output += `<li class="addButton"><i class="far fa-plus-square"></i></li>`;
-        }
 
+        /*if (window.location.pathname === "/timeInn_p2/src/templates/cartelera.html"){
+            output += `<button name="add" class="add-button"><i id="add-button" class="far fa-plus-square"></i></button>`;
+        }*/
         output += `</ul>`;
         return output;
     },

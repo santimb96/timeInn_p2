@@ -43,7 +43,6 @@ const renderCartelera = {
                             this.borrarCarta(pelicula);
                         } else {
                             this.mostrarFormEdicion(pelicula.getAttribute('name'));
-                            //this.editarCarta(pelicula.getAttribute('name'));
                         }
                     }
                 })
@@ -92,13 +91,42 @@ const renderCartelera = {
                 this.cartelera.innerHTML = "";
                 this.renderCartelera();
             }
+
         });
 
     },
 
+    mostrarFormAnadir : function (){
+        document.querySelector('.add-button').addEventListener('click',function (){
+            console.log("clicked");
+            document.querySelector('.modal-contenedor').classList.add('mostrar');
+            this.anadirElemento();
+        }.bind(this));
+    },
+
     anadirElemento: function () {
+        document.getElementById('submit').addEventListener('click',function (){
+            event.preventDefault();
+            const formId = document.getElementById('form');
+            const form = new FormData(formId);
+            console.log(document.getElementById('imagen').getAttribute('class'));
+            let formObject = {};
+            form.forEach((value,key) =>
+            {
+                formObject[key] = value;
+            });
+
+            formObject['Poster'] = `../img/subir/${formObject.Poster.name}`
+            cartelera.push(formObject);
+            document.querySelector('.modal-contenedor').classList.remove('mostrar');
+            this.cartelera.innerHTML = "";
+            this.renderCartelera();
+            this.listenerBotones();
+        }.bind(this))
     }
 }
+
 renderCartelera.renderCartelera();
-renderCartelera.listenerBotones()
+renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
+renderCartelera.mostrarFormAnadir();
