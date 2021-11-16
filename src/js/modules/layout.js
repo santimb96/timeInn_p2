@@ -55,6 +55,10 @@ const layout = {
             }
 
         })
+        if (window.location.pathname === "/timeInn_p2/src/templates/cartelera.html"){
+            output += `<li class="addButton"><i class="far fa-plus-square"></i></li>`;
+        }
+
         output += `</ul>`;
         return output;
     },

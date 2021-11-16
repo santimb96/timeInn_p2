@@ -71,7 +71,10 @@ a:hover:after {
     height: 5%;
 }
 
-
+#addButton{
+    color: var(--blanco);
+    font-size: 3vw;
+}
 /*CONTENEDOR*/
 .contenedorPadre {
     font-weight: bold;
