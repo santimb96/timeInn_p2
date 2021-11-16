@@ -75,19 +75,9 @@ const renderCartelera = {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
 
-            let formObject = {}
-
-            form.forEach((value, key) => {
-                formObject[key] = value
-            });
-
-            //console.log(JSON.stringify(formObject));
-
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
 
-            console.log(formObject.Genre);
-
-            this.renderNuevaCartelera(formObject.Title, formObject.Genre, pelicula);
+            this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), pelicula);
 
 
         }.bind(this));
