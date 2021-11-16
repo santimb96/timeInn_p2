@@ -30,7 +30,7 @@ const renderCartelera = {
 
     },
 
-    borrarListener: function () {
+    listenerBotones: function () {
 
         const botones = document.querySelectorAll('.edicion');
         const peliculas = document.querySelectorAll('.pelicula');
@@ -100,5 +100,5 @@ const renderCartelera = {
     }
 }
 renderCartelera.renderCartelera();
-renderCartelera.borrarListener()
+renderCartelera.listenerBotones()
 renderCartelera.cerrarVentana();
