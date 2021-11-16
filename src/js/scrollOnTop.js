@@ -14,9 +14,11 @@ const scrollOnTop = {
     },
 
     scrollTop : function () {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
+        document.querySelector('.scroll').addEventListener('click', function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
     }
 }
-
+scrollOnTop.scrollTop();
 

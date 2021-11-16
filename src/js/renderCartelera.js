@@ -60,7 +60,9 @@ const renderCartelera = {
     },
 
     cerrarVentana: function () {
-        document.querySelector('.modal-contenedor').classList.remove('mostrar');
+        document.querySelector('.boton-cerrar').addEventListener('click', function () {
+            document.querySelector('.modal-contenedor').classList.remove('mostrar');
+        })
     },
 
     editarCarta: function (pelicula) {
@@ -84,7 +86,6 @@ const renderCartelera = {
     anadirElemento: function () {
     }
 }
-
-
 renderCartelera.renderCartelera();
 renderCartelera.borrarListener()
+renderCartelera.cerrarVentana();
