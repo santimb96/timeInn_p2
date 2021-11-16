@@ -42,7 +42,7 @@ const renderCartelera = {
                         if (boton.getAttribute('name') === 'borrar') {
                             this.borrarCarta(pelicula);
                         } else {
-                            this.mostrarFormEdicion();
+                            this.mostrarFormEdicion(pelicula.getAttribute('name'));
                             //this.editarCarta(pelicula.getAttribute('name'));
                         }
                     }
@@ -55,8 +55,9 @@ const renderCartelera = {
         carta.remove();
     },
 
-    mostrarFormEdicion: function (){
+    mostrarFormEdicion: function (pelicula) {
         document.querySelector('.modal-contenedor').classList.add('mostrar');
+        this.editarCarta(pelicula);
     },
 
     cerrarVentana: function () {
@@ -67,22 +68,44 @@ const renderCartelera = {
 
     editarCarta: function (pelicula) {
         //TODO: HACER FORMULARIO PARA EDITAR  PELÍCULAS
+
+        document.getElementById('submit').addEventListener('click', function () {
+            event.preventDefault();
+
+            const formId = document.getElementById('form');
+            const form = new FormData(formId);
+
+            let formObject = {}
+
+            form.forEach((value, key) => {
+                formObject[key] = value
+            });
+
+            //console.log(JSON.stringify(formObject));
+
+            document.querySelector('.modal-contenedor').classList.remove('mostrar');
+
+            console.log(formObject.Genre);
+
+            this.renderNuevaCartelera(formObject.Title, formObject.Genre, pelicula);
+
+
+        }.bind(this));
+
+    },
+
+    renderNuevaCartelera: function (titulo, genero, pelicula) {
         cartelera.forEach(carta => {
             if (carta.Title === pelicula) {
-                /**
-                 * preguntar los datos en esta sección
-                 * @type {string}
-                 */
-                carta.Title = "Tus muertos"
+                carta.Title = titulo;
+                carta.Genre = genero;
                 this.cartelera.innerHTML = "";
-                this.renderCartelera()
+                this.renderCartelera();
             }
         });
 
-        /**
-         * con este código comprobamos que se añade un
-         */
     },
+
     anadirElemento: function () {
     }
 }
