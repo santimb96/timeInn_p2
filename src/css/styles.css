@@ -480,6 +480,38 @@ margin: -3% 7% 7%;
     background-color: #555;
 }
 
+/**
+VENTANA EDICIÓN
+ */
+.modal-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+}
+.mostrar{
+    pointer-events: auto;
+    opacity: 1;
+}
+.modal-edicion {
+    display: flex;
+    background: var(--gris-30);
+    width: 30vw;
+    height: 30vh;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 400px){
 
 }

@@ -30,7 +30,7 @@ const renderCartelera = {
 
     },
 
-    borrarListener : function () {
+    borrarListener: function () {
 
         const botones = document.querySelectorAll('.edicion');
         const peliculas = document.querySelectorAll('.pelicula');
@@ -38,12 +38,13 @@ const renderCartelera = {
         botones.forEach(boton => {
             boton.addEventListener('click', function () {
                 peliculas.forEach(pelicula => {
-                    if(boton.getAttribute('id') === pelicula.getAttribute('id')){
-                       if(boton.getAttribute('name') === 'borrar'){
-                           this.borrarCarta(pelicula);
-                       } else {
-                           this.editarCarta(pelicula.getAttribute('name'));
-                       }
+                    if (boton.getAttribute('id') === pelicula.getAttribute('id')) {
+                        if (boton.getAttribute('name') === 'borrar') {
+                            this.borrarCarta(pelicula);
+                        } else {
+                            this.mostrarFormEdicion();
+                            //this.editarCarta(pelicula.getAttribute('name'));
+                        }
                     }
                 })
             }.bind(this))
@@ -54,10 +55,18 @@ const renderCartelera = {
         carta.remove();
     },
 
-    editarCarta: function(pelicula) {
-        //TODO: HACER FORMULARIO PARA INTEGRAR PELÍCULAS
+    mostrarFormEdicion: function (){
+        document.querySelector('.modal-contenedor').classList.add('mostrar');
+    },
+
+    cerrarVentana: function () {
+        document.querySelector('.modal-contenedor').classList.remove('mostrar');
+    },
+
+    editarCarta: function (pelicula) {
+        //TODO: HACER FORMULARIO PARA EDITAR  PELÍCULAS
         cartelera.forEach(carta => {
-            if(carta.Title === pelicula){
+            if (carta.Title === pelicula) {
                 /**
                  * preguntar los datos en esta sección
                  * @type {string}
@@ -72,7 +81,8 @@ const renderCartelera = {
          * con este código comprobamos que se añade un
          */
     },
-    anadirElemento: function (){}
+    anadirElemento: function () {
+    }
 }
 
 
