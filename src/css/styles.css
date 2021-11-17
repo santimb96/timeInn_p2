@@ -5,6 +5,7 @@
     --gris-20: #eee;
     --gris-30: #666;
     --gris-40: #ddd;
+    --rojo-10: red;
 }
 
 body{
@@ -432,15 +433,66 @@ VENTANA EDICIÓN
     pointer-events: none;
     justify-content: center;
     align-items: center;
-    margin-top: 20%;
+    top: 0;
 }
 
 .modal-edicion{
-    background: var(--gris-30);
+    background: var(--blanco);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
     position: fixed;
     border-radius: 10px;
+    margin-top: 20%;
+    width: 70vh;
+    height: 70vh;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5% 5%;
+    align-content: center;
+    gap: 1vh;
+    font-weight: bold;
+}
+
+#form > input {
+    height: 5vh;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 2px black solid;
+    width: 50vh;
+}
+
+#form > input:hover{
+    background: var(--gris-10);
+    transition: 0.4s;
+}
+
+#form > button {
+    background: var(--negro);
+    color: var(--blanco);
+    border-radius: 10px;
+    width: 20%;
+    height: 20%;
+    font-size: 1.2rem;
+    border: 2px black solid;
+}
+
+#form > button:hover{
+    background: var(--blanco);
+    color: var(--negro);
+    transition: 0.4s;
+}
+
+
+
+.cerrar-boton {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .mostrar{
@@ -448,32 +500,21 @@ VENTANA EDICIÓN
     display: flex;
 }
 
-.form-container{
-display: flex;
-flex-direction: column;
-flex-wrap: wrap;
+.opacidad-fondo {
+    background-color: rgba(0,0,0,0.6);
 }
 
-#form > input {
-display: flex;
-}
-
-#form {
-    display: flex;
-    flex-direction: column;
-    margin: 25vh;
-}
 
 .boton-cerrar {
-    background-color: red;
-    font-size: 7vh;
+    background: transparent;
+    font-size: 4vh;
     border-radius: 10px;
+    border: none;
 }
 
-.cerrar-boton{
-    flex-direction: column;
-    display: flex;
-    align-self: self-start;
+.boton-cerrar:hover{
+    background: var(--rojo-10);
+    transition: 0.4s;
 }
 
 @media only screen and (max-width: 400px){

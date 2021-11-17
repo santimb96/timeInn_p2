@@ -3,6 +3,8 @@ import {cartelera} from './modules/cartelera.js';
 const renderCartelera = {
     cartelera: document.querySelector('.cartelera'),
 
+    elementosOscurecer: ['.header', '.cartelera', '.footer'],
+
     renderCartelera: function () {
         let contador = 1;
 
@@ -55,14 +57,23 @@ const renderCartelera = {
     },
 
     mostrarFormEdicion: function (pelicula) {
+
+        this.elementosOscurecer.forEach(elemento => {
+            document.querySelector(elemento).classList.add('opacidad-fondo');
+        });
+
         document.querySelector('.modal-contenedor').classList.add('mostrar');
+
         this.editarCarta(pelicula);
     },
 
     cerrarVentana: function () {
         document.querySelector('.boton-cerrar').addEventListener('click', function () {
+            this.elementosOscurecer.forEach(elemento => {
+                document.querySelector(elemento).classList.remove('opacidad-fondo');
+            });
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
-        })
+        }.bind(this));
     },
 
     editarCarta: function (pelicula) {
@@ -96,28 +107,33 @@ const renderCartelera = {
 
     },
 
-    mostrarFormAnadir : function (){
-        document.querySelector('.add-button').addEventListener('click',function (){
+    mostrarFormAnadir: function () {
+        document.querySelector('.add-button').addEventListener('click', function () {
             console.log("clicked");
+            this.elementosOscurecer.forEach(elemento => {
+                document.querySelector(elemento).classList.add('opacidad-fondo');
+            });
             document.querySelector('.modal-contenedor').classList.add('mostrar');
             this.anadirElemento();
         }.bind(this));
     },
 
     anadirElemento: function () {
-        document.getElementById('submit').addEventListener('click',function (){
+        document.getElementById('submit').addEventListener('click', function () {
             event.preventDefault();
             const formId = document.getElementById('form');
             const form = new FormData(formId);
             console.log(document.getElementById('imagen').getAttribute('class'));
             let formObject = {};
-            form.forEach((value,key) =>
-            {
+            form.forEach((value, key) => {
                 formObject[key] = value;
             });
 
             formObject['Poster'] = `../img/subir/${formObject.Poster.name}`
             cartelera.push(formObject);
+            this.elementosOscurecer.forEach(elemento => {
+                document.querySelector(elemento).classList.remove('opacidad-fondo');
+            });
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
             this.cartelera.innerHTML = "";
             this.renderCartelera();
