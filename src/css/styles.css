@@ -317,7 +317,6 @@ PROMOCIONES
 
 /*CARTELERA.HTML*/
 
-
 .cartelera {
     display: grid;
     grid-template-columns: 100%;
@@ -364,7 +363,6 @@ PROMOCIONES
     border-radius: 5px;
 }
 
-
 .text-content {
     width: 60%;
     height: 100%;
@@ -406,72 +404,6 @@ PROMOCIONES
     transition: 0.3s;
 }
 
-
-/*.pelicula {
-display: flex;
-background-color: var(--negro);
-width: 65%;
-border-radius: 40px;
-color: var(--blanco);
-margin: 20px;
-font-family: 'Carrois Gothic SC',cursive;
-}
-
-.cartelera{
-display: grid;
-grid-template-columns: 100%;
-justify-items: center;
-}
-
-.img-container > img{
-margin: 30px;
-border-radius: 10px;
-width: 300px;
-height: 400px;
-}
-
-.pelicula > button {
-margin: 30px;
-border-radius: 10px;
-}
-
-.text-content{
-display: flex;
-flex-direction: column;
-margin-left: 2%;
-width: 100%;
-}
-.horarios{
-display: flex;
-flex-direction: row;
-}
-
-.horarios > button {
-margin: 10%;
-font-size: 1.5rem;
-background: forestgreen;
-color: var(--blanco);
-border-radius: 5px;
-padding: 10px;
-width: 20%;
-}
-
-.horarios > button:hover{
-background: var(--blanco);
-font-weight: bold;
-color: var(--negro);
-}
-
-.titulo-pelicula{
-font-size: 2rem;
-margin: 7%;
-}
-
-.subtitulo-pelicula{
-font-size: 1.2rem;
-margin: -3% 7% 7%;
-}*/
-
 .scroll {
     display: none;
     position: fixed;
@@ -496,32 +428,52 @@ margin: -3% 7% 7%;
 VENTANA EDICIÓN
  */
 .modal-contenedor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display:none;
     pointer-events: none;
-    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
 }
-.mostrar{
-    pointer-events: auto;
-    opacity: 1;
-}
-.modal-edicion {
-    display: flex;
+
+.modal-edicion{
     background: var(--gris-30);
-    width: 30vw;
-    height: 30vh;
     align-items: center;
     justify-content: center;
     position: fixed;
     border-radius: 10px;
-    padding: 2%;
+}
+
+.mostrar{
+    pointer-events: auto;
+    display: flex;
 }
 
 .form-container{
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+}
+
+#form > input {
+display: flex;
+}
+
+#form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    margin: 25vh;
+}
+
+.boton-cerrar {
+    background-color: red;
+    font-size: 7vh;
+    border-radius: 10px;
+}
+
+.cerrar-boton{
+    flex-direction: column;
+    display: flex;
+    align-self: self-start;
 }
 
 @media only screen and (max-width: 400px){
