@@ -85,22 +85,32 @@ const renderCartelera = {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
 
+            this.elementosOscurecer.forEach(elemento => {
+                document.querySelector(elemento).classList.remove('opacidad-fondo');
+            });
+
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
 
-            this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), pelicula);
+            this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), form.get('Year'), form.get('Runtime'), form.get('Poster'), pelicula);
 
 
         }.bind(this));
 
     },
 
-    renderNuevaCartelera: function (titulo, genero, pelicula) {
+    renderNuevaCartelera: function (titulo, genero, ano, runtime, poster, pelicula) {
+
         cartelera.forEach(carta => {
+
             if (carta.Title === pelicula) {
                 carta.Title = titulo;
                 carta.Genre = genero;
+                carta.Year = ano;
+                carta.Runtime = runtime;
+                carta.Poster = `../img/subir/${poster.name}`;
                 this.cartelera.innerHTML = "";
                 this.renderCartelera();
+                this.listenerBotones();
             }
 
         });
@@ -131,13 +141,17 @@ const renderCartelera = {
 
             formObject['Poster'] = `../img/subir/${formObject.Poster.name}`
             cartelera.push(formObject);
+
             this.elementosOscurecer.forEach(elemento => {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
             this.cartelera.innerHTML = "";
+
+
             this.renderCartelera();
             this.listenerBotones();
+
         }.bind(this))
     }
 }
