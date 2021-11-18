@@ -343,6 +343,13 @@ PROMOCIONES
     outline: none;
     padding: 15px;
     border-radius: 4px;
+    border: 2px var(--negro) solid;
+}
+
+.add-button:hover{
+    background: var(--gris-10);
+    border: 2px var(--blanco) solid;
+    transition: 0.5s;
 }
 
 #add-button{
