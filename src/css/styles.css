@@ -476,7 +476,7 @@ VENTANA EDICIÓN
 
 .modal-edicion{
     background: var(--blanco);
-    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
     /* position: fixed; */
@@ -570,17 +570,30 @@ SUSCRIPCION
 
 .suscripcion{
     display: none;
-
-}
-
-.suscripcion-mostrar{
-    display: flex;
     pointer-events: none;
     justify-content: center;
     align-items: center;
     top: 0;
     right: 35%;
     position: fixed;
+}
+
+.form-sub{
+    background: var(--blanco);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    justify-content: center;
+    /* position: fixed; */
+    border-radius: 10px;
+    margin: 1% 5% 5%;
+    padding: 20%;
+    width: 70vh;
+    height: 70vh;
+}
+
+.suscripcion-mostrar {
+    display: flex;
+    pointer-events: auto;
 }
 
 @media only screen and (max-width: 400px){
