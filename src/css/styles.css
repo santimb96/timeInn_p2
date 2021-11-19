@@ -563,6 +563,26 @@ background: var(--rojo-10);
 transition: 0.4s;
 }
 
+
+/**
+SUSCRIPCION
+ */
+
+.suscripcion{
+    display: none;
+
+}
+
+.suscripcion-mostrar{
+    display: flex;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 35%;
+    position: fixed;
+}
+
 @media only screen and (max-width: 400px){
 
 }
