@@ -1,6 +1,6 @@
 const suscripcion = {
 
-    sub :document.querySelector('.suscripcion'),
+    sub: document.querySelector('.suscripcion'),
 
     render: function () {
 
@@ -17,14 +17,12 @@ const suscripcion = {
     },
 
     cargaForm: function () {
+        //TODO COOKIE
 
         setTimeout(() => {
 
-
             this.sub.innerHTML = this.render();
-
             this.sub.classList.add('suscripcion-mostrar');
-
             this.cerrarSuscripcion();
 
         }, 5000);
