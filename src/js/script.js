@@ -10,7 +10,18 @@ const app = {
     calendario: document.querySelector('.calendario'),
 
     renderNovedades: function () {
-        novedades.forEach(novedad => {
+
+        const ordenado = novedades.sort(function(a, b){
+            if(b.Year > a.Year){
+                return 1;
+            }
+            if(b.Year < a.Year){
+                return -1;
+            }
+            return 0;
+        });
+
+        ordenado.forEach(novedad => {
             this.novedades.innerHTML += `<div class="novedad">
                                             <img src="${novedad.Poster}" alt="${novedad.Title}">
                                             <h2>${novedad.Title}</h2>
