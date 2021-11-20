@@ -59,9 +59,6 @@ const layout = {
 
         })
 
-        /*if (window.location.pathname === "/timeInn_p2/src/templates/cartelera.html"){
-            output += `<button name="add" class="add-button"><i id="add-button" class="far fa-plus-square"></i></button>`;
-        }*/
         output += `</ul>`;
         return output;
     },
@@ -69,23 +66,24 @@ const layout = {
         document.getElementsByClassName("header")[0].innerHTML += this.header();
         document.getElementsByClassName("footer")[0].innerHTML += this.footerBar;
         document.getElementsByClassName("footer")[0].innerHTML += this.footer;
+        this.buttons();
+    },
+    buttons : function (){
+        document.getElementById('hamburger').addEventListener('click', function (){
+            document.querySelector('.menu').style.display = 'block';
+            document.getElementById('x').style.display = 'block';
+            document.getElementById('hamburger').style.display = 'none';
+        });
+        document.getElementById('x').addEventListener('click',function (){
+            document.querySelector('.menu').style.display = 'none';
+            document.getElementById('hamburger').style.display = 'block';
+            document.getElementById('x').style.display = 'none';
+        });
+        document.querySelector('.footer-bar').addEventListener('click',function (){
+            document.querySelector('.footer-fields').style.display = 'flex';
+            document.querySelector('.footer-bar').style.display = 'none';
+        });
     }
 }
 
-function showMenuBar() {
-    document.querySelector('.menu').style.display = 'block';
-    document.getElementById('x').style.display = 'block';
-    document.getElementById('hamburger').style.display = 'none';
-};
-
-function closeMenuBar() {
-    document.querySelector('.menu').style.display = 'none';
-    document.getElementById('hamburger').style.display = 'block';
-    document.getElementById('x').style.display = 'none';
-};
-
-function showFooter(){
-    document.querySelector('.footer-fields').style.display = 'flex';
-    document.querySelector('.footer-bar').style.display = 'none';
-}
 
