@@ -7,9 +7,11 @@ const renderCartelera = {
 
     renderCartelera: function () {
         let contador = 1;
+        let tituloRep = "";
 
         cartelera.forEach(pelicula => {
-            this.cartelera.innerHTML += `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
+            if (tituloRep !== pelicula.Title) {
+                this.cartelera.innerHTML += `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
                                             <div class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
                                             
                                             <div class="text-content">
@@ -27,9 +29,12 @@ const renderCartelera = {
                                             </div>
                                             </div>
                                          </div>`;
-            contador++;
+                contador++;
+                tituloRep = pelicula.Title;
 
+            }
         });
+        console.log(this.cartelera);
     },
 
     listenerBotones: function () {
@@ -60,8 +65,8 @@ const renderCartelera = {
         this.elementosOscurecer.forEach(elemento => {
             document.querySelector(elemento).classList.add('opacidad-fondo');
         });
-        document.getElementById('submit').style.display="block";
-        document.getElementById('add').style.display="none";
+        document.getElementById('submit').style.display = "block";
+        document.getElementById('add').style.display = "none";
         document.querySelector('.modal-contenedor').classList.add('mostrar');
 
         this.editarCarta(pelicula);
@@ -121,8 +126,8 @@ const renderCartelera = {
                 document.querySelector(elemento).classList.add('opacidad-fondo');
             });
             document.querySelector('.modal-contenedor').classList.add('mostrar');
-            document.getElementById('submit').style.display="none";
-            document.getElementById('add').style.display="block";
+            document.getElementById('submit').style.display = "none";
+            document.getElementById('add').style.display = "block";
             this.anadirElemento();
         }.bind(this));
     },
@@ -144,8 +149,8 @@ const renderCartelera = {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
 
-            document.getElementById('submit').style.display="block";
-            document.getElementById('add').style.display="none";
+            document.getElementById('submit').style.display = "block";
+            document.getElementById('add').style.display = "none";
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
 
             this.cartelera.innerHTML = "";
@@ -153,7 +158,7 @@ const renderCartelera = {
             this.listenerBotones();
 
         }.bind(this))
-    }
+    },
 }
 
 renderCartelera.renderCartelera();
