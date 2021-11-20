@@ -364,15 +364,15 @@ PROMOCIONES
 }
 
 .img-container > img {
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 340px;
     margin: 10px;
     box-shadow: 0 0 5px 2px var(--gris-40);
     border-radius: 5px;
 }
 
 .text-content {
-    width: 60%;
+    width: 75%;
     height: 100%;
     margin-left: 5%;
 }
@@ -422,7 +422,7 @@ PROMOCIONES
 .edicion{
     background: var(--gris-30);
     width: 10vh;
-    font-size: 10px;
+    font-size: 20px;
     padding: 1%;
     margin: 1%;
     font-weight: bold;
@@ -595,6 +595,15 @@ SUSCRIPCION
     display: flex;
     pointer-events: auto;
 }
+
+#add{
+    display:none;
+}
+
+#submit{
+    display: flex;
+}
+
 
 @media only screen and (max-width: 400px){
 
