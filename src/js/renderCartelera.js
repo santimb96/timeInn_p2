@@ -8,7 +8,7 @@ const renderCartelera = {
     renderCartelera: function () {
         let contador = 1;
         let tituloRep = "";
-        this.cartelera.innerHTML += `<h1 className="carteleraTitulo">CARTELERA</h1>`;
+        this.cartelera.innerHTML += `<h2 class="carteleraTitulo">CARTELERA</h2>`;
         cartelera.forEach(pelicula => {
             if (tituloRep !== pelicula.Title) {
                 this.cartelera.innerHTML += `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
