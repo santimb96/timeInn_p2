@@ -14,9 +14,7 @@ const suscripcion = {
                 <button id="submit" name="submit" value="Enviar">Enviar</button>
             </form>
             </div>`;
-    },
-
-    cargaForm: function () {
+    }, cargaForm: function () {
         //TODO COOKIE
 
         setTimeout(() => {
