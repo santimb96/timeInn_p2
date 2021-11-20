@@ -8,76 +8,100 @@
     --rojo-10: red;
 }
 
-body{
+/*MOBILE DESIGN*/
+body {
     margin: 0;
-    padding: 0;
 }
 
 /*HEADER*/
 .header {
     grid-area: header;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 .logo > a > img {
-    width: 297px;
-    height: 98px;
+    width: 30vh;
+    height: 10vh;
+    margin-left: 1vh;
+}
+
+.bar-menu {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
 }
 
 .menu {
-    background-color: var(--negro);
-    justify-content: center;
-    height: 66px;
-    margin-bottom: 2%;
-    font-family: 'Carrois Gothic SC', cursive;
+    display: none;
+    background-color: black;
+    width: 35vh;
+    position: fixed;
+    height: 100%;
+    right: 0;
+}
+
+
+.fa-bars:before {
+    content: "\f0c9";
+    font-size: 5vh;
+    color: white;
+}
+
+#hamburger {
+    background-color: black;
+    border: none;
 }
 
 .menu > ul {
     display: flex;
+    flex-direction: column;
     list-style: none;
-    justify-content: center;
-    padding: 9px;
-    font-size: 1.3rem;
-    align-items: center;
+    padding: 1vh;
+
 }
 
-.li {
-
-    color: var(--blanco);
-    margin-left: 2rem;
-    margin-right: 2rem;
+.menu > ul > button {
+    display: flex;
+    padding: 2vh;
+    background-color: black;
+    border: none;
 }
 
-a {
-    color: var(--blanco);
+.menu > ul > button > a {
     text-decoration: none;
-    letter-spacing: 0.15em;
-    padding: 15px 20px;
-    position: relative;
+    font-family: 'Carrois Gothic SC', cursive;
+    font-size: 1.2rem;
+    color: white;
 }
 
-a:after {
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #fff;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
+.menu button.active {
+    background-color: #04AA6D;
+    color: white;
 }
 
-a:hover:after {
-    width: 100%;
-    left: 0;
-    height: 5%;
+.menu button:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#x {
+    display: none;
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 5vh;
 }
 
 /*CONTENEDOR*/
 .contenedorPadre {
     font-weight: bold;
     display: grid;
-    grid-template-rows: 10% 20% 30% 25% 25%;
+    /*grid-template-rows: 10% 20% 30% 25% 25%;*/
+    grid-row-gap: 10vh;
     grid-template-areas:
         "header"
         "video"
@@ -97,37 +121,26 @@ h1 {
 /*VIDEO*/
 .video {
     grid-area: video;
+    overflow-x: hidden;
+    margin-top: 5%;
 }
 
 /*NOVEDADES*/
 .novedades {
+    grid-area: novedades;
 }
 
 .cartas-novedades {
-    width: 100%;
-    max-width: 1200px;
-    height: 430px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    grid-area: novedades;
-
-    /*flex-direction: column;*/
+    flex-direction: column;
 }
 
-/**
-CARTAS
- */
 .cartas-novedades .novedad {
-    width: 250px;
     height: 430px;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    padding-top: 10px;
+    margin: 1%;
+    /*padding-top: 10px;*/
     text-align: center;
     transition: all 0.25s;
 }
@@ -136,6 +149,8 @@ CARTAS
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
+
+/*SOLO FUNCIONA EN MODO DESKTOP*/
 
 .cartas-novedades .novedad img {
     margin: 0;
@@ -154,23 +169,21 @@ CARTAS
     padding: 2px;
 }
 
-/**
-PROMOCIONES
- */
-
-.cartas-promociones {
-    width: 100%;
-    max-width: 1200px;
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
+/*PROMOCIONES*/
+.promociones {
     grid-area: promociones;
+    align-self: center;
 }
 
-.cartas-promociones .promocion {
+.cartas-promociones {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-area: promociones;
+    justify-content: center;
+}
+
+.promocion {
     width: 300px;
     height: 150px;
     border-radius: 8px;
@@ -182,48 +195,29 @@ PROMOCIONES
     transition: all 0.25s;
 }
 
-.cartas-promociones .promocion:hover {
+.promocion:hover {
     transform: translateY(-15px);
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
 .promocion img {
     margin: 0;
-    width: 200px;
     height: 60px;
 }
 
-
-/*PROMOCIONES*/
-/*
-.promociones{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: 20%;
-    align-self: center;
-}
-*/
-
-
-.promocion > p {
-    word-break: break-word;
-}
-
+/*CALENDARIO*/
 .calendario {
     grid-area: calendario;
     display: flex;
     flex-direction: column;
-    width: 60%;
     align-self: center;
     justify-self: center;
-    /*margin: auto;*/
 }
 
 .month {
     background-color: var(--negro);
     text-align: center;
     color: var(--blanco);
-    height: 80px;
 }
 
 .month > h3 {
@@ -270,12 +264,26 @@ PROMOCIONES
 /*FOOTER*/
 .footer {
     display: grid;
-    background-color: black;
-    grid-template-columns: 40% 12% 14%;
-    column-gap: 12%;
+    background-color: var(--negro);
     color: white;
     margin-top: 2%;
     grid-area: footer;
+}
+
+.footer-fields {
+    display: none;
+    flex-direction: column;
+}
+
+.footer-bar > button {
+    border: none;
+    background-color: black;
+    color: var(--blanco);
+    font-size: 4vh;
+}
+
+.footer-bar {
+    display: flex;
 }
 
 .footer > div {
@@ -294,6 +302,8 @@ PROMOCIONES
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 2vh;
+    margin-top: 2vh;
 }
 
 .col-2 > input[type="button"], .col-3 > input[type="button"] {
@@ -305,8 +315,9 @@ PROMOCIONES
 
 .col-3-metodosPago, .col-2-redesSociales {
     display: flex;
-    justify-content: space-around;
-    font-size: larger;
+    column-gap: 2vh;
+    font-size: 4vh;
+    margin-left: 2vh;
 }
 
 .col-2-redesSociales > img, .col-3-metodosPago > img {
@@ -316,35 +327,103 @@ PROMOCIONES
     margin: 2%;
 }
 
-/*CARTELERA.HTML*/
+/*SCROLL*/
 
-.cartelera {
-    display: grid;
-    grid-template-columns: 100%;
-    justify-items: center;
-    font-family: 'Carrois Gothic SC', sans-serif;
-    gap: 1vh;
+.scroll {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    z-index: 99;
+    font-size: 18px;
+    text-transform: uppercase;
+    outline: none;
+    padding: 22px;
+    border-radius: 4px;
+    border: 2px var(--negro) solid;
 }
 
+.scroll:hover {
+    background: var(--gris-30);
+    border: 2px var(--blanco) solid;
+    transition: 0.5s;
+}
+
+/*SUSCRIPCION*/
+.suscripcion {
+    display: none;
+    pointer-events: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 23%;
+    position: fixed;
+}
+
+.form-sub {
+    background: var(--blanco);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 1% 5% 5%;
+    padding: 20%;
+}
+
+.suscripcion-mostrar {
+    display: flex;
+    pointer-events: auto;
+}
+
+#add {
+    display: none;
+}
+
+#submit {
+    display: flex;
+}
+
+
+/*CARTELERA*/
+
+ .cartelera {
+     display: grid;
+     grid-template-columns: 100%;
+     justify-items: center;
+     font-family: 'Carrois Gothic SC', sans-serif;
+     gap: 1vh;
+ }
+
+ .carteleraTitulo {
+     margin-top: 15vh;
+     font-size: 8vh;
+ }
+
 .pelicula {
+    justify-content: center;
     border-radius: 10px;
     background: var(--negro);
     display: flex;
     overflow: hidden;
     margin: 2px;
-    width: 60%;
-    height: 100%;
+    width: 75%;
     color: white;
+    padding: 2vh;
+    flex-direction:column;
 }
 
 .add-button {
     position: fixed;
-    right: 30px;
+    bottom: 20vh;
     outline: none;
-    padding: 15px;
+    padding: 22px;
     border-radius: 4px;
     border: 2px var(--negro) solid;
+    right: 0;
 }
+
+ .fa-plus-square:before {
+     content: "\f0fe";
+     font-size: 20px;
+ }
 
 .add-button:hover{
     background: var(--gris-10);
@@ -364,16 +443,14 @@ PROMOCIONES
 }
 
 .img-container > img {
-    width: 230px;
-    height: 340px;
+    width: 35vh;
+    height: 50vh;
     margin: 10px;
     box-shadow: 0 0 5px 2px var(--gris-40);
     border-radius: 5px;
 }
 
 .text-content {
-    width: 75%;
-    height: 100%;
     margin-left: 5%;
 }
 
@@ -388,8 +465,6 @@ PROMOCIONES
 }
 
 .horarios {
-    display: flex;
-    justify-content: flex-start;
     gap: 10%;
     font-weight: bold;
 }
@@ -414,9 +489,8 @@ PROMOCIONES
 
 .ediciones {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    margin-top: 1vh;
 }
 
 .edicion{
@@ -437,40 +511,14 @@ PROMOCIONES
     transition: 0.3s;
 }
 
-/*
-SCROLL
-*/
-
-.scroll {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    text-transform: uppercase;
-    outline: none;
-    padding: 22px;
-    border-radius: 4px;
-    border: 2px var(--negro) solid;
-}
-
-.scroll:hover {
-    background: var(--gris-30);
-    border: 2px var(--blanco) solid;
-    transition: 0.5s;
-}
-
-/**
-VENTANA EDICIÓN
- */
+/* VENTANA EDICIÓN*/
 .modal-contenedor{
     display: none;
     pointer-events: none;
     justify-content: center;
     align-items: center;
-    top: 0;
-    right: 35%;
+    top: 40px;
+    right: 8%;
     position: fixed;
 }
 
@@ -479,35 +527,27 @@ VENTANA EDICIÓN
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
-    /* position: fixed; */
     border-radius: 10px;
-    margin: 5%;
-    margin-top: 1%;
     padding: 20%;
-    width: 70vh;
-    height: 70vh;
-
 }
 
 #form {
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0 5% 5%;
-align-content: center;
-gap: 1vh;
-font-weight: bold;
-
-opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5% 5%;
+    align-content: center;
+    gap: 1vh;
+    font-weight: bold;
+    opacity: 1;
 }
 
 #form > input {
-height: 5vh;
-font-size: 1.2rem;
-border-radius: 10px;
-border: 2px black solid;
-width: 50vh;
+    /* height: 5vh; */
+    font-size: 1rem;
+    border-radius: 10px;
+/* border: 1px black solid;*/
 }
 
 #form > input:hover{
@@ -519,11 +559,10 @@ transition: 0.4s;
 background: var(--negro);
 color: var(--blanco);
 border-radius: 10px;
-width: 20%;
-height: 20%;
 font-size: 1.2rem;
 border: 2px black solid;
 }
+
 
 #form > button:hover{
 background: var(--blanco);
@@ -531,25 +570,16 @@ color: var(--negro);
 transition: 0.4s;
 }
 
-
-
 .cerrar-boton {
 display: flex;
 flex-direction: row-reverse;
-}
-
-.mostrar{
-pointer-events: auto;
-display: flex;
+    margin: -30px;
 }
 
 .opacidad-fondo {
 background-color: rgba(0,0,0,0.6);
 filter: blur(8px);
-
-
 }
-
 
 .boton-cerrar {
 background: transparent;
@@ -559,52 +589,230 @@ border: none;
 }
 
 .boton-cerrar:hover{
-background: var(--rojo-10);
-transition: 0.4s;
+    background: var(--rojo-10);
+    transition: 0.4s;
 }
 
-
-/**
-SUSCRIPCION
- */
-
-.suscripcion{
-    display: none;
-    pointer-events: none;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    right: 35%;
-    position: fixed;
-}
-
-.form-sub{
-    background: var(--blanco);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-    align-items: center;
-    justify-content: center;
-    /* position: fixed; */
-    border-radius: 10px;
-    margin: 1% 5% 5%;
-    padding: 20%;
-    width: 70vh;
-    height: 70vh;
-}
-
-.suscripcion-mostrar {
-    display: flex;
+.mostrar {
     pointer-events: auto;
+    display: block;
 }
 
-#add{
-    display:none;
+#form > input[type="file"]{
+    margin-left: 1px;
 }
 
-#submit{
-    display: flex;
-}
+@media only screen and (min-width: 600px) {
+    /*VIDEO*/
+    .video {
+        width: 100%;
+        margin-top: 5%;
+    }
 
+    /*NOVEDADES*/
+    .cartas-novedades {
+        justify-content: space-between;
+    }
 
-@media only screen and (max-width: 400px){
+    .cartas-novedades .novedad {
+        width: 250px;
+        height: 430px;
+        overflow: hidden;
+    }
+
+    /*NOVEDADES*/
+    .novedades {
+        grid-area: novedades;
+    }
+
+    .cartas-novedades {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*PROMOCIONES*/
+    .promociones {
+        grid-area: promociones;
+        /*align-self: center;*/
+    }
+
+    .cartas-promociones {
+        display: flex;
+        flex-direction: row;
+        grid-area: promociones;
+    }
+
+    /*CARTELERA*/
+    .cartelera {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        font-family: 'Carrois Gothic SC', sans-serif;
+        gap: 1vh;
+    }
+
+    .pelicula {
+        border-radius: 10px;
+        background: var(--negro);
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin: 2px;
+        color: white;
+    }
+
+    .img-container > img {
+        width: 230px;
+        height: 340px;
+        margin: 10px;
+        box-shadow: 0 0 5px 2px var(--gris-40);
+        border-radius: 5px;
+    }
+
+    .text-content {
+        width: 75%;
+    }
+
+    .subtitulo-pelicula {
+        font-size: 1rem;
+        color: var(--gris-40);
+    }
+
+    .horarios {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .ediciones {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    /*VENTANA DE EDICIÓN*/
+    .modal-contenedor{
+        display: none;
+        pointer-events: none;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 35%;
+        position: fixed;
+    }
+
+    .modal-edicion{
+        background: var(--blanco);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+        align-items: center;
+        justify-content: center;
+        /* position: fixed; */
+        border-radius: 10px;
+        margin: 5%;
+        margin-top: 1%;
+        padding: 20%;
+        width: 70vh;
+        height: 70vh;
+
+    }
+
+    #form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        gap: 1vh;
+        font-weight: bold;
+        padding: 20% 5% 5%;
+        opacity: 1;
+    }
+
+    #form > input {
+        height: 5vh;
+        font-size: 1.2rem;
+        border-radius: 10px;
+        border: 2px black solid;
+        width: 50vh;
+    }
+
+    #form > input:hover{
+        background: var(--gris-10);
+        transition: 0.4s;
+    }
+
+    #form > button {
+        background: var(--negro);
+        color: var(--blanco);
+        border-radius: 10px;
+        height: 20%;
+        font-size: 1.2rem;
+        border: 2px black solid;
+    }
+
+    #form > button:hover{
+        background: var(--blanco);
+        color: var(--negro);
+        transition: 0.4s;
+    }
+
+    .cerrar-boton {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .mostrar{
+        pointer-events: auto;
+        display: flex;
+    }
+
+    .opacidad-fondo {
+        background-color: rgba(0,0,0,0.6);
+        filter: blur(8px);
+    }
+
+    .boton-cerrar {
+        background: transparent;
+        font-size: 4vh;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .boton-cerrar:hover{
+        background: var(--rojo-10);
+        transition: 0.4s;
+    }
+
+    .suscripcion-mostrar{
+        right: 38%;
+        top: 20%;
+    }
+
+    .footer {
+        display: grid;
+        background-color: var(--negro);
+        color: white;
+        margin-top: 2%;
+        grid-area: footer;
+        justify-content: center;
+    }
+
+    .footer-fields {
+        display: none;
+    }
+
+    .footer-bar > button {
+        border: none;
+        background-color: black;
+        color: var(--blanco);
+        font-size: 4vh;
+    }
+
+    .footer-bar {
+        display: flex;
+    }
+
+    .footer > div {
+        margin: 3%;
+    }
 
 }

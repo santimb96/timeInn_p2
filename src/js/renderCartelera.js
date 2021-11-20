@@ -8,7 +8,7 @@ const renderCartelera = {
     renderCartelera: function () {
         let contador = 1;
         let tituloRep = "";
-
+        this.cartelera.innerHTML += `<h2 class="carteleraTitulo">CARTELERA</h2>`;
         cartelera.forEach(pelicula => {
             if (tituloRep !== pelicula.Title) {
                 this.cartelera.innerHTML += `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
@@ -31,7 +31,6 @@ const renderCartelera = {
                                          </div>`;
                 contador++;
                 tituloRep = pelicula.Title;
-
             }
         });
         console.log(this.cartelera);
@@ -154,6 +153,7 @@ const renderCartelera = {
             document.querySelector('.modal-contenedor').classList.remove('mostrar');
 
             this.cartelera.innerHTML = "";
+
             this.renderCartelera();
             this.listenerBotones();
 
