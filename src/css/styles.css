@@ -364,8 +364,8 @@ PROMOCIONES
 }
 
 .img-container > img {
-    width: 200px;
-    height: 300px;
+    width: 230px;
+    height: 340px;
     margin: 10px;
     box-shadow: 0 0 5px 2px var(--gris-40);
     border-radius: 5px;
