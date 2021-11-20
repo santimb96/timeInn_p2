@@ -8,6 +8,7 @@
     --rojo-10: red;
 }
 
+/*MOBILE DESIGN*/
 body{
     margin: 0;
     padding: 0;
@@ -16,7 +17,219 @@ body{
 /*HEADER*/
 .header {
     grid-area: header;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
+
+.logo > a > img {
+    width: 30vh;
+    height: 10vh;
+    margin-left: 1vh;
+}
+
+.bar-menu {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: space-between;
+}
+
+.menu {
+    display: none;
+    background-color: black;
+    width: 35vh;
+    position: fixed;
+    height: 100%;
+    right: 0;
+}
+
+
+.fa-bars:before {
+    content: "\f0c9";
+    font-size: 5vh;
+    color: white;
+}
+
+#hamburger {
+    background-color: black;
+    border: none;
+}
+
+.mostrar{
+    pointer-events: auto;
+    display: flex;
+}
+
+.menu > ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 1vh;
+
+}
+
+.menu > ul > button {
+    display: flex;
+    padding: 2vh;
+    background-color: black;
+    border: none;
+}
+
+.menu > ul > button > a {
+    text-decoration: none;
+    font-family: 'Carrois Gothic SC', cursive;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.menu button.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.menu button:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+#x{
+    display: none;
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 5vh;
+}
+
+/*CONTENEDOR*/
+ .contenedorPadre {
+     width: 360px;
+     height: 640px;
+     font-weight: bold;
+     display: grid;
+     /*grid-template-rows: 10% 20% 30% 25% 25%;*/
+     grid-row-gap: 10vh;
+     grid-template-areas:
+        "header"
+        "video"
+        "novedades"
+        "promociones"
+        "calendario"
+        "footer";
+     font-family: 'Carrois Gothic SC', sans-serif;
+ }
+
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+/*VIDEO*/
+.video {
+    grid-area: video;
+}
+
+/*NOVEDADES*/
+.novedades {
+    grid-area: novedades;
+}
+
+/*PROMOCIONES*/
+.promociones {
+    grid-area: promociones;
+}
+
+/*CALENDARIO*/
+.calendario {
+    grid-area: calendario;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-self: center;
+    justify-self: center;
+}
+
+/*FOOTER*/
+ .footer {
+     display: grid;
+     background-color: black;
+     grid-template-columns: 40% 12% 14%;
+     column-gap: 12%;
+     color: white;
+     margin-top: 2%;
+     grid-area: footer;
+ }
+
+.footer > div {
+    margin: 3%;
+}
+
+.col-1-title {
+    font-weight: bolder;
+}
+
+.col-1-content {
+    font-size: small;
+}
+
+.col-2, .col-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.col-2 > input[type="button"], .col-3 > input[type="button"] {
+    display: flex;
+    border: none;
+    background-color: black;
+    color: white;
+}
+
+.col-3-metodosPago, .col-2-redesSociales {
+    display: flex;
+    justify-content: space-around;
+    font-size: larger;
+}
+
+.col-2-redesSociales > img, .col-3-metodosPago > img {
+    width: 7%;
+    background: white;
+    border-radius: 45%;
+    margin: 2%;
+}
+
+/*SCROLL*/
+
+ .scroll {
+     display: none;
+     position: fixed;
+     bottom: 20px;
+     right: 30px;
+     z-index: 99;
+     font-size: 18px;
+     text-transform: uppercase;
+     outline: none;
+     padding: 22px;
+     border-radius: 4px;
+     border: 2px var(--negro) solid;
+ }
+
+.scroll:hover {
+    background: var(--gris-30);
+    border: 2px var(--blanco) solid;
+    transition: 0.5s;
+}
+
+/*
+body{
+    margin: 0;
+    padding: 0;
+}
+
+!*HEADER*!
+
 
 .logo > a > img {
     width: 297px;
@@ -73,33 +286,10 @@ a:hover:after {
     height: 5%;
 }
 
-/*CONTENEDOR*/
-.contenedorPadre {
-    font-weight: bold;
-    display: grid;
-    grid-template-rows: 10% 20% 30% 25% 25%;
-    grid-template-areas:
-        "header"
-        "video"
-        "novedades"
-        "promociones"
-        "calendario"
-        "footer";
-    font-family: 'Carrois Gothic SC', sans-serif;
-}
 
-h1 {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-}
+!*VIDEO*!
 
-/*VIDEO*/
-.video {
-    grid-area: video;
-}
-
-/*NOVEDADES*/
+!*NOVEDADES*!
 .novedades {
 }
 
@@ -114,12 +304,13 @@ h1 {
     margin: auto;
     grid-area: novedades;
 
-    /*flex-direction: column;*/
+    !*flex-direction: column;*!
 }
 
-/**
+
+!**
 CARTAS
- */
+ *!
 .cartas-novedades .novedad {
     width: 250px;
     height: 430px;
@@ -154,9 +345,9 @@ CARTAS
     padding: 2px;
 }
 
-/**
+!**
 PROMOCIONES
- */
+ *!
 
 .cartas-promociones {
     width: 100%;
@@ -194,30 +385,22 @@ PROMOCIONES
 }
 
 
-/*PROMOCIONES*/
-/*
+!*PROMOCIONES*!
+!*
 .promociones{
     display: grid;
     grid-template-columns: 50% 50%;
     column-gap: 20%;
     align-self: center;
 }
-*/
+*!
 
 
 .promocion > p {
     word-break: break-word;
 }
 
-.calendario {
-    grid-area: calendario;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    align-self: center;
-    justify-self: center;
-    /*margin: auto;*/
-}
+
 
 .month {
     background-color: var(--negro);
@@ -267,56 +450,8 @@ PROMOCIONES
     color: var(--blanco);
 }
 
-/*FOOTER*/
-.footer {
-    display: grid;
-    background-color: black;
-    grid-template-columns: 40% 12% 14%;
-    column-gap: 12%;
-    color: white;
-    margin-top: 2%;
-    grid-area: footer;
-}
 
-.footer > div {
-    margin: 3%;
-}
-
-.col-1-title {
-    font-weight: bolder;
-}
-
-.col-1-content {
-    font-size: small;
-}
-
-.col-2, .col-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
-.col-2 > input[type="button"], .col-3 > input[type="button"] {
-    display: flex;
-    border: none;
-    background-color: black;
-    color: white;
-}
-
-.col-3-metodosPago, .col-2-redesSociales {
-    display: flex;
-    justify-content: space-around;
-    font-size: larger;
-}
-
-.col-2-redesSociales > img, .col-3-metodosPago > img {
-    width: 7%;
-    background: white;
-    border-radius: 45%;
-    margin: 2%;
-}
-
-/*CARTELERA.HTML*/
+!*CARTELERA.HTML*!
 
 .cartelera {
     display: grid;
@@ -437,33 +572,11 @@ PROMOCIONES
     transition: 0.3s;
 }
 
-/*
-SCROLL
-*/
 
-.scroll {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    text-transform: uppercase;
-    outline: none;
-    padding: 22px;
-    border-radius: 4px;
-    border: 2px var(--negro) solid;
-}
 
-.scroll:hover {
-    background: var(--gris-30);
-    border: 2px var(--blanco) solid;
-    transition: 0.5s;
-}
-
-/**
+!**
 VENTANA EDICIÓN
- */
+ *!
 .modal-contenedor{
     display: none;
     pointer-events: none;
@@ -479,7 +592,7 @@ VENTANA EDICIÓN
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
-    /* position: fixed; */
+    !* position: fixed; *!
     border-radius: 10px;
     margin: 5%;
     margin-top: 1%;
@@ -525,6 +638,7 @@ font-size: 1.2rem;
 border: 2px black solid;
 }
 
+
 #form > button:hover{
 background: var(--blanco);
 color: var(--negro);
@@ -538,16 +652,11 @@ display: flex;
 flex-direction: row-reverse;
 }
 
-.mostrar{
-pointer-events: auto;
-display: flex;
-}
+
 
 .opacidad-fondo {
 background-color: rgba(0,0,0,0.6);
 filter: blur(8px);
-
-
 }
 
 
@@ -564,9 +673,9 @@ transition: 0.4s;
 }
 
 
-/**
+!**
 SUSCRIPCION
- */
+ *!
 
 .suscripcion{
     display: none;
@@ -583,7 +692,7 @@ SUSCRIPCION
     box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     align-items: center;
     justify-content: center;
-    /* position: fixed; */
+    !* position: fixed; *!
     border-radius: 10px;
     margin: 1% 5% 5%;
     padding: 20%;
@@ -605,6 +714,4 @@ SUSCRIPCION
 }
 
 
-@media only screen and (max-width: 400px){
-
-}
+*/

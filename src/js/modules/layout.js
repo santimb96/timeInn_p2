@@ -2,9 +2,12 @@ const layout = {
     menu: ["novedades", "cartelera", "promociones", "zona ocio"],
     header: function () {
         return `
-        <div class="logo">
-            <a href="../templates/index.html"><img src="../../src/img/logoPalmimax.png" alt="Logo"></a>
+        <div class="bar-menu">
+            <div class="logo"><a href="../templates/index.html"><img src="../../src/img/logoPalmimax.png" alt="Logo"></a></div>
+            <button id="hamburger" onclick="showMenuBar()"><i class="fas fa-bars"></i></button>
+            <button id="x" onclick="closeMenuBar()">X</button>
         </div>
+        
         <div class="menu">
             ${this.renderMenu()}
         </div>`
@@ -47,11 +50,11 @@ const layout = {
         let output=`<ul>`;
         this.menu.forEach(section => {
             if (section==="cartelera"){
-                output+=`<a href="../../src/templates/cartelera.html"><li>${section}</li></a>`
+                output+=`<button onclick="closeMenuBar()"><a href="../../src/templates/cartelera.html"><li>${section}</li></a></button>`
             }
             else
             {
-                output += `<a href="#${section}"><li>${section}</li></a>`;
+                output += `<button onclick="closeMenuBar()"><a href="#${section}"><li>${section}</li></a></button>`;
             }
 
         })
@@ -62,9 +65,25 @@ const layout = {
         output += `</ul>`;
         return output;
     },
-
     render: function () {
-        document.getElementsByClassName("header")[0].innerHTML = this.header();
+        document.getElementsByClassName("header")[0].innerHTML += this.header();
         document.getElementsByClassName("footer")[0].innerHTML = this.footer;
     }
 }
+function showMenuBar () {
+        document.querySelector('.menu').style.display = 'block';
+        document.getElementById('x').style.display = 'block';
+        document.getElementById('hamburger').style.display='none';
+};
+
+function closeMenuBar(){
+    document.querySelector('.menu').style.display = 'none';
+    document.getElementById('hamburger').style.display = 'block';
+    document.getElementById('x').style.display = 'none';
+};
+
+//document.querySelector('.field').addEventListener('click',function (){
+  //  closeMenuBar();
+//});
+
+

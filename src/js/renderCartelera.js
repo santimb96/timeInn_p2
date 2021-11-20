@@ -31,7 +31,6 @@ const renderCartelera = {
                                          </div>`;
                 contador++;
                 tituloRep = pelicula.Title;
-
             }
         });
         console.log(this.cartelera);
