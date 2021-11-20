@@ -372,7 +372,7 @@ PROMOCIONES
 }
 
 .text-content {
-    width: 60%;
+    width: 75%;
     height: 100%;
     margin-left: 5%;
 }
@@ -422,7 +422,7 @@ PROMOCIONES
 .edicion{
     background: var(--gris-30);
     width: 10vh;
-    font-size: 10px;
+    font-size: 20px;
     padding: 1%;
     margin: 1%;
     font-weight: bold;

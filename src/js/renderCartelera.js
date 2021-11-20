@@ -24,8 +24,8 @@ const renderCartelera = {
                                                     <button>20:25</button>                                                
                                             </div>
                                             <div class="ediciones">
-                                            <button id="${contador}" class="edicion" name="editar">EDITAR</button>
-                                            <button id="${contador}" class="edicion" name="borrar">BORRAR</button>
+                                            <button id="${contador}" class="edicion" name="editar"><i class="far fa-edit"></i></button>
+                                            <button id="${contador}" class="edicion" name="borrar"><i class="far fa-trash-alt"></i></button>
                                             </div>
                                             </div>
                                          </div>`;
@@ -166,4 +166,10 @@ renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
 renderCartelera.mostrarFormAnadir();
 
-//al hacer submit -> me hace edit y add a la vez
+//al hacer submit -> me hace edit y add a la vez --> arreglado
+
+//TODO 1 CAMBIAR BORRAR POR UNA PAPELERA
+//TODO 2 CAMBIAR EDITAR POR UN LÁPIZ
+//TODO 3 PONER CONTROL AL FORMULARIO
+//TODO 4 COOKIES
+
