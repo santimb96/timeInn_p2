@@ -11,7 +11,6 @@
 /*MOBILE DESIGN*/
 body{
     margin: 0;
-    padding: 0;
 }
 
 /*HEADER*/
@@ -104,8 +103,6 @@ body{
 
 /*CONTENEDOR*/
  .contenedorPadre {
-     width: 360px;
-     height: 640px;
      font-weight: bold;
      display: grid;
      /*grid-template-rows: 10% 20% 30% 25% 25%;*/
@@ -129,6 +126,10 @@ h1 {
 /*VIDEO*/
 .video {
     grid-area: video;
+    width: 134vh;
+    /* display: flex; */
+    /* right: 49px; */
+    overflow-x: hidden;
 }
 
 /*NOVEDADES*/
@@ -136,9 +137,73 @@ h1 {
     grid-area: novedades;
 }
 
+.cartas-novedades{
+    display: flex;
+}
+.cartas-novedades .novedad {
+    height: 430px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 1%;
+    /*padding-top: 10px;*/
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.cartas-novedades .novedad:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+} /*SOLO FUNCIONA EN MODO DESKTOP*/
+
+.cartas-novedades .novedad img {
+    margin: 0;
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.novedad > h2, .promocion > h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cartas-novedades .novedad p {
+    font-size: 1rem;
+    padding: 2px;
+}
 /*PROMOCIONES*/
 .promociones {
     grid-area: promociones;
+    align-self: center;
+}
+
+.cartas-promociones {
+    display: flex;
+    flex-wrap: wrap;
+    grid-area: promociones;
+    justify-content: center;
+}
+
+.cartas-promociones .promocion {
+    width: 300px;
+    height: 150px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    padding-top: 10px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.cartas-promociones .promocion:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.promocion img {
+    margin: 0;
+    height: 60px;
 }
 
 /*CALENDARIO*/
@@ -146,17 +211,60 @@ h1 {
     grid-area: calendario;
     display: flex;
     flex-direction: column;
-    width: 60%;
     align-self: center;
     justify-self: center;
+}
+.month {
+    background-color: var(--negro);
+    text-align: center;
+    color: var(--blanco);
+}
+
+.month > h3 {
+    align-self: center;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: var(--gris-40);
+}
+
+.weekdays > li {
+    display: inline-block;
+    width: 13.6%;
+    color: var(--gris-30);
+    text-align: center;
+    font-size: 20px;
+}
+
+.days {
+    padding: 10px 0;
+    background: var(--gris-20);
+    margin: 0;
+    font-size: 40px;
+}
+
+.days > li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    color: var(--gris-10);
+    font-size: 20px;
+}
+
+.days > li .active {
+    padding: 5px;
+    background-color: var(--negro);
+    color: var(--blanco);
 }
 
 /*FOOTER*/
  .footer {
      display: grid;
      background-color: black;
-     grid-template-columns: 40% 12% 14%;
-     column-gap: 12%;
      color: white;
      margin-top: 2%;
      grid-area: footer;
@@ -222,13 +330,9 @@ h1 {
     transition: 0.5s;
 }
 
-/*
-body{
-    margin: 0;
-    padding: 0;
-}
 
-!*HEADER*!
+
+/*
 
 
 .logo > a > img {
@@ -311,72 +415,13 @@ a:hover:after {
 !**
 CARTAS
  *!
-.cartas-novedades .novedad {
-    width: 250px;
-    height: 430px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    padding-top: 10px;
-    text-align: center;
-    transition: all 0.25s;
-}
 
-.cartas-novedades .novedad:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
-
-.cartas-novedades .novedad img {
-    margin: 0;
-    width: 200px;
-    height: 300px;
-    border-radius: 5px;
-}
-
-.novedad > h2, .promocion > h2 {
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-
-.cartas-novedades .novedad p {
-    font-size: 1rem;
-    padding: 2px;
-}
 
 !**
 PROMOCIONES
  *!
 
-.cartas-promociones {
-    width: 100%;
-    max-width: 1200px;
-    height: 100px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin: auto;
-    grid-area: promociones;
-}
 
-.cartas-promociones .promocion {
-    width: 300px;
-    height: 150px;
-    border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    margin: 20px;
-    padding-top: 10px;
-    text-align: center;
-    transition: all 0.25s;
-}
-
-.cartas-promociones .promocion:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
 
 .promocion img {
     margin: 0;
@@ -402,53 +447,7 @@ PROMOCIONES
 
 
 
-.month {
-    background-color: var(--negro);
-    text-align: center;
-    color: var(--blanco);
-    height: 80px;
-}
 
-.month > h3 {
-    align-self: center;
-}
-
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color: var(--gris-40);
-}
-
-.weekdays > li {
-    display: inline-block;
-    width: 13.6%;
-    color: var(--gris-30);
-    text-align: center;
-    font-size: 20px;
-}
-
-.days {
-    padding: 10px 0;
-    background: var(--gris-20);
-    margin: 0;
-    font-size: 40px;
-}
-
-.days > li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    color: var(--gris-10);
-    font-size: 20px;
-}
-
-.days > li .active {
-    padding: 5px;
-    background-color: var(--negro);
-    color: var(--blanco);
-}
 
 
 !*CARTELERA.HTML*!
@@ -715,3 +714,22 @@ SUSCRIPCION
 
 
 */
+
+@media only screen and (min-width:  600px) {
+    .video{
+        width: 100%;
+    }
+
+    /*NOVEDADES*/
+
+    .cartas-novedades {
+        justify-content: space-between;
+    }
+
+    .cartas-novedades .novedad {
+        width: 250px;
+        height: 430px;
+        overflow: hidden;
+    }
+
+}
