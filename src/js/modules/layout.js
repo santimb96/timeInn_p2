@@ -4,15 +4,15 @@ const layout = {
         return `
         <div class="bar-menu">
             <div class="logo"><a href="../templates/index.html"><img src="../../src/img/logoPalmimax.png" alt="Logo"></a></div>
-            <button id="hamburger" onclick="showMenuBar()"><i class="fas fa-bars"></i></button>
-            <button id="x" onclick="closeMenuBar()">X</button>
+            <button id="hamburger"><i class="fas fa-bars"></i></button>
+            <button id="x">X</button>
         </div>
         
         <div class="menu">
             ${this.renderMenu()}
         </div>`
     },
-    footerBar: `<div class="footer-bar"><button onclick="showFooter()"><i class="fas fa-ellipsis-h"></i></button></i></div>`,
+    footerBar: `<div class="footer-bar"><button><i class="fas fa-ellipsis-h"></i></button></i></div>`,
     footer:`
         <div class="footer-fields">
             <div class="col-1">
@@ -80,7 +80,7 @@ const layout = {
             document.getElementById('x').style.display = 'none';
         });
         document.querySelector('.footer-bar').addEventListener('click',function (){
-            document.querySelector('.footer-fields').style.display = 'flex';
+            document.querySelector('.footer-fields').style.display = 'grid';
             document.querySelector('.footer-bar').style.display = 'none';
         });
     }

@@ -603,6 +603,89 @@ border: none;
 }
 
 @media only screen and (min-width: 600px) {
+
+    /*HEADER*/
+    .header {
+        grid-area: header;
+        overflow: hidden;
+        top: 0;
+        width: 100%;
+        position: unset;
+    }
+
+    .header > div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .logo > a > img {
+        width: 50vh;
+        height: 20vh;
+    }
+
+    .bar-menu {
+        display: flex;
+        background-color: white;
+        position: unset;
+        align-items: start;
+    }
+
+    .menu > ul > button {
+        padding: 0;
+        justify-content: center;
+    }
+
+    .menu {
+        display: flex;
+        background-color: black;
+        width: 35vh;
+        position: unset;
+        height: 100%;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .menu > ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 1vh;
+        gap: 10vh;
+        align-items: center;
+        justify-content: center;
+        /* width: 10vh; */
+        height: 5vh;
+    }
+
+    .menu > ul > button > a {
+        color: var(--blanco);
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        padding: 10px 10px;
+        position: relative;
+    }
+
+    .menu > ul > button > a:after {
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: #fff;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+    .menu > ul > button > a:hover:after {
+        width: 100%;
+        left: 0;
+        height: 5%;
+    }
+
     /*VIDEO*/
     .video {
         width: 100%;
@@ -705,7 +788,6 @@ border: none;
         box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
         align-items: center;
         justify-content: center;
-        /* position: fixed; */
         border-radius: 10px;
         margin: 5%;
         margin-top: 1%;
@@ -760,11 +842,6 @@ border: none;
         flex-direction: row-reverse;
     }
 
-    .mostrar{
-        pointer-events: auto;
-        display: flex;
-    }
-
     .opacidad-fondo {
         background-color: rgba(0,0,0,0.6);
         filter: blur(8px);
@@ -787,32 +864,18 @@ border: none;
         top: 20%;
     }
 
-    .footer {
-        display: grid;
-        background-color: var(--negro);
-        color: white;
-        margin-top: 2%;
-        grid-area: footer;
-        justify-content: center;
-    }
-
-    .footer-fields {
+    /*FOOTER*/
+    .footer-bar{
         display: none;
     }
 
-    .footer-bar > button {
-        border: none;
-        background-color: black;
-        color: var(--blanco);
-        font-size: 4vh;
+    .footer-fields {
+        display: grid;
+        pointer-events: auto;
+        grid-template-columns: 50% 25% 25%;
     }
 
-    .footer-bar {
-        display: flex;
+    .footer {
+        grid-area: footer;
     }
-
-    .footer > div {
-        margin: 3%;
-    }
-
 }
