@@ -166,10 +166,3 @@ renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
 renderCartelera.mostrarFormAnadir();
 
-//al hacer submit -> me hace edit y add a la vez --> arreglado
-
-//TODO 1 CAMBIAR BORRAR POR UNA PAPELERA
-//TODO 2 CAMBIAR EDITAR POR UN LÁPIZ
-//TODO 3 PONER CONTROL AL FORMULARIO
-//TODO 4 COOKIES
-
