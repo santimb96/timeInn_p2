@@ -52,7 +52,7 @@ const layout = {
         let output = `<ul>`;
         this.menu.forEach(section => {
             if (section === "cartelera") {
-                output += `<button onclick="closeMenuBar()"><a href="../../src/templates/cartelera.html"><li>${section}</li></a></button>`
+                output += `<button onclick="closeMenuBar()"><a href="../../src/public/cartelera.html"><li>${section}</li></a></button>`
             } else {
                 output += `<button onclick="closeMenuBar()"><a href="#${section}"><li>${section}</li></a></button>`;
             }
