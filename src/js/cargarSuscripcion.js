@@ -1,7 +1,7 @@
 const suscripcion = {
 
     sub: document.querySelector('.suscripcion'),
-    elementosOscurecer: ['.header', '.video', '.novedades','.promociones','.calendario','.footer'],
+    elementosOscurecer: ['.header', '.video', '.novedades', '.promociones', '.calendario', '.footer'],
 
     render: function () {
 
@@ -31,12 +31,12 @@ const suscripcion = {
     },
 
     cerrarSuscripcion: function () {
-        document.querySelector('.boton-cerrar').onclick = function () {
+        document.querySelector('.boton-cerrar').addEventListener('click', function () {
             this.sub.classList.remove('suscripcion-mostrar');
             this.elementosOscurecer.forEach(elemento => {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
-        }.bind(this);
+        }.bind(this));
     },
     enviarSuscripcion: function () {
         document.getElementById('submit').addEventListener('click', function () {
