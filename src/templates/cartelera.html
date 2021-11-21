@@ -14,10 +14,11 @@
           rel="stylesheet">
     <script src="../js/modules/layout.js"></script>
 
+
     <!--FONT AWESOME -->
     <script src="https://kit.fontawesome.com/a87bd14a53.js" crossorigin="anonymous"></script>
 </head>
-<body onload="layout.render()">
+<body onload="layout.render(); imageAsButton();">
 
 <div class="cartelera-contenedor">
 
@@ -26,11 +27,8 @@
         <button name="add" class="add-button"><i id="add-button" class="far fa-plus-square"></i></button>
     </div>
 
-    <div class="cartelera">
-
-    </div>
-
-
+    <div class="cartelera"></div>
+    <div class="contenedor-pelicula"><div class="pelicula-content"></div></div>
 
     <div class="footer"></div>
     <div class="modal-contenedor">
@@ -38,12 +36,18 @@
             <div class="cerrar-boton">
                 <button class="boton-cerrar"> X</button>
             </div>
-            <form name="form" id="form">
-                TÍTULO <input type="text" name="Title">
-                GÉNERO <input type="text" name="Genre">
-                AÑO <input type="text" name="Year">
-                RUNTIME <input type="text" name="Runtime">
-                IMAGEN <input type="file" name="Poster" id="imagen">
+        <form name="form" id="form">
+            TÍTULO <input type="text" name="Title">
+            GÉNERO <input type="text" name="Genre">
+            AÑO <input type="text" name="Year">
+            RUNTIME <input type="text" name="Runtime">
+            DIRECTOR <input type="text" name="Director">
+            RELEASED <input type="text" name="Released">
+            WRITER <input type="text" name="Writer">
+            ACTORS <input type="text" name="Actors">
+            AWARDS <input type="text" name="Director">
+            IMDB RATING <input type="text" name="imdbRating">
+            IMAGEN <input type="file" name="Poster" id="imagen">
                 <button id="submit" name="submit" value="Editar">Editar</button>
                 <button id="add" name="add" value="Añadir">Añadir</button>
             </form>
@@ -52,10 +56,13 @@
 
 </div>
 
+
 <button class="scroll" title="on top"><i class="fas fa-arrow-up"></i></button>
 
 <script type="module" src="../js/renderCartelera.js"></script>
 <script src="../js/scrollOnTop.js"></script>
+<script type="module" src="../js/modules/movieDescription.js"></script>
+
 
 </body>
 </html>
