@@ -71,6 +71,7 @@ const renderCartelera = {
         this.edit.style.display = "block";
         this.add.style.display = "none";
         this.modal.style.display = "block";
+        this.datePicker();
         this.scroll.style.display = "none";
 
         this.editarCarta(pelicula);
@@ -141,6 +142,7 @@ const renderCartelera = {
                 document.querySelector(elemento).classList.add('opacidad-fondo');
             });
             this.modal.style.display = "block";
+            this.datePicker();
             this.edit.style.display = "none";
             this.add.style.display = "block";
             this.scroll.style.display = "none";
@@ -178,6 +180,11 @@ const renderCartelera = {
 
         }.bind(this))
     },
+    datePicker : function() {
+        $( "#datePicker" ).datepicker({
+            dateFormat: 'dd-mm-yy'
+        });
+    }
 }
 
 renderCartelera.renderCartelera();

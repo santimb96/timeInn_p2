@@ -10,8 +10,15 @@
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Concert+One&family=Permanent+Marker&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Concert+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+
+    <!--DATA PICKER-->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+
+    <!--SCRIPT-->
     <script src="../js/modules/layout.js"></script>
 
 
@@ -28,7 +35,9 @@
     </div>
 
     <div class="cartelera"></div>
-    <div class="contenedor-pelicula"><div class="pelicula-content"></div></div>
+    <div class="contenedor-pelicula">
+        <div class="pelicula-content"></div>
+    </div>
 
     <div class="footer"></div>
     <div class="modal-contenedor">
@@ -36,18 +45,18 @@
             <div class="cerrar-boton">
                 <button class="boton-cerrar"> X</button>
             </div>
-        <form name="form" id="form">
-            TÍTULO <input type="text" name="Title" maxlength="25">
-            GÉNERO <input type="text" name="Genre" maxlength="25">
-            AÑO <input type="text" name="Year" maxlength="25">
-            RUNTIME <input type="text" name="Runtime" maxlength="25">
-            DIRECTOR <input type="text" name="Director" maxlength="25">
-            RELEASED <input type="text" name="Released" maxlength="25">
-            WRITER <input type="text" name="Writer" maxlength="25">
-            ACTORS <input type="text" name="Actors" maxlength="25">
-            AWARDS <input type="text" name="Director" maxlength="25">
-            IMDB RATING <input type="text" name="imdbRating">
-            IMAGEN <input type="file" name="Poster" id="imagen">
+            <form name="form" id="form">
+                TÍTULO <input type="text" name="Title" maxlength="25">
+                GÉNERO <input type="text" name="Genre" maxlength="25">
+                AÑO <input type="text" name="Year" maxlength="25">
+                RUNTIME <input type="text" name="Runtime" maxlength="25">
+                DIRECTOR <input type="text" name="Director" maxlength="25">
+                RELEASED <input type="text" name="Released" id="datePicker" maxlength="25">
+                WRITER <input type="text" name="Writer" maxlength="25">
+                ACTORS <input type="text" name="Actors" maxlength="25">
+                AWARDS <input type="text" name="Director" maxlength="25">
+                IMDB RATING <input type="text" name="imdbRating">
+                IMAGEN <input type="file" name="Poster" id="imagen">
                 <button id="submit" name="submit" value="Editar">Editar</button>
                 <button id="add" name="add" value="Añadir">Añadir</button>
             </form>

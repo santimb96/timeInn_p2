@@ -613,6 +613,18 @@ border: none;
     margin-left: 1px;
 }
 
+
+/**
+DATA PICKER
+ */
+.ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all{
+    position: fixed;
+    top: 252.475px;
+    left: 508.858px;
+    z-index: 1;
+    display: block;
+}
+
 @media only screen and (min-width: 600px) {
 
     /*HEADER*/
