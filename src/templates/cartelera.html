@@ -46,17 +46,17 @@
                 <button class="boton-cerrar"> X</button>
             </div>
             <form name="form" id="form">
-                TÍTULO <input type="text" name="Title" maxlength="25">
-                GÉNERO <input type="text" name="Genre" maxlength="25">
-                AÑO <input type="text" name="Year" maxlength="25">
-                RUNTIME <input type="text" name="Runtime" maxlength="25">
-                DIRECTOR <input type="text" name="Director" maxlength="25">
-                RELEASED <input type="text" name="Released" id="datePicker" maxlength="25">
-                WRITER <input type="text" name="Writer" maxlength="25">
-                ACTORS <input type="text" name="Actors" maxlength="25">
-                AWARDS <input type="text" name="Director" maxlength="25">
-                IMDB RATING <input type="text" name="imdbRating">
-                IMAGEN <input type="file" name="Poster" id="imagen">
+                TÍTULO <input type="text" name="Title" maxlength="25" required>
+                GÉNERO <input type="text" name="Genre" maxlength="25" required>
+                AÑO <input type="number" name="Year" maxlength="25" required>
+                RUNTIME <input type="number" name="Runtime" maxlength="25" required>
+                DIRECTOR <input type="text" name="Director" maxlength="25" required>
+                RELEASED <input type="date" name="Released" id="datePicker" required>
+                WRITER <input type="text" name="Writer" maxlength="25" required>
+                ACTORS <input type="text" name="Actors" maxlength="25" required>
+                AWARDS <input type="text" name="Director" maxlength="25" required>
+                IMDB RATING <input type="number" name="imdbRating" required>
+                IMAGEN <input type="file" name="Poster" id="imagen" required>
                 <button id="submit" name="submit" value="Editar">Editar</button>
                 <button id="add" name="add" value="Añadir">Añadir</button>
             </form>
