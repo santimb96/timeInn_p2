@@ -56,10 +56,10 @@ const suscripcion = {
         let documentCookie = decodedCookie.split(';');
         for(let i = 0; i < documentCookie.length; i++) {
             let fieldValue = documentCookie[i];
-            while (fieldValue.charAt(0) == ' ') {
+            while (fieldValue.charAt(0) === ' ') {
                 fieldValue = fieldValue.substring(1);
             }
-            if (fieldValue.indexOf(name) == 0) {
+            if (fieldValue.indexOf(name) === 0) {
                 return fieldValue.substring(name.length, fieldValue.length);
             }
         }
@@ -67,11 +67,9 @@ const suscripcion = {
     },
     checkCookie : function (){
         let user = this.getCookie();
-        if (user != "") {
-            alert("Bienvenido de nuevo: " + user);
-        } else {
+        if (user === "") {
             this.cargaForm();
-            if (user != "" && user != null) {
+            if (user !== "" && user != null) {
                 this.setCookie(user);
                 this.elementosOscurecer.forEach(elemento => {
                     document.querySelector(elemento).classList.add('opacidad-fondo');

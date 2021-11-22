@@ -83,10 +83,6 @@ body {
     color: white;
 }
 
-.menu button:hover:not(.active) {
-    background-color: #555;
-    color: white;
-}
 
 #x {
     display: none;
@@ -133,22 +129,19 @@ h1 {
 .cartas-novedades {
     display: flex;
     flex-direction: column;
+    gap: 5vh;
 }
 
 .cartas-novedades .novedad {
     height: 430px;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    border: none;
     margin: 1%;
     /*padding-top: 10px;*/
     text-align: center;
     transition: all 0.25s;
 }
 
-.cartas-novedades .novedad:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
 
 /*SOLO FUNCIONA EN MODO DESKTOP*/
 
@@ -172,7 +165,10 @@ h1 {
 /*PROMOCIONES*/
 .promociones {
     grid-area: promociones;
-    align-self: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .cartas-promociones {
@@ -187,7 +183,7 @@ h1 {
     width: 300px;
     height: 150px;
     border-radius: 8px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    border: none;
     overflow: hidden;
     margin: 20px;
     padding-top: 10px;
@@ -195,10 +191,6 @@ h1 {
     transition: all 0.25s;
 }
 
-.promocion:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
-}
 
 .promocion img {
     margin: 0;
@@ -694,7 +686,7 @@ border: none;
         height: 2px;
         left: 50%;
         position: absolute;
-        background: #fff;
+        background: var(--blanco);
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
     }
@@ -714,15 +706,21 @@ border: none;
     /*NOVEDADES*/
     .cartas-novedades {
         justify-content: space-between;
+        gap: 0;
     }
 
     .cartas-novedades .novedad {
         width: 250px;
         height: 430px;
         overflow: hidden;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     }
 
-    /*NOVEDADES*/
+    .novedad:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+    }
+
     .novedades {
         grid-area: novedades;
     }
@@ -742,6 +740,13 @@ border: none;
         display: flex;
         flex-direction: row;
         grid-area: promociones;
+    }
+    .promocion {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    }
+    .promocion:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
     }
 
     /*CARTELERA*/

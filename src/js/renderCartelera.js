@@ -1,10 +1,14 @@
 import {cartelera} from './modules/cartelera.js';
 import {imageAsButton} from './modules/movieDescription.js';
-//export {pelicula} from './modules/movieDescription.js';
 
 const renderCartelera = {
     cartelera: document.querySelector('.cartelera'),
     elementosOscurecer: ['.header', '.cartelera', '.footer'],
+    modal: document.querySelector('.modal-contenedor'),
+    scroll: document.querySelector('.scroll'),
+    add: document.querySelector('#add'),
+    edit: document.querySelector('#submit'),
+
     renderCartelera: function () {
         let contador = 0;
         let tituloRep = "";
@@ -47,6 +51,7 @@ const renderCartelera = {
                         if (boton.getAttribute('name') === 'borrar') {
                             this.borrarCarta(pelicula);
                         } else {
+                            document.getElementById('form').reset();
                             this.mostrarFormEdicion(pelicula.getAttribute('name'));
                         }
                     }
@@ -63,10 +68,10 @@ const renderCartelera = {
         this.elementosOscurecer.forEach(elemento => {
             document.querySelector(elemento).classList.add('opacidad-fondo');
         });
-        document.getElementById('submit').style.display = "block";
-        document.getElementById('add').style.display = "none";
-        document.querySelector('.modal-contenedor').style.display = "block";
-        document.querySelector('.scroll').style.display = "none";
+        this.edit.style.display = "block";
+        this.add.style.display = "none";
+        this.modal.style.display = "block";
+        this.scroll.style.display = "none";
 
         this.editarCarta(pelicula);
     },
@@ -75,16 +80,16 @@ const renderCartelera = {
             this.elementosOscurecer.forEach(elemento => {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
-            document.querySelector('.modal-contenedor').style.display = "none";
-            document.querySelector('.scroll').style.display = "block";
+            this.modal.style.display = "none";
+            this.scroll.style.display = "block";
         }.bind(this));
     },
 
     editarCarta: function (pelicula) {
-        //TODO: HACER FORMULARIO PARA EDITAR  PELÍCULAS
 
         document.getElementById('submit').addEventListener('click', function () {
             event.preventDefault();
+
 
             const formId = document.getElementById('form');
             const form = new FormData(formId);
@@ -93,8 +98,8 @@ const renderCartelera = {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
 
-            document.querySelector('.modal-contenedor').style.display = "none";
-            document.querySelector('.scroll').style.display = "block";
+            this.modal.style.display = "none";
+            this.scroll.style.display = "block";
 
             this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), form.get('Year'),
                 form.get('Runtime'), form.get('Poster'),form.get('Plot'),form.get('Director'),form.get('Released'),
@@ -107,23 +112,23 @@ const renderCartelera = {
     renderNuevaCartelera: function (Title, Genre, Year, Runtime, Poster, Plot, Director, Released, Writer, Actors, Awards, imdbRating, pelicula) {
         cartelera.forEach(carta => {
             if (carta.Title === pelicula) {
-                    carta.Title = Title;
-                    carta.Genre = Genre;
-                    carta.Year = Year;
-                    carta.Runtime = Runtime;
-                    carta.Poster = `../img/subir/${Poster.name}`;
-                    carta.Plot = Plot;
-                    carta.Director = Director;
-                    carta.Released = Released;
-                    carta.Writer = Writer;
-                    carta.Actors = Actors;
-                    carta.Awards = Awards;
-                    carta.imdbRating = imdbRating;
-                    this.cartelera.innerHTML = "";
-                    this.renderCartelera();
-                    this.listenerBotones();
-                    imageAsButton();
-                    document.getElementById('form').reset();
+                carta.Title = Title;
+                carta.Genre = Genre;
+                carta.Year = Year;
+                carta.Runtime = Runtime;
+                carta.Poster = `../img/subir/${Poster.name}`;
+                carta.Plot = Plot;
+                carta.Director = Director;
+                carta.Released = Released;
+                carta.Writer = Writer;
+                carta.Actors = Actors;
+                carta.Awards = Awards;
+                carta.imdbRating = imdbRating;
+                this.cartelera.innerHTML = "";
+                this.renderCartelera();
+                this.listenerBotones();
+                imageAsButton();
+                document.getElementById('form').reset();
             }
         });
 
@@ -131,13 +136,14 @@ const renderCartelera = {
 
     mostrarFormAnadir: function () {
         document.querySelector('.add-button').addEventListener('click', function () {
+            document.getElementById('form').reset();
             this.elementosOscurecer.forEach(elemento => {
                 document.querySelector(elemento).classList.add('opacidad-fondo');
             });
-            document.querySelector('.modal-contenedor').style.display = "block";
-            document.getElementById('submit').style.display = "none";
-            document.getElementById('add').style.display = "block";
-            document.querySelector('.scroll').style.display = "none";
+            this.modal.style.display = "block";
+            this.edit.style.display = "none";
+            this.add.style.display = "block";
+            this.scroll.style.display = "none";
             this.anadirElemento();
         }.bind(this));
     },
@@ -159,17 +165,16 @@ const renderCartelera = {
                 document.querySelector(elemento).classList.remove('opacidad-fondo');
             });
 
-            document.getElementById('submit').style.display = "block";
-            document.getElementById('add').style.display = "none";
-            document.querySelector('.modal-contenedor').style.display = "none";
-            document.querySelector('.scroll').style.display = "block";
+            this.edit.style.display = "block";
+            this.add.style.display = "none";
+            this.modal.style.display = "none";
+            this.scroll.style.display = "block";
 
             this.cartelera.innerHTML = "";
 
             this.renderCartelera();
             this.listenerBotones();
             imageAsButton();
-            document.getElementById('form').reset();
 
         }.bind(this))
     },
@@ -180,4 +185,4 @@ renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
 renderCartelera.mostrarFormAnadir();
 
-//TODO INPUTS FORM VACIAR!
+
