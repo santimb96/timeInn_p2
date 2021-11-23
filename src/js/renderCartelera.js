@@ -87,7 +87,7 @@ const renderCartelera = {
 
     editarCarta: function (pelicula) {
 
-        document.getElementById('submit').addEventListener('click', function () {
+        document.getElementById('submit').addEventListener('submit', function () {
             event.preventDefault();
 
 
@@ -149,7 +149,7 @@ const renderCartelera = {
     },
 
     anadirElemento: function () {
-        document.getElementById('add').addEventListener('click', function () {
+        document.getElementById('add').addEventListener('submit', function () {
             event.preventDefault(); //necesario para que no refresque la página web
             const formId = document.getElementById('form');
             const form = new FormData(formId);
