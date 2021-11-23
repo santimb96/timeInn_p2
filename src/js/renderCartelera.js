@@ -72,6 +72,21 @@ const renderCartelera = {
         this.add.style.display = "none";
         this.modal.style.display = "block";
         this.scroll.style.display = "none";
+        let inputForms = document.querySelectorAll('.inputForm');
+
+        cartelera.forEach(carta => {
+            if (carta.Title === pelicula){
+                inputForms.forEach(input => {
+                    for (let key in carta){
+                        if (input.getAttribute('name') === key){
+                            console.log(input.getAttribute('name') + "===" + key);
+                            input.value = carta[key];
+                        }
+                    }
+                });
+            }
+        });
+
 
         this.editarCarta(pelicula);
     },
@@ -84,13 +99,8 @@ const renderCartelera = {
             this.scroll.style.display = "block";
         }.bind(this));
     },
-
     editarCarta: function (pelicula) {
-
-        document.getElementById('submit').addEventListener('submit', function () {
-            event.preventDefault();
-
-
+        document.getElementById('submit').addEventListener('click', function () {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
 
@@ -103,7 +113,7 @@ const renderCartelera = {
 
             this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), form.get('Year'),
                 form.get('Runtime'), form.get('Poster'),form.get('Plot'),form.get('Director'),form.get('Released'),
-                form.get('Writer'),form.get('Actors'),form.get('Awards'),form.get('imdbRating'),pelicula);
+                form.get('Writer'),form.get('Actors'),form.get('Awards'),form.get('imdbRating'),pelicula,form);
 
 
         }.bind(this));
@@ -116,7 +126,7 @@ const renderCartelera = {
                 carta.Genre = Genre;
                 carta.Year = Year;
                 carta.Runtime = Runtime;
-                carta.Poster = `../img/subir/${Poster.name}`;
+                carta.Poster = `img/subir/${Poster.name}`;
                 carta.Plot = Plot;
                 carta.Director = Director;
                 carta.Released = Released;
@@ -149,8 +159,7 @@ const renderCartelera = {
     },
 
     anadirElemento: function () {
-        document.getElementById('add').addEventListener('submit', function () {
-            event.preventDefault(); //necesario para que no refresque la página web
+        document.getElementById('add').addEventListener('click', function (event) {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
             let formObject = {};
@@ -158,7 +167,7 @@ const renderCartelera = {
                 formObject[key] = value;
             });
 
-            formObject['Poster'] = `../img/subir/${formObject.Poster.name}`
+            formObject['Poster'] = `img/subir/${formObject.Poster.name}`
             cartelera.push(formObject);
 
             this.elementosOscurecer.forEach(elemento => {

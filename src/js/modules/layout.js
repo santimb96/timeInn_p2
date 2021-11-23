@@ -3,7 +3,7 @@ const layout = {
     header: function () {
         return `
         <div class="bar-menu">
-            <div class="logo"><a href="../templates/index.html"><img src="../../src/img/logoPalmimax.png" alt="Logo"></a></div>
+            <div class="logo"><a href="index.html"><img src="img/logoPalmimax.png" alt="Logo"></a></div>
             <button id="hamburger"><i class="fas fa-bars"></i></button>
             <button id="x">X</button>
         </div>
@@ -52,7 +52,7 @@ const layout = {
         let output = `<ul>`;
         this.menu.forEach(section => {
             if (section === "cartelera") {
-                output += `<button><a href="../../src/templates/cartelera.html"><li>${section}</li></a></button>`
+                output += `<button><a href="cartelera.html"><li>${section}</li></a></button>`
             } else {
                 output += `<button><a href="#${section}"><li>${section}</li></a></button>`;
             }

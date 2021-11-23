@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARTELERA</title>
 
-    <link rel="stylesheet" media="screen and (min-width: 360px)" href="../css/styles.css">
+    <link rel="stylesheet" media="screen and (min-width: 360px)" href="css/styles.css">
 
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +19,7 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 
     <!--SCRIPT-->
-    <script src="../js/modules/layout.js"></script>
+    <script src="js/modules/layout.js"></script>
 
 
     <!--FONT AWESOME -->
@@ -46,19 +46,19 @@
                 <button class="boton-cerrar"> X</button>
             </div>
             <form name="form" id="form">
-                TÍTULO <input type="text" name="Title" maxlength="25" required>
-                GÉNERO <input type="text" name="Genre" maxlength="25" required>
-                AÑO <input type="number" name="Year" maxlength="25" required>
-                RUNTIME <input type="number" name="Runtime" maxlength="25" required>
-                DIRECTOR <input type="text" name="Director" maxlength="25" required>
-                RELEASED <input type="date" name="Released" id="datePicker" required>
-                WRITER <input type="text" name="Writer" maxlength="25" required>
-                ACTORS <input type="text" name="Actors" maxlength="25" required>
-                AWARDS <input type="text" name="Director" maxlength="25" required>
-                IMDB RATING <input type="number" name="imdbRating" required>
-                IMAGEN <input type="file" name="Poster" id="imagen" required>
-            <button type="submit" id="submit" name="submit" value="Editar">Editar</button>
-            <button type="submit" id="add" name="add" value="Añadir">Añadir</button>
+                TÍTULO <input class="inputForm" type="text" name="Title" maxlength="25">
+                GÉNERO <input class="inputForm" type="text" name="Genre" maxlength="25">
+                AÑO <input class="inputForm" type="number" name="Year" maxlength="25" required>
+                RUNTIME <input class="inputForm" type="text" name="Runtime" maxlength="25" required>
+                DIRECTOR <input class="inputForm" type="text" name="Director" maxlength="25" required>
+                RELEASED <input class="inputForm" type="date" name="Released" id="datePicker" required>
+                WRITER <input class="inputForm" type="text" name="Writer" maxlength="25" required>
+                ACTORS <input class="inputForm" type="text" name="Actors" maxlength="25" required>
+                AWARDS <input class="inputForm" type="text" name="Director" maxlength="25" required>
+                IMDB RATING <input class="inputForm" type="number" name="imdbRating" required>
+                IMAGEN <input class="inputForm" type="file" name="Poster" id="imagen" required>
+                <button id="submit" name="submit" value="Editar">Editar</button>
+                <button id="add" name="add" value="Añadir">Añadir</button>
             </form>
         </div>
     </div>
@@ -68,9 +68,9 @@
 
 <button class="scroll" title="on top"><i class="fas fa-arrow-up"></i></button>
 
-<script type="module" src="../js/renderCartelera.js"></script>
-<script src="../js/scrollOnTop.js"></script>
-<script type="module" src="../js/modules/movieDescription.js"></script>
+<script type="module" src="js/renderCartelera.js"></script>
+<script src="js/scrollOnTop.js"></script>
+<script type="module" src="js/modules/movieDescription.js"></script>
 
 
 </body>
