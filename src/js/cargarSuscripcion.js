@@ -44,17 +44,18 @@ const suscripcion = {
         }.bind(this));
 
     },
-    setCookie : function (cookieValue){
+    setCookie: function (cookieValue) {
         const d = new Date();
-        d.setTime(d.getTime() + (30*24*60*60*1000));
+        d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
         let expires = "expires=" + d.toUTCString();
-        document.cookie = "email" + "=" + cookieValue + ";" + expires + ";path=/";},
+        document.cookie = "email" + "=" + cookieValue + ";" + expires + ";path=/";
+    },
 
-    getCookie : function (){
+    getCookie: function () {
         let name = "email" + "=";
         let decodedCookie = decodeURIComponent(document.cookie);
         let documentCookie = decodedCookie.split(';');
-        for(let i = 0; i < documentCookie.length; i++) {
+        for (let i = 0; i < documentCookie.length; i++) {
             let fieldValue = documentCookie[i];
             while (fieldValue.charAt(0) === ' ') {
                 fieldValue = fieldValue.substring(1);
@@ -65,7 +66,7 @@ const suscripcion = {
         }
         return "";
     },
-    checkCookie : function (){
+    checkCookie: function () {
         let user = this.getCookie();
         if (user === "") {
             this.cargaForm();

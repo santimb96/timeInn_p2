@@ -11,11 +11,11 @@ const app = {
 
     renderNovedades: function () {
 
-        const ordenado = novedades.sort(function(a, b){
-            if(b.Year > a.Year){
+        const ordenado = novedades.sort(function (a, b) {
+            if (b.Year > a.Year) {
                 return 1;
             }
-            if(b.Year < a.Year){
+            if (b.Year < a.Year) {
                 return -1;
             }
             return 0;
@@ -38,7 +38,7 @@ const app = {
                                         </div>`;
         })
     },
-    renderCalendario: function (){
+    renderCalendario: function () {
         this.calendario.innerHTML += calendario.calendario();
     }
 }

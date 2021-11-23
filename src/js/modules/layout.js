@@ -13,16 +13,13 @@ const layout = {
         </div>`
     },
     footerBar: `<div class="footer-bar"><button><i class="fas fa-ellipsis-h"></i></button></i></div>`,
-    footer:`
+    footer: `
         <div class="footer-fields">
             <div class="col-1">
                 <div class="col-1-title">Sobre nosotros</div>
-                <div class="col-1-content">Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                    unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not
-                    only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-                    recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <div class="col-1-content">Somos Kim y Santi, un grupo de desarrolladores mallorquines en el ámbito web. Nuestra finalidad reside en pasarlo bien
+                 juntos mientras trabajamos en proyectos de clase el máximo tiempo que podamos. También nos picamos mucho por ver quién se equivoca más o quién resuelve
+                 más rápido un conflicto y, por ello, somos una gran pareja de trabajo y vamos a por el 10 de DWEC siempre que se pueda. ¡Un saludo a @classicoman2!
                 </div>
             </div>
             <div class="col-2">
@@ -68,18 +65,18 @@ const layout = {
         document.getElementsByClassName("footer")[0].innerHTML += this.footer;
         this.buttons();
     },
-    buttons : function (){
-        document.getElementById('hamburger').addEventListener('click', function (){
+    buttons: function () {
+        document.getElementById('hamburger').addEventListener('click', function () {
             document.querySelector('.menu').style.display = 'block';
             document.getElementById('x').style.display = 'block';
             document.getElementById('hamburger').style.display = 'none';
         });
-        document.getElementById('x').addEventListener('click',function (){
+        document.getElementById('x').addEventListener('click', function () {
             document.querySelector('.menu').style.display = 'none';
             document.getElementById('hamburger').style.display = 'block';
             document.getElementById('x').style.display = 'none';
         });
-        document.querySelector('.footer-bar').addEventListener('click',function (){
+        document.querySelector('.footer-bar').addEventListener('click', function () {
             document.querySelector('.footer-fields').style.display = 'grid';
             document.querySelector('.footer-bar').style.display = 'none';
         });

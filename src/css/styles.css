@@ -376,18 +376,18 @@ h1 {
 
 /*CARTELERA*/
 
- .cartelera {
-     display: grid;
-     grid-template-columns: 100%;
-     justify-items: center;
-     font-family: 'Carrois Gothic SC', sans-serif;
-     gap: 1vh;
- }
+.cartelera {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    font-family: 'Carrois Gothic SC', sans-serif;
+    gap: 1vh;
+}
 
- .carteleraTitulo {
-     margin-top: 15vh;
-     font-size: 8vh;
- }
+.carteleraTitulo {
+    margin-top: 15vh;
+    font-size: 8vh;
+}
 
 .pelicula {
     justify-content: center;
@@ -399,7 +399,7 @@ h1 {
     width: 75%;
     color: white;
     padding: 2vh;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .add-button {
@@ -412,18 +412,18 @@ h1 {
     right: 0;
 }
 
- .fa-plus-square:before {
-     content: "\f0fe";
-     font-size: 20px;
- }
+.fa-plus-square:before {
+    content: "\f0fe";
+    font-size: 20px;
+}
 
-.add-button:hover{
+.add-button:hover {
     background: var(--gris-10);
     border: 2px var(--blanco) solid;
     transition: 0.5s;
 }
 
-#add-button{
+#add-button {
     font-size: 2vw;
 }
 
@@ -446,7 +446,7 @@ h1 {
     margin-left: 5%;
 }
 
-.titulo-pelicula{
+.titulo-pelicula {
     font-size: 2rem;
     margin-bottom: 0;
 }
@@ -485,7 +485,7 @@ h1 {
     margin-top: 1vh;
 }
 
-.edicion{
+.edicion {
     background: var(--gris-30);
     width: 10vh;
     font-size: 20px;
@@ -496,7 +496,7 @@ h1 {
     color: var(--blanco)
 }
 
-.edicion:hover{
+.edicion:hover {
     background: var(--blanco);
     color: var(--negro);
     border: 2px var(--gris-30) solid;
@@ -504,21 +504,20 @@ h1 {
 }
 
 /*DESCRIPCION PELICULA*/
-.contenedor-pelicula{
+.contenedor-pelicula {
     display: none;
     font-family: 'Carrois Gothic SC', sans-serif;
 }
 
-.pelicula-content{
+.pelicula-content {
     margin-top: 15vh;
     display: flex;
     justify-content: center;
 }
 
 
-
 /* VENTANA EDICIÓN*/
-.modal-contenedor{
+.modal-contenedor {
     display: none;
     /* pointer-events: none; */
     justify-content: center;
@@ -530,7 +529,7 @@ h1 {
     left: 1vh;
 }
 
-.modal-edicion{
+.modal-edicion {
     background: var(--blanco);
     box-shadow: 0 12px 16px rgb(0 0 0);
     align-items: center;
@@ -558,48 +557,50 @@ h1 {
     width: 25vh;
     font-size: 1rem;
     border-radius: 10px;
-/* border: 1px black solid;*/
+    /* border: 1px black solid;*/
 }
 
-#form > input:hover{
-background: var(--gris-10);
-transition: 0.4s;
+#form > input:hover {
+    background: var(--gris-10);
+    color: var(--blanco);
+    transition: 0.4s;
+
 }
 
 #form > button {
-background: var(--negro);
-color: var(--blanco);
-border-radius: 10px;
-font-size: 1.2rem;
-border: 2px black solid;
+    background: var(--negro);
+    color: var(--blanco);
+    border-radius: 10px;
+    font-size: 1.2rem;
+    border: 2px black solid;
 }
 
 
-#form > button:hover{
-background: var(--blanco);
-color: var(--negro);
-transition: 0.4s;
+#form > button:hover {
+    background: var(--blanco);
+    color: var(--negro);
+    transition: 0.4s;
 }
 
 .cerrar-boton {
-display: flex;
-flex-direction: row-reverse;
+    display: flex;
+    flex-direction: row-reverse;
     margin: -30px;
 }
 
 .opacidad-fondo {
-background-color: rgba(0,0,0,0.6);
-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: blur(8px);
 }
 
 .boton-cerrar {
-background: transparent;
-font-size: 4vh;
-border-radius: 10px;
-border: none;
+    background: transparent;
+    font-size: 4vh;
+    border-radius: 10px;
+    border: none;
 }
 
-.boton-cerrar:hover{
+.boton-cerrar:hover {
     background: var(--rojo-10);
     transition: 0.4s;
 }
@@ -609,15 +610,14 @@ border: none;
     display: block;
 }
 
-#form > input[type="file"]{
+#form > input[type="file"] {
     margin-left: 1px;
 }
-
 
 /**
 DATA PICKER
  */
-.ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all{
+.ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all {
     position: fixed;
     top: 252.475px;
     left: 508.858px;
@@ -753,9 +753,11 @@ DATA PICKER
         flex-direction: row;
         grid-area: promociones;
     }
+
     .promocion {
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     }
+
     .promocion:hover {
         transform: translateY(-15px);
         box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
@@ -809,7 +811,7 @@ DATA PICKER
     }
 
     /*VENTANA DE EDICIÓN*/
-    .modal-contenedor{
+    .modal-contenedor {
         display: none;
         justify-content: center;
         align-items: center;
@@ -819,7 +821,7 @@ DATA PICKER
         text-align: -webkit-center;
     }
 
-    .modal-edicion{
+    .modal-edicion {
         /*background: var(--blanco); */
         /* align-items: center; */
         /* justify-content: center; */
@@ -831,7 +833,7 @@ DATA PICKER
         height: 70vh;
         display: flex;
         flex-direction: column;
-    /* flex-wrap: wrap;*/
+        /* flex-wrap: wrap;*/
 
     }
 
@@ -844,7 +846,7 @@ DATA PICKER
         padding: 0 0 0;
         opacity: 1;
         text-align-last: start;
-        margin-top:3vh;
+        margin-top: 3vh;
     }
 
     #form > input {
@@ -853,7 +855,7 @@ DATA PICKER
         width: 50vh;
     }
 
-    #form > input:hover{
+    #form > input:hover {
         background: var(--gris-10);
         transition: 0.4s;
     }
@@ -865,7 +867,7 @@ DATA PICKER
         margin-top: 5vh;
     }
 
-    #form > button:hover{
+    #form > button:hover {
         background: var(--blanco);
         color: var(--negro);
         transition: 0.4s;
@@ -878,7 +880,7 @@ DATA PICKER
     }
 
     .opacidad-fondo {
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0, 0, 0, 0.6);
         filter: blur(8px);
     }
 
@@ -889,18 +891,18 @@ DATA PICKER
         border: none;
     }
 
-    .boton-cerrar:hover{
+    .boton-cerrar:hover {
         background: var(--rojo-10);
         transition: 0.4s;
     }
 
-    .suscripcion-mostrar{
+    .suscripcion-mostrar {
         right: 38%;
         top: 20%;
     }
 
     /*FOOTER*/
-    .footer-bar{
+    .footer-bar {
         display: none;
     }
 

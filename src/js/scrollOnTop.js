@@ -1,4 +1,6 @@
-window.onscroll = function () {scrollOnTop.visualizarScroll()}
+window.onscroll = function () {
+    scrollOnTop.visualizarScroll()
+}
 
 const scrollOnTop = {
 
@@ -13,7 +15,7 @@ const scrollOnTop = {
         }
     },
 
-    scrollTop : function () {
+    scrollTop: function () {
         document.querySelector('.scroll').addEventListener('click', function () {
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
