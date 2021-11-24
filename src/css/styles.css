@@ -380,6 +380,11 @@ h1 {
     justify-content: center;
     margin-top: 5vh;
 }
+
+.campoVacio{
+    border-color: red;
+}
+
  .cartelera {
      display: grid;
      grid-template-columns: 100%;
@@ -629,8 +634,7 @@ DATA PICKER
     display: block;
 }
 
-@media only screen and (min-width: 600px) {
-
+@media only screen and (min-width: 1050px) {
     /*HEADER*/
     .header {
         grid-area: header;

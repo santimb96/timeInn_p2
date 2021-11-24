@@ -1,5 +1,5 @@
 const layout = {
-    menu: ["novedades", "cartelera", "promociones", "zona ocio"],
+    menu: ["home", "novedades", "cartelera", "promociones", "zona ocio"],
     header: function () {
         return `
         <div class="bar-menu">
@@ -50,7 +50,11 @@ const layout = {
         this.menu.forEach(section => {
             if (section === "cartelera") {
                 output += `<button><a href="cartelera.html"><li>${section}</li></a></button>`
-            } else {
+            } else if(section === "home"){
+                output += `<button><a href="index.html"><li>${section}</li></a></button>`
+            }
+
+            else {
                 output += `<button><a href="#${section}"><li>${section}</li></a></button>`;
             }
 

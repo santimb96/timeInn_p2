@@ -147,28 +147,33 @@ const renderCartelera = {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
             let formObject = {};
-            form.forEach((value, key) => {
-                formObject[key] = value;
-            });
 
-            formObject['Poster'] = `img/subir/${formObject.Poster.name}`
-            cartelera.push(formObject);
+            if (this.camposValidados()){
 
-            this.elementosOscurecer.forEach(elemento => {
-                document.querySelector(elemento).classList.remove('opacidad-fondo');
-            });
+                form.forEach((value, key) => {
+                    formObject[key] = value;
+                });
 
-            this.edit.style.display = "block";
-            this.add.style.display = "none";
-            this.modal.style.display = "none";
-            this.scroll.style.display = "block";
+                formObject['Poster'] = `img/subir/${formObject.Poster.name}`
+                cartelera.push(formObject);
 
-            this.cartelera.innerHTML = "";
+                this.elementosOscurecer.forEach(elemento => {
+                    document.querySelector(elemento).classList.remove('opacidad-fondo');
+                });
 
-            this.renderCartelera();
-            this.listenerBotones();
-            imageAsButton();
-            this.filter();
+                this.edit.style.display = "block";
+                this.add.style.display = "none";
+                this.modal.style.display = "none";
+                this.scroll.style.display = "block";
+
+                this.cartelera.innerHTML = "";
+
+                this.renderCartelera();
+                this.listenerBotones();
+                imageAsButton();
+                this.filter();
+            }
+
 
         }.bind(this))
     },
@@ -233,6 +238,21 @@ const renderCartelera = {
                                             </div>
                                          </div>`;
 
+    },
+    camposValidados : function (){
+        let inputForms = document.querySelectorAll('.inputForm');
+        let validated = true;
+        inputForms.forEach(input => {
+            if (input.value === "" || input.value === null){
+                validated = false;
+                input.classList.add('campoVacio');
+            }
+            else{
+                input.classList.remove('campoVacio');
+            }
+        });
+
+        return validated;
     }
     /*datePicker : function() {
         $( "#datePicker" ).datepicker({
