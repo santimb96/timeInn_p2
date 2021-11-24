@@ -18,9 +18,8 @@ const suscripcion = {
     },
     cargaForm: function () {
         setTimeout(() => {
-            console.log(document.cookie);
             this.checkCookie();
-        }, 5000);
+        }, 3000);
     },
 
     cerrarSuscripcion: function () {
@@ -67,18 +66,15 @@ const suscripcion = {
     },
     checkCookie : function (){
         let user = this.getCookie();
-        if (user === "") {
-            this.cargaForm();
-            if (user !== "" && user != null) {
-                this.setCookie(user);
-                this.elementosOscurecer.forEach(elemento => {
-                    document.querySelector(elemento).classList.add('opacidad-fondo');
-                });
-                this.sub.innerHTML = this.render();
-                this.sub.classList.add('suscripcion-mostrar');
-                this.cerrarSuscripcion();
-                this.enviarSuscripcion();
-            }
+        if (user === "" || user === null) {
+            this.sub.innerHTML = this.render();
+            this.sub.classList.add('suscripcion-mostrar');
+            this.elementosOscurecer.forEach(elemento => {
+                document.querySelector(elemento).classList.add('opacidad-fondo');
+            });
+            this.enviarSuscripcion();
+            this.cerrarSuscripcion();
         }
+
     }
 }
