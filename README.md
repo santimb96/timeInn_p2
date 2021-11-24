@@ -128,6 +128,8 @@ isn poder hacer, por desgracia, un `fetch('uri');`.
 Para finalizar, la creación de las cookies está basada en la explicación de [W3Schools](https://www.w3schools.com/js/js_cookies.asp),
 con pequeñas ediciones acomodando el código a nuestras necesidades y exigencias de la práctica.
 
+## MEJORAS IMPLEMENTADAS 
+
 
 
 
