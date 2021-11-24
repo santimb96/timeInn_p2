@@ -375,7 +375,11 @@ h1 {
 
 
 /*CARTELERA*/
-
+.filter{
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+}
  .cartelera {
      display: grid;
      grid-template-columns: 100%;

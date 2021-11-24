@@ -5,17 +5,6 @@ import {cartelera} from './cartelera.js';
 const pelicula = {
     buttons: document.querySelectorAll('.img-container'),
     id: "",
-    /*imageAsButton: function () {
-        this.buttons.forEach(button => {
-            console.log("hey");
-            button.addEventListener('click', function () {
-                this.id = button.getAttribute('id');
-                document.querySelectorAll('.cartelera')[0].style.display = "none";
-                document.querySelector('.contenedor-pelicula').style.display = "block";
-                this.renderPeliculaDescription();
-            }.bind(this));
-        });
-    },*/
     renderPeliculaDescription: function (id) {
         document.querySelector('.pelicula-content').innerHTML =
             `<div class="pelicula" name="${cartelera[id].Title}" >

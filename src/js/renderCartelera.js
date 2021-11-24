@@ -15,26 +15,9 @@ const renderCartelera = {
         this.cartelera.innerHTML += `<h2 class="carteleraTitulo">CARTELERA</h2>`;
         cartelera.forEach(pelicula => {
             if (tituloRep !== pelicula.Title) {
-                this.cartelera.innerHTML += `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
-                                            <div id="${contador}" class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
-                                            
-                                            <div class="text-content">
-                                                <h2 class="titulo-pelicula">${(pelicula.Title).toUpperCase()}</h2>
-                                                <h3 class="subtitulo-pelicula">${(pelicula.Genre).toLowerCase()} / 
-                                                ${(pelicula.Year).toLowerCase()} / ${(pelicula.Runtime).toLowerCase()}</h3>
-                                            
-                                            <br><div class="horarios">DIGITAL
-                                                    <button>15:50</button>
-                                                    <button>20:25</button>                                                
-                                            </div>
-                                            <div class="ediciones">
-                                            <button id="${contador}" class="edicion" name="editar"><i class="far fa-edit"></i></button>
-                                            <button id="${contador}" class="edicion" name="borrar"><i class="far fa-trash-alt"></i></button>
-                                            </div>
-                                            </div>
-                                         </div>`;
-                contador++;
+                this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
                 tituloRep = pelicula.Title;
+                contador++;
             }
         });
     },
@@ -113,7 +96,7 @@ const renderCartelera = {
 
             this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), form.get('Year'),
                 form.get('Runtime'), form.get('Poster'),form.get('Plot'),form.get('Director'),form.get('Released'),
-                form.get('Writer'),form.get('Actors'),form.get('Awards'),form.get('imdbRating'),pelicula,form);
+                form.get('Writer'),form.get('Actors'),form.get('Awards'),form.get('imdbRating'),pelicula);
 
 
         }.bind(this));
@@ -138,6 +121,7 @@ const renderCartelera = {
                 this.renderCartelera();
                 this.listenerBotones();
                 imageAsButton();
+                this.filter();
                 document.getElementById('form').reset();
             }
         });
@@ -159,7 +143,7 @@ const renderCartelera = {
     },
 
     anadirElemento: function () {
-        document.getElementById('add').addEventListener('click', function (event) {
+        document.getElementById('add').addEventListener('click', function () {
             const formId = document.getElementById('form');
             const form = new FormData(formId);
             let formObject = {};
@@ -184,9 +168,50 @@ const renderCartelera = {
             this.renderCartelera();
             this.listenerBotones();
             imageAsButton();
+            this.filter();
 
         }.bind(this))
     },
+    filter : function (){
+        document.getElementById("filterButton").addEventListener('click', function (){
+            let contador = 0;
+            let year = document.getElementById('filterInput').value;
+            this.cartelera.innerHTML = "";
+            cartelera.forEach(pelicula => {
+                if (pelicula.Year === year){
+                    this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
+                    contador++;
+                }
+            });
+
+            this.listenerBotones();
+            imageAsButton();
+            this.filter();
+
+        }.bind(this));
+
+    },
+    renderPeliculas : function(pelicula,contador){
+        return `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
+                                            <div id="${contador}" class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
+                                            
+                                            <div class="text-content">
+                                                <h2 class="titulo-pelicula">${(pelicula.Title).toUpperCase()}</h2>
+                                                <h3 class="subtitulo-pelicula">${(pelicula.Genre).toLowerCase()} / 
+                                                ${(pelicula.Year).toLowerCase()} / ${(pelicula.Runtime).toLowerCase()}</h3>
+                                            
+                                            <br><div class="horarios">DIGITAL
+                                                    <button>15:50</button>
+                                                    <button>20:25</button>                                                
+                                            </div>
+                                            <div class="ediciones">
+                                            <button id="${contador}" class="edicion" name="editar"><i class="far fa-edit"></i></button>
+                                            <button id="${contador}" class="edicion" name="borrar"><i class="far fa-trash-alt"></i></button>
+                                            </div>
+                                            </div>
+                                         </div>`;
+
+    }
     /*datePicker : function() {
         $( "#datePicker" ).datepicker({
             dateFormat: 'dd-mm-yy'
@@ -198,3 +223,4 @@ renderCartelera.renderCartelera();
 renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
 renderCartelera.mostrarFormAnadir();
+renderCartelera.filter();

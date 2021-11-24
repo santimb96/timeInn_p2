@@ -25,13 +25,18 @@
     <!--FONT AWESOME -->
     <script src="https://kit.fontawesome.com/a87bd14a53.js" crossorigin="anonymous"></script>
 </head>
-<body onload="layout.render(); imageAsButton();">
+<body onload="layout.render()">
 
 <div class="cartelera-contenedor">
 
     <div class="header"></div>
     <div>
         <button name="add" class="add-button"><i id="add-button" class="far fa-plus-square"></i></button>
+    </div>
+
+    <div class="filter">
+            Filter per year <input id="filterInput" type="text" placeholder="Year"/>
+            <button id="filterButton">Filter</button>
     </div>
 
     <div class="cartelera"></div>
@@ -48,8 +53,8 @@
             <form name="form" id="form" onsubmit="return false;">
                 TÍTULO <input class="inputForm" type="text" name="Title" maxlength="25">
                 GÉNERO <input class="inputForm" type="text" name="Genre" maxlength="25">
-                AÑO <input class="inputForm" type="number" name="Year" maxlength="25">
-                RUNTIME <input type="number" name="Runtime" maxlength="25">
+                AÑO <input class="inputForm" type="text" name="Year" maxlength="25">
+                RUNTIME <input class="inputForm" type="text" name="Runtime" maxlength="25">
                 DIRECTOR <input class="inputForm" type="text" name="Director" maxlength="25">
                 RELEASED <input type="date" name="Released" id="datePicker">
                 WRITER <input class="inputForm" type="text" name="Writer" maxlength="25">
