@@ -175,12 +175,34 @@ const renderCartelera = {
     filter : function (){
         document.getElementById("filterButton").addEventListener('click', function (){
             let contador = 0;
-            let year = document.getElementById('filterInput').value;
+            let filter = document.getElementById('filterInput').value;
+            filter = filter.toLowerCase();
+            let select = document.getElementById('filter');
+            let option = select.options[select.selectedIndex].value;
             this.cartelera.innerHTML = "";
             cartelera.forEach(pelicula => {
-                if (pelicula.Year === year){
-                    this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
-                    contador++;
+                if (option === 'Year'){
+                    if (pelicula.Year === filter){
+                        this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
+                        contador++;
+                    }
+                }
+                else if(option === 'Title'){
+                    let titulo = pelicula.Title.toLowerCase();
+                    if (titulo.includes(filter)){
+                        this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
+                        contador++;
+                    }
+                }
+                else if(option === 'Genre'){
+                    let genero = pelicula.Genre.toLowerCase();
+                    if (genero.includes(filter)){
+                        this.cartelera.innerHTML += this.renderPeliculas(pelicula,contador);
+                        contador++;
+                    }
+                }
+                else{
+                    console.log("ERROR");
                 }
             });
 
