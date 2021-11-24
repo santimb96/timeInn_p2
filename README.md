@@ -31,5 +31,14 @@ haciendo uso de algunas de sus promociones y referencias varias pero dándole nu
 
 Por otra parte, la web se denomina Palmimax, en referencia a Ocimax, un centro de ocio situado en 
 Palma de Mallorca. Sin embargo, tanto paleta de colores como fuentes son totalmente distintas, así como el
-contenedor padre 
+contenedor padre, que tiene un background determinado que Aficine, por ejemplo, lo establece como imagen y contenedor.
+En nuestro caso, usamos una paleta minimalista porque encontramos que se mantiene con esta
+una elegancia y discreción que hacen de la interfaz algo atractivo de ver. Simple, pero efectivo.
+
+Encontramos que, para la experiencia de usuario, hemos recreado bien la interfaz que comparten
+múltiples plataformas web del sector.
+
+## FRONT PAGE 
+
+En este encontramos un nav bar el cual contiene una serie de secciones (enlaces), a visitar
 
