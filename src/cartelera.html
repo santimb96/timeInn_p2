@@ -10,7 +10,8 @@
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Concert+One&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carrois+Gothic+SC&family=Concert+One&family=Permanent+Marker&display=swap"
+          rel="stylesheet">
 
     <!--DATA PICKER-->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
@@ -45,18 +46,18 @@
             <div class="cerrar-boton">
                 <button class="boton-cerrar"> X</button>
             </div>
-            <form name="form" id="form">
+            <form name="form" id="form" onsubmit="return false;">
                 TÍTULO <input class="inputForm" type="text" name="Title" maxlength="25">
                 GÉNERO <input class="inputForm" type="text" name="Genre" maxlength="25">
-                AÑO <input class="inputForm" type="number" name="Year" maxlength="25" required>
-                RUNTIME <input class="inputForm" type="text" name="Runtime" maxlength="25" required>
-                DIRECTOR <input class="inputForm" type="text" name="Director" maxlength="25" required>
-                RELEASED <input class="inputForm" type="date" name="Released" id="datePicker" required>
-                WRITER <input class="inputForm" type="text" name="Writer" maxlength="25" required>
-                ACTORS <input class="inputForm" type="text" name="Actors" maxlength="25" required>
-                AWARDS <input class="inputForm" type="text" name="Director" maxlength="25" required>
-                IMDB RATING <input class="inputForm" type="number" name="imdbRating" required>
-                IMAGEN <input class="inputForm" type="file" name="Poster" id="imagen" required>
+                AÑO <input class="inputForm" type="number" name="Year" maxlength="25">
+                RUNTIME <input type="number" name="Runtime" maxlength="25">
+                DIRECTOR <input class="inputForm" type="text" name="Director" maxlength="25">
+                RELEASED <input type="date" name="Released" id="datePicker">
+                WRITER <input class="inputForm" type="text" name="Writer" maxlength="25">
+                ACTORS <input class="inputForm" type="text" name="Actors" maxlength="25">
+                AWARDS <input class="inputForm" type="text" name="Director" maxlength="25">
+                IMDB RATING <input class="inputForm" type="number" name="imdbRating">
+                IMAGEN <input type="file" name="Poster" id="imagen">
                 <button id="submit" name="submit" value="Editar">Editar</button>
                 <button id="add" name="add" value="Añadir">Añadir</button>
             </form>

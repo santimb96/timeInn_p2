@@ -75,10 +75,10 @@ const renderCartelera = {
         let inputForms = document.querySelectorAll('.inputForm');
 
         cartelera.forEach(carta => {
-            if (carta.Title === pelicula){
+            if (carta.Title === pelicula) {
                 inputForms.forEach(input => {
-                    for (let key in carta){
-                        if (input.getAttribute('name') === key){
+                    for (let key in carta) {
+                        if (input.getAttribute('name') === key) {
                             console.log(input.getAttribute('name') + "===" + key);
                             input.value = carta[key];
                         }
@@ -112,8 +112,8 @@ const renderCartelera = {
             this.scroll.style.display = "block";
 
             this.renderNuevaCartelera(form.get('Title'), form.get('Genre'), form.get('Year'),
-                form.get('Runtime'), form.get('Poster'),form.get('Plot'),form.get('Director'),form.get('Released'),
-                form.get('Writer'),form.get('Actors'),form.get('Awards'),form.get('imdbRating'),pelicula,form);
+                form.get('Runtime'), form.get('Poster'), form.get('Plot'), form.get('Director'), form.get('Released'),
+                form.get('Writer'), form.get('Actors'), form.get('Awards'), form.get('imdbRating'), pelicula, form);
 
 
         }.bind(this));
@@ -198,5 +198,3 @@ renderCartelera.renderCartelera();
 renderCartelera.listenerBotones();
 renderCartelera.cerrarVentana();
 renderCartelera.mostrarFormAnadir();
-
-

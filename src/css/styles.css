@@ -446,7 +446,7 @@ h1 {
     margin-left: 5%;
 }
 
-.titulo-pelicula{
+.titulo-pelicula {
     font-size: 2rem;
     margin-bottom: 0;
 }
@@ -855,7 +855,7 @@ DATA PICKER
         width: 50vh;
     }
 
-    #form > input:hover{
+    #form > input:hover {
         background: var(--gris-10);
         transition: 0.4s;
     }

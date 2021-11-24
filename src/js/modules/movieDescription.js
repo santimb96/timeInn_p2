@@ -17,8 +17,8 @@ const pelicula = {
         });
     },*/
     renderPeliculaDescription: function (id) {
-                document.querySelector('.pelicula-content').innerHTML =
-                    `<div class="pelicula" name="${cartelera[id].Title}" >
+        document.querySelector('.pelicula-content').innerHTML =
+            `<div class="pelicula" name="${cartelera[id].Title}" >
                 <div class="img-container" name="${(cartelera[id].Title).toLowerCase()}">
                     <img src="${cartelera[id].Poster}" alt="${cartelera[id].Title}">
                 </div>
@@ -43,7 +43,7 @@ const pelicula = {
 };
 
 export function imageAsButton() {
-     document.querySelectorAll('.img-container').forEach(button => {
+    document.querySelectorAll('.img-container').forEach(button => {
         button.addEventListener('click', function () {
             let id = button.getAttribute('id');
             document.querySelectorAll('.cartelera')[0].style.display = "none";
