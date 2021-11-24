@@ -6,7 +6,11 @@
     --gris-30: #666;
     --gris-40: #ddd;
     --rojo-10: red;
+    --verde-10:#04AA6D;
+    --font-menu:'Carrois Gothic SC', cursive;
+    --font-frontPage-1:'Carrois Gothic SC', sans-serif;
 }
+
 
 /*MOBILE DESIGN*/
 body {
@@ -31,13 +35,13 @@ body {
 .bar-menu {
     display: flex;
     align-items: center;
-    background-color: black;
+    background-color: var(--negro);
     justify-content: space-between;
 }
 
 .menu {
     display: none;
-    background-color: black;
+    background-color: var(--negro);
     width: 35vh;
     position: fixed;
     height: 100%;
@@ -48,11 +52,11 @@ body {
 .fa-bars:before {
     content: "\f0c9";
     font-size: 5vh;
-    color: white;
+    color: var(--blanco);
 }
 
 #hamburger {
-    background-color: black;
+    background-color: var(--negro);
     border: none;
 }
 
@@ -67,27 +71,27 @@ body {
 .menu > ul > button {
     display: flex;
     padding: 2vh;
-    background-color: black;
+    background-color: var(--negro);
     border: none;
 }
 
 .menu > ul > button > a {
     text-decoration: none;
-    font-family: 'Carrois Gothic SC', cursive;
+    font-family: var(--font-menu);
     font-size: 1.2rem;
-    color: white;
+    color: var(--blanco);
 }
 
 .menu button.active {
-    background-color: #04AA6D;
-    color: white;
+    background-color: var(--verde-10);
+    color: var(--blanco);
 }
 
 
 #x {
     display: none;
-    color: white;
-    background-color: black;
+    color: var(--blanco);
+    background-color: var(--negro);
     border: none;
     font-size: 5vh;
 }
@@ -105,7 +109,7 @@ body {
         "promociones"
         "calendario"
         "footer";
-    font-family: 'Carrois Gothic SC', sans-serif;
+    font-family: var(--font-frontPage-1);
 }
 
 h1 {
@@ -141,9 +145,6 @@ h1 {
     text-align: center;
     transition: all 0.25s;
 }
-
-
-/*SOLO FUNCIONA EN MODO DESKTOP*/
 
 .cartas-novedades .novedad img {
     margin: 0;
@@ -257,7 +258,7 @@ h1 {
 .footer {
     display: grid;
     background-color: var(--negro);
-    color: white;
+    color: var(--blanco);
     margin-top: 2%;
     grid-area: footer;
 }
@@ -269,7 +270,7 @@ h1 {
 
 .footer-bar > button {
     border: none;
-    background-color: black;
+    background-color: var(--negro);
     color: var(--blanco);
     font-size: 4vh;
 }
@@ -301,8 +302,8 @@ h1 {
 .col-2 > input[type="button"], .col-3 > input[type="button"] {
     display: flex;
     border: none;
-    background-color: black;
-    color: white;
+    background-color: var(--negro);
+    color: var(--blanco);
 }
 
 .col-3-metodosPago, .col-2-redesSociales {
@@ -314,7 +315,7 @@ h1 {
 
 .col-2-redesSociales > img, .col-3-metodosPago > img {
     width: 7%;
-    background: white;
+    background: var(--blanco);
     border-radius: 45%;
     margin: 2%;
 }
@@ -382,14 +383,14 @@ h1 {
 }
 
 .campoVacio{
-    border-color: red;
+    border-color: var(--rojo-10);
 }
 
  .cartelera {
      display: grid;
      grid-template-columns: 100%;
      justify-items: center;
-     font-family: 'Carrois Gothic SC', sans-serif;
+     font-family: var(--font-frontPage-1);
      gap: 1vh;
  }
 
@@ -471,7 +472,7 @@ h1 {
 }
 
 .horarios > button {
-    background: green;
+    background: var(--verde-10);
     border-radius: 5px;
     border: none;
     font-size: 1.5rem;
@@ -515,7 +516,7 @@ h1 {
 /*DESCRIPCION PELICULA*/
 .contenedor-pelicula{
     display: none;
-    font-family: 'Carrois Gothic SC', sans-serif;
+    font-family: var(--font-frontPage-1);
 }
 
 .pelicula-content{
@@ -580,7 +581,7 @@ background: var(--negro);
 color: var(--blanco);
 border-radius: 10px;
 font-size: 1.2rem;
-border: 2px black solid;
+border: 2px var(--negro) solid;
 }
 
 
@@ -657,7 +658,7 @@ DATA PICKER
 
     .bar-menu {
         display: flex;
-        background-color: white;
+        background-color: var(--blanco);
         position: unset;
         align-items: start;
     }
@@ -669,7 +670,7 @@ DATA PICKER
 
     .menu {
         display: flex;
-        background-color: black;
+        background-color: var(--negro);
         width: 35vh;
         position: unset;
         height: 100%;
@@ -753,7 +754,6 @@ DATA PICKER
     /*PROMOCIONES*/
     .promociones {
         grid-area: promociones;
-        /*align-self: center;*/
     }
 
     .cartas-promociones {
@@ -774,7 +774,7 @@ DATA PICKER
         display: grid;
         grid-template-columns: 100%;
         justify-items: center;
-        font-family: 'Carrois Gothic SC', sans-serif;
+        font-family: var(--font-frontPage-1);
         gap: 1vh;
     }
 
@@ -785,7 +785,7 @@ DATA PICKER
         flex-direction: row;
         overflow: hidden;
         margin: 2px;
-        color: white;
+        color: var(--blanco);
     }
 
     .img-container > img {
@@ -828,19 +828,12 @@ DATA PICKER
     }
 
     .modal-edicion{
-        /*background: var(--blanco); */
-        /* align-items: center; */
-        /* justify-content: center; */
-        /* border-radius: 10px; */
         margin: 35%;
         margin-top: 1%;
-        /* padding: 20%; */
         width: 90vh;
         height: 70vh;
         display: flex;
         flex-direction: column;
-    /* flex-wrap: wrap;*/
-
     }
 
     #form {

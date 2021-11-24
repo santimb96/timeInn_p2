@@ -55,7 +55,7 @@ const layout = {
             }
 
             else {
-                output += `<button><a href="#${section}"><li>${section}</li></a></button>`;
+                output += `<button><a href="#${section}" class="buts"><li>${section}</li></a></button>`;
             }
 
         })
@@ -75,11 +75,19 @@ const layout = {
             document.getElementById('x').style.display = 'block';
             document.getElementById('hamburger').style.display = 'none';
         });
+
         document.getElementById('x').addEventListener('click', function () {
             document.querySelector('.menu').style.display = 'none';
             document.getElementById('hamburger').style.display = 'block';
             document.getElementById('x').style.display = 'none';
         });
+
+        document.querySelectorAll('.buts').forEach(but => but.addEventListener('click', function () {
+            document.querySelector('.menu').style.display = 'none';
+            document.getElementById('hamburger').style.display = 'block';
+            document.getElementById('x').style.display = 'none';
+        }));
+
         document.querySelector('.footer-bar').addEventListener('click', function () {
             document.querySelector('.footer-fields').style.display = 'grid';
             document.querySelector('.footer-bar').style.display = 'none';
