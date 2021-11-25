@@ -1,6 +1,6 @@
 /**
  * @author oasiao@cifpfbmoll.eu, smartinez@cifpfbmoll.eu
- * @version 1..0.0
+ * @version 1.0.0
  */
 /**
  * importaciones de la cartelera(objetos a manipular) y de una función
@@ -75,10 +75,12 @@ const renderCartelera = {
     borrarCarta: function (carta) {
         carta.remove();
     },
+
     /**
      * mostrarFormEdicion() muestra form para editar con los valores del objeto clicado
      * @param pelicula
      */
+
     mostrarFormEdicion: function (pelicula) {
 
         this.elementosOscurecer.forEach(elemento => {
@@ -250,7 +252,9 @@ const renderCartelera = {
         document.getElementById("filterButton").addEventListener('click', function (){
             let contador = 0;
             let filter = document.getElementById('filterInput').value;
-            filter = filter.toLowerCase();
+
+            filter = (filter.toLowerCase()).trim();
+
             let select = document.getElementById('filter');
             let option = select.options[select.selectedIndex].value;
             this.cartelera.innerHTML = `<h1>CARTELERA</h1>`;
@@ -306,9 +310,7 @@ const renderCartelera = {
         }.bind(this));
     },
 
-    /**
-    * renderPeliculas() renderiza la lista de películas del objeto
-     */
+
      renderPeliculas : function(pelicula,contador){
         return `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
                                             <div id="${contador}" class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
