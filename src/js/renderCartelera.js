@@ -41,7 +41,9 @@ const renderCartelera = {
                 })
             }.bind(this))
         });
+
         imageAsButton();
+        this.back();
     },
     borrarCarta: function (carta) {
         carta.remove();
@@ -62,7 +64,6 @@ const renderCartelera = {
                 inputForms.forEach(input => {
                     for (let key in carta){
                         if (input.getAttribute('name') === key){
-                            console.log(input.getAttribute('name') + "===" + key);
                             input.value = carta[key];
                         }
                     }
@@ -109,10 +110,15 @@ const renderCartelera = {
                 carta.Genre = Genre;
                 carta.Year = Year;
                 carta.Runtime = Runtime;
-                carta.Poster = `img/subir/${Poster.name}`;
+                if (Poster.name.includes('.jpg')||Poster.name.includes('.png')||Poster.name.includes('.jpeg')){
+                    carta.Poster = `img/subir/${Poster.name}`;
+                }
                 carta.Plot = Plot;
                 carta.Director = Director;
-                carta.Released = Released;
+
+                if (Released !== ""){
+                    carta.Released = Released;
+                }
                 carta.Writer = Writer;
                 carta.Actors = Actors;
                 carta.Awards = Awards;
@@ -120,7 +126,7 @@ const renderCartelera = {
                 this.cartelera.innerHTML = "";
                 this.renderCartelera();
                 this.listenerBotones();
-                imageAsButton();
+                this.back();
                 this.filter();
                 document.getElementById('form').reset();
             }
@@ -170,7 +176,6 @@ const renderCartelera = {
 
                 this.renderCartelera();
                 this.listenerBotones();
-                imageAsButton();
                 this.filter();
             }
 
@@ -184,7 +189,7 @@ const renderCartelera = {
             filter = filter.toLowerCase();
             let select = document.getElementById('filter');
             let option = select.options[select.selectedIndex].value;
-            this.cartelera.innerHTML = "";
+            this.cartelera.innerHTML = `<h1>CARTELERA</h1>`;
             cartelera.forEach(pelicula => {
                 if (option === 'Year'){
                     if (pelicula.Year === filter){
@@ -211,12 +216,25 @@ const renderCartelera = {
                 }
             });
 
+            document.getElementById('cleanFilter').style.display = "block";
+
+            this.cleanFilter();
             this.listenerBotones();
-            imageAsButton();
             this.filter();
 
         }.bind(this));
 
+    },
+    cleanFilter : function (){
+        document.getElementById('cleanFilter').addEventListener('click',function (){
+            document.getElementById('cleanFilter').style.display = "none";
+            document.getElementById('filterInput').value="";
+            this.cartelera.innerHTML = "";
+            this.filter();
+            this.renderCartelera();
+            this.listenerBotones();
+
+        }.bind(this));
     },
     renderPeliculas : function(pelicula,contador){
         return `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
@@ -253,6 +271,19 @@ const renderCartelera = {
         });
 
         return validated;
+    },
+    back : function (){
+        document.getElementById('back').addEventListener('click',function (){
+            document.querySelector('.filter').style.display = "flex";
+            document.querySelector('.add-button').style.display = "block";
+            document.querySelector('.divBack').style.display = "none";
+            document.querySelector('.pelicula-content').innerHTML = "";
+            this.cartelera.innerHTML = "";
+            this.renderCartelera();
+            imageAsButton();
+            this.listenerBotones();
+            this.filter();
+        }.bind(this));
     }
     /*datePicker : function() {
         $( "#datePicker" ).datepicker({

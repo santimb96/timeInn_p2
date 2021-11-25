@@ -30,6 +30,7 @@
 <div class="cartelera-contenedor">
 
     <div class="header"></div>
+
     <div>
         <button name="add" class="add-button"><i id="add-button" class="far fa-plus-square"></i></button>
     </div>
@@ -40,12 +41,19 @@
             <option value="Year">Year</option>
             <option value="Genre">Genre</option>
         </select>
-            <input id="filterInput" type="text"/>
-            <button id="filterButton">Filter</button>
+        <input id="filterInput" type="text"/>
+        <button id="filterButton">Filter</button>
+        <button id="cleanFilter">x</button>
     </div>
 
     <div class="cartelera"></div>
     <div class="contenedor-pelicula">
+        <div class="divBack">
+            <button id="back"><i class="fas fa-arrow-circle-left"></i></button>
+            <div>CARTELERA</div>
+        </div>
+
+
         <div class="pelicula-content"></div>
     </div>
 

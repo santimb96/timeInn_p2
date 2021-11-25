@@ -61,6 +61,8 @@ body {
     border: none;
 }
 
+
+
 .menu > ul {
     display: flex;
     flex-direction: column;
@@ -377,9 +379,24 @@ h1 {
 
 
 /*CARTELERA*/
+#back {
+    display: flex;
+    width: 10vh;
+    font-size: 5vh;
+    border: none;
+    background: white;
+}
+
+.divBack{
+    display: none;
+    align-items: center;
+    font-size: 5vh;
+    margin-top: 5vh;
+}
+
 .filter{
     display: flex;
-    margin: 2vh;
+    margin-top: 15vh;
     justify-content: center;
     gap: 1vh;
 }
@@ -398,6 +415,12 @@ h1 {
     font-family: var(--font-frontPage-1);
 }
 
+#cleanFilter{
+    display: none;
+    font-family: var(--font-frontPage-1);
+
+}
+
 .campoVacio{
     border-color: var(--rojo-10);
 }
@@ -411,7 +434,7 @@ h1 {
  }
 
  .carteleraTitulo {
-     margin-top: 15vh;
+     margin-top: 5vh;
      font-size: 8vh;
  }
 
@@ -531,14 +554,21 @@ h1 {
 
 /*DESCRIPCION PELICULA*/
 .contenedor-pelicula{
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: var(--font-frontPage-1);
+    margin-top: 10vh;
 }
 
 .pelicula-content{
-    margin-top: 15vh;
+    margin-top: 10vh;
     display: flex;
     justify-content: center;
+}
+
+.cartelera-none{
+    display: none;
 }
 
 
@@ -936,6 +966,6 @@ DATA PICKER
     .filter{
         display: flex;
         justify-content: center;
-        margin-top: 5vh;
+        margin: 2vh;
     }
 }

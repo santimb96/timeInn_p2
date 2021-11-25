@@ -6,7 +6,7 @@ const pelicula = {
     buttons: document.querySelectorAll('.img-container'),
     id: "",
     renderPeliculaDescription: function (id) {
-        document.querySelector('.pelicula-content').innerHTML =
+        document.querySelector('.pelicula-content').innerHTML +=
             `<div class="pelicula" name="${cartelera[id].Title}" >
                 <div class="img-container" name="${(cartelera[id].Title).toLowerCase()}">
                     <img src="${cartelera[id].Poster}" alt="${cartelera[id].Title}">
@@ -25,8 +25,8 @@ const pelicula = {
                     Actors: ${(cartelera[id].Actors)} /
                     Awards: ${(cartelera[id].Awards)} / </h5>
                     <h3>IMDB RATING: ${(cartelera[id].imdbRating)}</h3>
-                    
                 </div>
+               
             </div>`;
     }
 };
@@ -34,12 +34,18 @@ const pelicula = {
 export function imageAsButton() {
     document.querySelectorAll('.img-container').forEach(button => {
         button.addEventListener('click', function () {
-            let id = button.getAttribute('id');
-            document.querySelectorAll('.cartelera')[0].style.display = "none";
-            document.querySelector('.contenedor-pelicula').style.display = "block";
+            document.querySelector('.filter').style.display = "none";
             document.querySelector('.add-button').style.display = "none";
+            document.querySelector('.divBack').style.display = "flex"
+            document.querySelector('.cartelera').innerHTML = "";
+            document.querySelector('.pelicula-content').innerHTML = "";
+            let id = button.getAttribute('id');
+
+
             pelicula.renderPeliculaDescription(id);
         });
     });
 }
+
+
 
