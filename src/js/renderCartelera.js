@@ -1,7 +1,22 @@
+/**
+ * @author oasiao@cifpfbmoll.eu, smartinez@cifpfbmoll.eu
+ * @version 1..0.0
+ */
+/**
+ * importaciones de la cartelera(objetos a manipular) y de una función
+ */
 import {cartelera} from './modules/cartelera.js';
 import {imageAsButton} from './modules/movieDescription.js';
 
+/**
+ * objeto renderCartelera que gestionará esta misma
+ * @type {{add: Element, editarCarta: renderCartelera.editarCarta, anadirElemento: renderCartelera.anadirElemento, renderPeliculas: (function(*, *): string), edit: Element, borrarCarta: renderCartelera.borrarCarta, camposValidados: (function(): boolean), elementosOscurecer: string[], scroll: Element, back: renderCartelera.back, mostrarFormAnadir: renderCartelera.mostrarFormAnadir, cartelera: Element, listenerBotones: renderCartelera.listenerBotones, renderNuevaCartelera: renderCartelera.renderNuevaCartelera, filter: renderCartelera.filter, mostrarFormEdicion: renderCartelera.mostrarFormEdicion, cleanFilter: renderCartelera.cleanFilter, cerrarVentana: renderCartelera.cerrarVentana, renderCartelera: renderCartelera.renderCartelera, modal: Element}}
+ */
+
 const renderCartelera = {
+    /**
+     * variables globales obteniendo elementos del DOM
+     */
     cartelera: document.querySelector('.cartelera'),
     elementosOscurecer: ['.header', '.cartelera', '.footer'],
     modal: document.querySelector('.modal-contenedor'),
@@ -9,6 +24,10 @@ const renderCartelera = {
     add: document.querySelector('#add'),
     edit: document.querySelector('#submit'),
 
+    /**
+     * renderCartelera() renderiza en el HTML cada objeto película 
+     */
+    
     renderCartelera: function () {
         let contador = 0;
         let tituloRep = "";
@@ -21,6 +40,10 @@ const renderCartelera = {
             }
         });
     },
+
+    /**
+     * listenerBotones() se dedica a escuchar los botones 
+     */
     listenerBotones: function () {
 
         const botones = document.querySelectorAll('.edicion');
@@ -45,9 +68,17 @@ const renderCartelera = {
         imageAsButton();
         this.back();
     },
+    /**
+     * borrarCarta() borra la película clicada
+     * @param carta
+     */
     borrarCarta: function (carta) {
         carta.remove();
     },
+    /**
+     * mostrarFormEdicion() muestra form para editar con los valores del objeto clicado
+     * @param pelicula
+     */
     mostrarFormEdicion: function (pelicula) {
 
         this.elementosOscurecer.forEach(elemento => {
@@ -74,6 +105,9 @@ const renderCartelera = {
 
         this.editarCarta(pelicula);
     },
+    /**
+     * cerrarVentana() cierra la ventana del formulario
+     */
     cerrarVentana: function () {
         document.querySelector('.boton-cerrar').addEventListener('click', function () {
             this.elementosOscurecer.forEach(elemento => {
@@ -83,6 +117,10 @@ const renderCartelera = {
             this.scroll.style.display = "block";
         }.bind(this));
     },
+    /**
+     * editarCarta() edita los valores de la película mediante los valores del formulario
+     * @param pelicula
+     */
     editarCarta: function (pelicula) {
         document.getElementById('submit').addEventListener('click', function () {
             const formId = document.getElementById('form');
@@ -103,6 +141,22 @@ const renderCartelera = {
         }.bind(this));
 
     },
+    /**
+     * renderNuevaCartelera() pinta nueva cartelera
+     * @param Title
+     * @param Genre
+     * @param Year
+     * @param Runtime
+     * @param Poster
+     * @param Plot
+     * @param Director
+     * @param Released
+     * @param Writer
+     * @param Actors
+     * @param Awards
+     * @param imdbRating
+     * @param pelicula
+     */
     renderNuevaCartelera: function (Title, Genre, Year, Runtime, Poster, Plot, Director, Released, Writer, Actors, Awards, imdbRating, pelicula) {
         cartelera.forEach(carta => {
             if (carta.Title === pelicula) {
@@ -134,6 +188,10 @@ const renderCartelera = {
 
     },
 
+    /**
+     * mostrarFormAñadir() muestra form para añadir una nueva película
+     */
+    
     mostrarFormAnadir: function () {
         document.querySelector('.add-button').addEventListener('click', function () {
             document.getElementById('form').reset();
@@ -148,6 +206,9 @@ const renderCartelera = {
         }.bind(this));
     },
 
+    /**
+     * añadirElemento() permite añadir un nuevo elemento al array de películas y pintarlo posteriormente
+     */
     anadirElemento: function () {
         document.getElementById('add').addEventListener('click', function () {
             const formId = document.getElementById('form');
@@ -182,6 +243,9 @@ const renderCartelera = {
 
         }.bind(this))
     },
+    /**
+     * filter() filtra las películas por una serie de parámetros introducidos en el input
+     */
     filter : function (){
         document.getElementById("filterButton").addEventListener('click', function (){
             let contador = 0;
@@ -225,6 +289,11 @@ const renderCartelera = {
         }.bind(this));
 
     },
+    
+    /**
+     * cleanFilter() limpia el filtro de búsquedas
+     */
+    
     cleanFilter : function (){
         document.getElementById('cleanFilter').addEventListener('click',function (){
             document.getElementById('cleanFilter').style.display = "none";
@@ -236,7 +305,11 @@ const renderCartelera = {
 
         }.bind(this));
     },
-    renderPeliculas : function(pelicula,contador){
+
+    /**
+    * renderPeliculas() renderiza la lista de películas del objeto
+     */
+     renderPeliculas : function(pelicula,contador){
         return `<div id="${contador}" class="pelicula" name="${pelicula.Title}" >
                                             <div id="${contador}" class="img-container" name="${(pelicula.Title).toLowerCase()}" ><img src="${pelicula.Poster}" alt="${pelicula.Title}"></div>
                                             
@@ -257,6 +330,11 @@ const renderCartelera = {
                                          </div>`;
 
     },
+
+    /**
+     * camposValidados() corrobora los campos del input, si están vacíos o no
+     * @returns {boolean}
+     */
     camposValidados : function (){
         let inputForms = document.querySelectorAll('.inputForm');
         let validated = true;
@@ -272,6 +350,9 @@ const renderCartelera = {
 
         return validated;
     },
+    /**
+     * back() permite que, cuando estemos en la descripción de una carta, volvamos a la lista anterior
+     */
     back : function (){
         document.getElementById('back').addEventListener('click',function (){
             document.querySelector('.filter').style.display = "flex";
