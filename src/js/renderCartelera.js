@@ -62,6 +62,8 @@ const renderCartelera = {
      * @param carta
      */
     borrarCarta: function (carta) {
+        let indice = carta.getAttribute('id');
+        cartelera.splice(indice,1);
         carta.remove();
     },
     /**
@@ -73,6 +75,7 @@ const renderCartelera = {
         this.elementosOscurecer.forEach(elemento => {
             document.querySelector(elemento).classList.add('opacidad-fondo');
         });
+
         this.edit.style.display = "block";
         this.add.style.display = "none";
         this.modal.style.display = "block";
