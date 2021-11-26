@@ -52,9 +52,7 @@ const layout = {
                 output += `<button><a href="cartelera.html"><li>${section}</li></a></button>`
             } else if(section === "home"){
                 output += `<button><a href="index.html"><li>${section}</li></a></button>`
-            }
-
-            else {
+            } else {
                 output += `<button><a href="#${section}" class="buts"><li>${section}</li></a></button>`;
             }
 
