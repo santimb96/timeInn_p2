@@ -6,13 +6,18 @@ import {cartelera} from './modules/cartelera.js';
 import {imageAsButton} from './modules/movieDescription.js';
 
 const renderCartelera = {
+    /**
+     * variables que obtienen elementos del DOM
+     */
     cartelera: document.querySelector('.cartelera'),
     elementosOscurecer: ['.header', '.cartelera', '.footer'],
     modal: document.querySelector('.modal-contenedor'),
     scroll: document.querySelector('.scroll'),
     add: document.querySelector('#add'),
     edit: document.querySelector('#submit'),
-
+    /**
+     * renderiza la cartelera a prueba de errores
+     */
     renderCartelera: function () {
         let contador = 0;
         let tituloRep = "";
@@ -25,6 +30,9 @@ const renderCartelera = {
             }
         });
     },
+    /**
+     * listener de los botones mediante un addEventListener()
+     */
     listenerBotones: function () {
 
         const botones = document.querySelectorAll('.edicion');
@@ -49,9 +57,17 @@ const renderCartelera = {
         imageAsButton();
         this.back();
     },
+    /**
+     * borra la película de la lista
+     * @param carta
+     */
     borrarCarta: function (carta) {
         carta.remove();
     },
+    /**
+     * muestra el formulario de edición
+     * @param pelicula
+     */
     mostrarFormEdicion: function (pelicula) {
 
         this.elementosOscurecer.forEach(elemento => {
@@ -78,6 +94,9 @@ const renderCartelera = {
 
         this.editarCarta(pelicula);
     },
+    /**
+     * cierra la ventana del formulario
+     */
     cerrarVentana: function () {
         document.querySelector('.boton-cerrar').addEventListener('click', function () {
             this.elementosOscurecer.forEach(elemento => {
@@ -87,6 +106,10 @@ const renderCartelera = {
             this.scroll.style.display = "block";
         }.bind(this));
     },
+    /**
+     * edita la carta hacía la cartelera
+     * @param pelicula
+     */
     editarCarta: function (pelicula) {
         document.getElementById('submit').addEventListener('click', function () {
             const formId = document.getElementById('form');
@@ -107,6 +130,22 @@ const renderCartelera = {
         }.bind(this));
 
     },
+    /**
+     * renderiza la nueva cartelera
+     * @param Title
+     * @param Genre
+     * @param Year
+     * @param Runtime
+     * @param Poster
+     * @param Plot
+     * @param Director
+     * @param Released
+     * @param Writer
+     * @param Actors
+     * @param Awards
+     * @param imdbRating
+     * @param pelicula
+     */
     renderNuevaCartelera: function (Title, Genre, Year, Runtime, Poster, Plot, Director, Released, Writer, Actors, Awards, imdbRating, pelicula) {
         cartelera.forEach(carta => {
             if (carta.Title === pelicula) {
@@ -137,7 +176,9 @@ const renderCartelera = {
         });
 
     },
-
+    /**
+     * muestra el formulario de añadir película
+     */
     mostrarFormAnadir: function () {
         document.querySelector('.add-button').addEventListener('click', function () {
             document.getElementById('form').reset();
@@ -151,7 +192,9 @@ const renderCartelera = {
             this.anadirElemento();
         }.bind(this));
     },
-
+    /**
+     * añade un elemento a la cartelera
+     */
     anadirElemento: function () {
         document.getElementById('add').addEventListener('click', function () {
             const formId = document.getElementById('form');
@@ -186,6 +229,9 @@ const renderCartelera = {
 
         }.bind(this))
     },
+    /**
+     * filtra películas por género, año o título
+     */
     filter : function (){
         document.getElementById("filterButton").addEventListener('click', function (){
             let contador = 0;
@@ -229,6 +275,9 @@ const renderCartelera = {
         }.bind(this));
 
     },
+    /**
+     * limpia el filtro
+     */
     cleanFilter : function (){
         document.getElementById('cleanFilter').addEventListener('click',function (){
             document.getElementById('cleanFilter').style.display = "none";
@@ -261,6 +310,10 @@ const renderCartelera = {
                                          </div>`;
 
     },
+    /**
+     * valida los campos del formulario
+     * @returns {boolean}
+     */
     camposValidados : function (){
         let inputForms = document.querySelectorAll('.inputForm');
         let validated = true;
@@ -276,6 +329,9 @@ const renderCartelera = {
 
         return validated;
     },
+    /**
+     * función para cerrar el filtro
+     */
     back : function (){
         document.getElementById('back').addEventListener('click',function (){
             document.querySelector('.filter').style.display = "flex";
