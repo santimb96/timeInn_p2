@@ -42,6 +42,14 @@ una elegancia y discreción que hacen de la interfaz algo atractivo de ver. Simp
 Encontramos que, para la experiencia de usuario, hemos recreado bien la interfaz que comparten
 múltiples plataformas web del sector.
 
+## PALETA DE COLORES Y FONTS TEMPLATE
+
+### Paleta de colores
+![Image text](https://github.com/santimb96/timeInn_p2/blob/feature/kimDevelop/src/docs/paleta/paleta-colores.PNG)
+
+### Fonts template
+![Image text](https://github.com/santimb96/timeInn_p2/blob/feature/kimDevelop/src/docs/fuentes/font-templates.PNG)
+
 ## FRONT PAGE 
 
 En este encontramos un nav bar el cual contiene una serie de secciones (enlaces) a visitar,
