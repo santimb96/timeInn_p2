@@ -141,9 +141,20 @@ Para finalizar, la creación de las cookies está basada en la explicación de [
 con pequeñas ediciones acomodando el código a nuestras necesidades y exigencias de la práctica.
 
 ## MEJORAS IMPLEMENTADAS 
+La primera mejora que encontramos es el menú, cada campo está _linkeado_ a un apartado de la página o a otro html.
 
+Otra de las mejoras que hemos implementado es el calendario funcional: coge el mes, el año y la fecha actual. Además, el link a los eventos, en nuestro caso
+a la cartelera, se encuentra en el día actual.
 
+Entrando a la cartelera podemos ver el _filter_, con el cual podemos filtrar por título, año o género y si no encuentra ninguno, muestra
+un mensaje.
 
+Con el botón editar, hemos implementado la siguiente mejora: obtener todos los valores de la película en cada input del formulario y de esta manera,
+solo editamos el campo que deseamos y no toda la carta.
 
+Por otra parte, si hacemos _click_ a una imagen de la cartelera nos llevará a la descripción de esa película. Una vez que nos lleva
+a esa carta, observamos que tenemos un botón para volver atrás. Si _clickamos_ la 'cartelera' del menú, nos refrescará la página
+y por tanto, perderemos todas las modificaciones y adiciones que hayamos hecho. En cambio, si _clickamos_ el botón para volver atrás, 
+nos llevará a la cartelera con todas las modificaciones y adiciones que hayamos hecho anteriormente.
 
-
+Por último, en mobile responsive el footer es un botón, de esta manera no molesta al cliente y solo verá el footer si lo _clickamos_.  

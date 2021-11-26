@@ -129,6 +129,7 @@ h1 {
     font-weight: bold;
     opacity: 1;
     font-family: var(--font-frontPage-1);
+    font-size: 3vh;
 }
 
 /*VIDEO*/
