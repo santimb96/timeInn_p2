@@ -1,4 +1,4 @@
-# TIMEINN_P2 (en desarrollo /develop)
+# TIMEINN_P2 (PALMIMAX)
 
 ### AUTORES:
 - **Onika Kim Asiao Dumbrique**
