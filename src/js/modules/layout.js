@@ -67,28 +67,39 @@ const layout = {
         document.getElementsByClassName("footer")[0].innerHTML += this.footer;
         this.buttons();
     },
+
+    /* Menu para el mobile responsive. Por este motivo, miramos si el screen del cliente es menor a 1050px */
     buttons: function () {
-        document.getElementById('hamburger').addEventListener('click', function () {
-            document.querySelector('.menu').style.display = 'block';
-            document.getElementById('x').style.display = 'block';
-            document.getElementById('hamburger').style.display = 'none';
-        });
+            document.getElementById('hamburger').addEventListener('click', function () {
+                if (screen.width < 1050) {
+                    document.querySelector('.menu').style.display = 'block';
+                    document.getElementById('x').style.display = 'block';
+                    document.getElementById('hamburger').style.display = 'none';
+                }
+            });
 
         document.getElementById('x').addEventListener('click', function () {
-            document.querySelector('.menu').style.display = 'none';
-            document.getElementById('hamburger').style.display = 'block';
-            document.getElementById('x').style.display = 'none';
+            if (screen.width < 1050){
+                document.querySelector('.menu').style.display = 'none';
+                document.getElementById('hamburger').style.display = 'block';
+                document.getElementById('x').style.display = 'none';
+            }
         });
 
         document.querySelectorAll('.buts').forEach(but => but.addEventListener('click', function () {
-            document.querySelector('.menu').style.display = 'none';
-            document.getElementById('hamburger').style.display = 'block';
-            document.getElementById('x').style.display = 'none';
+            if (screen.width < 1050){
+                document.querySelector('.menu').style.display = 'none';
+                document.getElementById('hamburger').style.display = 'block';
+                document.getElementById('x').style.display = 'none';
+            }
         }));
 
         document.querySelector('.footer-bar').addEventListener('click', function () {
-            document.querySelector('.footer-fields').style.display = 'grid';
-            document.querySelector('.footer-bar').style.display = 'none';
+            if (screen.width < 1050){
+                document.querySelector('.footer-fields').style.display = 'grid';
+                document.querySelector('.footer-bar').style.display = 'none';
+            }
+
         });
     }
 }

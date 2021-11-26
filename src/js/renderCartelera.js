@@ -268,6 +268,11 @@ const renderCartelera = {
 
             document.getElementById('cleanFilter').style.display = "block";
 
+            if (contador === 0){
+                document.querySelector('.cartelera').innerHTML += `No hay resultados para tu búsqueda.`;
+            }
+
+
             this.cleanFilter();
             this.listenerBotones();
             this.filter();

@@ -28,7 +28,7 @@ const suscripcion = {
             <div class="cerrar-boton">
                 <button class="boton-cerrar"> X</button>
             </div>
-            <form name="form" id="form">
+            <form name="form" id="formSuscripcion">
                 Suscripción <input id="email" type="text" name="suscripcion" placeholder="E-mail">
                 <button id="submit" name="submit" value="Enviar">Enviar</button>
             </form>
