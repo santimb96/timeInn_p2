@@ -13,6 +13,9 @@ https://github.com/santimb96/timeInn_p2.git
 ### LINK TO WIREFRAME
 https://balsamiq.cloud/sqerry8/p4qk1uw
 
+### LINK TO VIDEO
+https://drive.google.com/file/d/16VBfBL7d_udu_gfToFSireZs9S17zH90/view?usp=sharing
+
 ## INTRODUCCIÓN
 
 Nos encontramos en el segundo proyecto de Desarrollo Web en Entorno Cliente
