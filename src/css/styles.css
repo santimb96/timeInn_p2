@@ -755,12 +755,13 @@ LOG IN
 .form{
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 3vh;
     align-items: center;
 }
 
 .form > a {
-    margin-right: 20vh;
+    margin-right: 15vh;
+    font-family: var(--font-frontPage-1);
 }
 
 .logo-logIn {
@@ -780,8 +781,21 @@ LOG IN
     justify-content: center;
 }
 
-.form > input {
+.form > input[type="text"],.form > input[type="password"] {
     width: 80%;
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--input-form);
+    font-size: 3vh;
+}
+
+.form > input[type="submit"] {
+    width: 60%;
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--font-frontPage-1);
+    font-size: 3vh;
+    margin-bottom: -1vh;
 }
 
 .hr-line {
@@ -790,10 +804,25 @@ LOG IN
     text-align: left;
     margin-left: 0;
     margin-top: 5vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
 }
 
 hr {
-    width: 30%;
+    width: 20%;
+}
+
+.new-account{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.new-account > button {
+    padding: 2vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+    width: 60%;
 }
 @media only screen and (min-width: 1050px) {
     /*HEADER*/
