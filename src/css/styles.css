@@ -739,6 +739,62 @@ DATA PICKER
     display: block;
 }
 
+/**
+LOG IN
+ */
+.contenedor-logIn{
+    display: flex;
+    flex-direction: column;
+}
+.signUp{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+}
+
+.form > a {
+    margin-right: 20vh;
+}
+
+.logo-logIn {
+    display: flex;
+    text-align: center;
+    background-color: var(--negro);
+}
+
+.logo-logIn > a > img{
+    width: 50%;
+}
+
+.contenedor-logIn > h1{
+    display: flex;
+    justify-content: flex-start;
+    font-family: var(--font-menu);
+    justify-content: center;
+}
+
+.form > input {
+    width: 80%;
+}
+
+.hr-line {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5vh;
+}
+
+hr {
+    width: 30%;
+}
 @media only screen and (min-width: 1050px) {
     /*HEADER*/
     .header {
