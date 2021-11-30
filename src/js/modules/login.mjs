@@ -10,8 +10,10 @@ export const login = {
             usuarios.forEach(usuario => {
                 if(usuario[0] === email && usuario[1] === password){
                     console.log("guay!");
+                    return [usuario.name, true];
                 }
             })
+            return false;
         }
     },
 }

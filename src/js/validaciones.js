@@ -10,8 +10,11 @@ const validaciones = {
     signUp: document.querySelector('.registrar'),
 
     validar: function () {
+        const obtenerUsuario = login.validarTodo(this.email.value, this.password.value);
         this.login.addEventListener('click', function (){
-            if(login.validarTodo(this.email.value, this.password.value)){
+            if(obtenerUsuario[1]){
+                document.cookie = `username=${obtenerUsuario[0]}; expires=Fri, 17 Dec 2021 12:00:00 UTC`;
+                location.href = '../index.html';
                 console.log('loggeado!');
             } else {
                 console.error('Error!');
