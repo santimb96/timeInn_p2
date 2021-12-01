@@ -12,7 +12,7 @@ const validaciones = {
         this.login.addEventListener('click',function (){
             let user = login.validarTodo(this.email.value,this.password.value)
             if (user[1]){
-                document.cookie = `username=${user[0]}; expires=Fri, 17 Dec 2021 12:00:00 UTC`;
+                document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
                 location.href = 'index.html';
                 console.log('loggeado!');
             }
@@ -25,7 +25,7 @@ const validaciones = {
     registrar: function (){
         this.signUp.addEventListener('click',function (){
             if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
-                document.cookie = `username=${this.email.value}; expires=Fri, 17 Dec 2021 12:00:00 UTC`;
+                document.cookie = `username=${this.email.value};max-age=3600`;
                 location.href = 'index.html';
                 console.log('registrado!');
             }
