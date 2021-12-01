@@ -29,12 +29,7 @@ export const login = {
     },
 
     passwordsIguales: function (password1,password2){
-        if (password1 === password2){
-            return true;
-        }
-        else {
-            return false;
-        }
+        return password1 === password2;
     },
 
     register: function (name,email,password,password2){
