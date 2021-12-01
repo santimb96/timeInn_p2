@@ -800,6 +800,8 @@ LOG IN
     font-family: var(--font-frontPage-1);
     font-size: 3vh;
     margin-bottom: -1vh;
+    justify-content: center;
+    align-self: center;
 }
 
 .hr-line {
@@ -1166,4 +1168,13 @@ hr {
         margin-bottom: 2vh;
         margin-right: 5vh;
     }
+
+    .new-account{
+        display: flex;
+        justify-content: center;
+        margin-right: 4vh;
+        /* justify-content: center; */
+        margin-top: 3vh;
+    }
+
 }
