@@ -474,6 +474,10 @@ h1 {
     border-color: var(--rojo-10);
 }
 
+.campoCorrecto {
+    border-color: var(--verde-20);
+}
+
 .cartelera {
     display: grid;
     grid-template-columns: 100%;
