@@ -1,9 +1,19 @@
 const layout = {
     menu: ["home", "novedades", "cartelera", "promociones", "zona ocio"],
     header: function () {
-        return `
-        <div class="bar-menu">
-            <div class="logo"><a href="index.html"><img src="img/logoPalmimax.png" alt="Logo"></a></div>
+        let output = "";
+        output+=`<div class="bar-menu">
+            <div class="logo">
+                <a href="index.html"><img src="img/logoPalmimax.png" alt="Logo"></a>`
+
+        if (screen.width >= 1050){
+            output +=
+                `<div class="login">
+                    <a href="">Log In</a>
+                    <a href="">Sign Up</a>
+                </div>`
+        }
+        output+=`</div>
             <button id="hamburger"><i class="fas fa-bars"></i></button>
             <button id="x">X</button>
         </div>
@@ -11,6 +21,8 @@ const layout = {
         <div class="menu">
             ${this.renderMenu()}
         </div>`
+
+        return output;
     },
     footerBar: `<div class="footer-bar"><button><i class="fas fa-ellipsis-h"></i></button></i></div>`,
     footer: `
@@ -55,10 +67,16 @@ const layout = {
             } else {
                 output += `<button><a href="#${section}" class="buts"><li>${section}</li></a></button>`;
             }
-
         })
-
         output += `</ul>`;
+
+        if (screen.width < 1050){
+            output += `<div class="log">`;
+            output += `<a href="" class="buts"><li>log in</li></a>`;
+            output += `<a href="" class="buts"><li>sign up</li></a></div>`;
+        }
+
+
         return output;
     },
     render: function () {

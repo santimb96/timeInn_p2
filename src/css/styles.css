@@ -33,69 +33,82 @@ body {
     margin-left: 1vh;
 }
 
-.bar-menu {
+.logo {
     display: flex;
-    align-items: center;
-    background-color: var(--negro);
+    width: 100%;
     justify-content: space-between;
 }
 
+.log{
+    list-style: none;
+    margin-left: 3vh;
+    font-size: 3vh;
+}
+
+
+.bar-menu {
+display: flex;
+align-items: center;
+background-color: var(--negro);
+justify-content: space-between;
+}
+
 .menu {
-    display: none;
-    background-color: var(--negro);
-    width: 35vh;
-    position: fixed;
-    height: 100%;
-    right: 0;
+display: none;
+background-color: var(--negro);
+width: 35vh;
+position: fixed;
+height: 100%;
+right: 0;
 }
 
 
 .fa-bars:before {
-    content: "\f0c9";
-    font-size: 5vh;
-    color: var(--blanco);
+content: "\f0c9";
+font-size: 5vh;
+color: var(--blanco);
 }
 
 #hamburger {
-    background-color: var(--negro);
-    border: none;
+background-color: var(--negro);
+border: none;
 }
 
 
 .menu > ul {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 1vh;
+display: flex;
+flex-direction: column;
+list-style: none;
+padding: 1vh;
 
 }
 
 .menu > ul > button {
-    display: flex;
-    padding: 2vh;
-    background-color: var(--negro);
-    border: none;
+display: flex;
+padding: 2vh;
+background-color: var(--negro);
+border: none;
 }
 
 .menu > ul > button > a {
-    text-decoration: none;
-    font-family: var(--font-menu);
-    font-size: 1.2rem;
-    color: var(--blanco);
+text-decoration: none;
+font-family: var(--font-menu);
+font-size: 1.2rem;
+color: var(--blanco);
 }
 
 .menu button.active {
-    background-color: var(--verde-20);
-    color: var(--blanco);
+background-color: var(--verde-20);
+color: var(--blanco);
 }
 
 
 #x {
-    display: none;
-    color: var(--blanco);
-    background-color: var(--negro);
-    border: none;
-    font-size: 5vh;
+display: none;
+color: var(--blanco);
+background-color: var(--negro);
+border: none;
+font-size: 5vh;
 }
 
 /*CONTENEDOR*/
@@ -726,6 +739,91 @@ DATA PICKER
     display: block;
 }
 
+/**
+LOG IN
+ */
+.contenedor-logIn{
+    display: flex;
+    flex-direction: column;
+}
+.signUp{
+    display: flex;
+    justify-content: flex-end;
+    margin: 2vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+    align-items: center;
+}
+
+.form > a {
+    margin-right: 15vh;
+    font-family: var(--font-frontPage-1);
+}
+
+.logo-logIn {
+    display: flex;
+    text-align: center;
+    background-color: var(--negro);
+}
+
+.logo-logIn > a > img{
+    width: 50%;
+}
+
+.contenedor-logIn > h1{
+    display: flex;
+    justify-content: flex-start;
+    font-family: var(--font-menu);
+    justify-content: center;
+}
+
+.form > input[type="text"],.form > input[type="password"] {
+    width: 80%;
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--input-form);
+    font-size: 3vh;
+}
+
+.form > input[type="submit"] {
+    width: 60%;
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--font-frontPage-1);
+    font-size: 3vh;
+    margin-bottom: -1vh;
+}
+
+.hr-line {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+}
+
+hr {
+    width: 20%;
+}
+
+.new-account{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.new-account > button {
+    padding: 2vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+    width: 60%;
+}
 @media only screen and (min-width: 1050px) {
     /*HEADER*/
     .header {
@@ -1053,5 +1151,15 @@ DATA PICKER
     /*BACK MOVIE DESCRIPTION*/
     .divBack {
         margin-top: 0;
+    }
+
+    /*LOGIN*/
+    .login {
+        display: flex;
+        flex-direction: row;
+        gap: 10vh;
+        align-self: end;
+        margin-bottom: 2vh;
+        margin-right: 5vh;
     }
 }
