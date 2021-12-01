@@ -1,7 +1,5 @@
 import {login} from "./modules/login.mjs";
 
-
-
 const validaciones = {
     email: document.querySelector('.email'),
     password: document.querySelector('.password'),
@@ -10,8 +8,8 @@ const validaciones = {
     signUp: document.querySelector('.registrar'),
 
     validar: function () {
-        const obtenerUsuario = login.validarTodo(this.email.value, this.password.value);
         this.login.addEventListener('click', function (){
+            const obtenerUsuario = login.validarTodo(this.email.value, this.password.value);
             if(obtenerUsuario[1]){
                 document.cookie = `username=${obtenerUsuario[0]}; expires=Fri, 17 Dec 2021 12:00:00 UTC`;
                 location.href = '../index.html';
@@ -38,7 +36,7 @@ const validaciones = {
         }.bind(this));
 
         this.login.addEventListener('click', function () {
-            if(login.validarAll(this.email.value, changeVerde)){
+            if(login.validarTodo(this.email.value, changeVerde)){
                 console.log("guay");
             } else {
                 console.error('error!');
