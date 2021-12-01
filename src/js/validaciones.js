@@ -1,13 +1,14 @@
-import {login} from "./modules/login.mjs";
+import {login} from "./modules/loginSystem.mjs";
 
 const validaciones = {
+    name : document.querySelector('.name'),
     email: document.querySelector('.email'),
     password: document.querySelector('.password'),
     passwordRepetida: document.querySelector('.password2'),
     login: document.querySelector('.login'),
-    signUp: document.querySelector('.registrar'),
+    signUp: document.querySelector('.signUp'),
 
-    validar: function (){
+    validarLogIn: function (){
         this.login.addEventListener('click',function (){
             let user = login.validarTodo(this.email.value,this.password.value)
             if (user[1]){
@@ -21,21 +22,47 @@ const validaciones = {
             }
         }.bind(this));
     },
+    registrar: function (){
+        this.signUp.addEventListener('click',function (){
+            if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
+                document.cookie = `username=${this.email.value}; expires=Fri, 17 Dec 2021 12:00:00 UTC`;
+                location.href = 'index.html';
+                console.log('registrado!');
+            }
+            else
+            {
+                console.log('ERROR en el registrado');
+            }
+        }.bind(this));
+    },
     validarRegistro: function () {
-        let changeVerde = false;
         this.password.addEventListener('change', function () {
-            if(login.validarPassword(this.password.value)){
+            if(login.validarPassword(this.password.value)) {
                 this.password.classList.add('campoCorrecto');
-                changeVerde = true;
-            } else {
+            }
+             else {
                 this.password.classList.add('campoVacio');
-                changeVerde = false;
+            }
+        }.bind(this));
+
+        this.passwordRepetida.addEventListener('change',function (){
+            if (login.passwordsIguales(this.password.value, this.passwordRepetida.value)) {
+                this.passwordRepetida.classList.add('campoCorrecto');
+            } else
+            {
+                this.passwordRepetida.classList.add('campoVacio');
             }
         }.bind(this));
     }
+
 }
 
-validaciones.validar();
+if (location.pathname === '/timeInn_p2/src/logIn.html'){
+    validaciones.validarLogIn();
+}
+else if (location.pathname === '/timeInn_p2/src/signUp.html'){
+    validaciones.registrar();
+}
 validaciones.validarRegistro();
 
 

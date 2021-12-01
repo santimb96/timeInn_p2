@@ -23,5 +23,33 @@ export const login = {
     },
     validarEmail: function (email){
         return this.emailPattern.test(email);
+    },
+
+    passwordsIguales: function (password1,password2){
+        if (password1 === password2){
+            return true;
+        }
+        else {
+            return false;
+        }
+    },
+
+    register: function (name,email,password,password2){
+        let user = {email,name,password};
+        if (password === password2){
+            if (this.validarPassword(password) && this.validarEmail(email)){
+                usuarios.push(user);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+
     }
+
 }

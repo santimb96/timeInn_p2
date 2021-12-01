@@ -72,8 +72,8 @@ const layout = {
 
         if (screen.width < 1050){
             output += `<div class="log">`;
-            output += `<a href="" class="buts"><li>log in</li></a>`;
-            output += `<a href="" class="buts"><li>sign up</li></a></div>`;
+            output += `<a href="logIn.html" class="buts"><li>log in</li></a>`;
+            output += `<a href="signUp.html" class="buts"><li>sign up</li></a></div>`;
         }
 
 
