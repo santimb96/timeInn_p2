@@ -8,18 +8,14 @@ export const login = {
         let validated = false;
         let user = "";
 
-
         if(emailPattern.test(email) && passwordPattern.test(password)){
-            console.log("patterned!");
             usuarios.forEach(usuario => {
-                if(usuario[0] === email && usuario[2] === password){
-                    console.log("guay!");
-                    return [usuario.name,true];
+                if(usuario.email === email && usuario.password === password){
+                    user = usuario.name;
+                    validated = true;
                 }
             })
         }
-        else{
-            return false;
-        }
+        return [user,validated];
     },
 }
