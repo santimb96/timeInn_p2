@@ -19,6 +19,15 @@ describe('Test validar password', function () {
     });
 });
 
+describe('Test validar name', function () {
+    it('valida correctamente!', () => {
+        assert.equal(login.validarName('santimb96'), true);
+    });
+    it('name incorrecto regexp!', () => {
+        assert.notEqual(login.validarName('santimb96837252651212'), true);
+    });
+});
+
 describe('Test validar todo', function () {
     it('valida correctamente!', () => {
         assert.deepEqual(login.validarTodo('adminadmin@adminer.com', 'AdminAd123'), ['admin', true]);
@@ -39,10 +48,10 @@ describe('Test validar password1 === password2', function () {
 
 describe('Test validar register', function () {
     it('valida correctamente!', () => {
-        assert.equal(login.register('santi', 'santisanti@santi.com', 'AdminAd123', 'AdminAd123'), true);
+        assert.equal(login.register('santimb96', 'santisanti@santi.com', 'AdminAd123', 'AdminAd123'), true);
     });
     it('registro incorrecto!', () => {
-        assert.notEqual(login.register('santi', 'santisanti@santi.com', 'AdminAd123', 'AdminAd124'), true);
+        assert.notEqual(login.register('santimb96', 'santisanti@santi.com', 'AdminAd123', 'AdminAd124'), true);
     });
 });
 
