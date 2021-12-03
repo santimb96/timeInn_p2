@@ -655,22 +655,32 @@ h1 {
     align-items: center;
     padding: 30% 5% 5%;
     align-content: center;
-    gap: 1vh;
+    gap: 2vh;
     font-weight: bold;
     opacity: 1;
     margin-left: -20px;
     font-family: var(--font-frontPage-1);
 }
 
-#form > input {
-    margin-right: 5vh;
-    width: 25vh;
+.fieldForm {
+    display: flex;
+    width: 50vh;
     font-size: 1rem;
     border-radius: 10px;
     font-family: var(--input-form);
+    margin-top: 1vh;
+    gap: 2vh;
+    align-items: center;
 }
 
-#form > input:hover {
+.fieldForm > input[type="text"], .fieldForm > input[type="password"]{
+    display: flex;
+    width: 50vh;
+    height: 5vh;
+    padding: 1vh;
+}
+
+.fieldForm > input :hover {
     background: var(--gris-10);
     color: var(--blanco);
     transition: 0.4s;
@@ -752,8 +762,13 @@ LOG IN
 }
 .signUp{
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin: 2vh;
+    font-family: var(--font-frontPage-1);
+    font-size: 3vh;
+    padding: 2vh;
+    width: 60%;
+
 }
 
 .form{
@@ -785,7 +800,7 @@ LOG IN
     justify-content: center;
 }
 
-.form > input[type="text"],.form > input[type="password"] {
+.form > input[type="text"], .form > input[type="password"] {
     width: 80%;
     padding: 2vh;
     margin-top: 1vh;
