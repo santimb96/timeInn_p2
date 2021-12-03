@@ -1,4 +1,5 @@
 import {login} from "./modules/loginSystem.mjs";
+import {usuarios} from "./modules/usuarios.mjs";
 
 const validaciones = {
     name : document.querySelector('.name'),
@@ -7,6 +8,8 @@ const validaciones = {
     passwordRepetida: document.querySelector('.password2'),
     login: document.querySelector('.login'),
     signUp: document.querySelector('.signUp'),
+    errorEmail: document.querySelector('.errorEmail'),
+    errorPassword : document.querySelector('.errorPassword'),
 
     validarLogIn: function (){
         this.login.addEventListener('click',function (){
@@ -18,12 +21,22 @@ const validaciones = {
             }
             else
             {
-                console.log("not logged");
+                if (!login.validarEmail(this.email.value)){
+                    this.errorEmail.innerHTML = "";
+                    this.errorEmail.innerHTML = "Email incorrecto!";
+                }
+
+                if (!login.validarPassword(this.password.value)){
+                    this.errorEmail.innerHTML = "";
+                    this.errorEmail.innerHTML = "Email incorrecto!";
+                }
+
             }
         }.bind(this));
     },
     registrar: function (){
-        this.signUp.addEventListener('click',function (){
+        this.signUp.addEventListener('click',function (event){
+            event.preventDefault();
             if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
                 document.cookie = `username=${this.email.value};max-age=3600`;
                 location.href = 'index.html';
@@ -31,7 +44,7 @@ const validaciones = {
             }
             else
             {
-                console.log('ERROR en el registrado');
+                    console.log('ERROR en el registrado');
             }
         }.bind(this));
     },
@@ -62,6 +75,8 @@ if (location.pathname === '/timeInn_p2/src/logIn.html'){
 }
 else if (location.pathname === '/timeInn_p2/src/signUp.html'){
     validaciones.registrar();
+    console.log(usuarios);
+
 }
 validaciones.validarRegistro();
 
