@@ -37,6 +37,16 @@ export const login = {
         return password1 === password2;
     },
 
+    emailExiste: function(email){
+        let existe = false;
+        usuarios.forEach(usuario => {
+            if (usuario.email === email){
+                existe = true;
+            }
+        });
+
+        return existe;
+    },
     register: function (name,email,password,password2){
         const user = {email,name,password};
 
