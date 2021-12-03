@@ -10,7 +10,7 @@ const validaciones = {
 
     validarLogIn: function (){
         this.login.addEventListener('click',function (){
-            let user = login.validarTodo(this.email.value,this.password.value)
+            let user = login.validarTodo(this.email.value,this.password.value);
             if (user[1]){
                 document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
                 location.href = 'index.html';
