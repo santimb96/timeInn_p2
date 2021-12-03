@@ -27,8 +27,8 @@ const validaciones = {
                 }
 
                 if (!login.validarPassword(this.password.value)){
-                    this.errorEmail.innerHTML = "";
-                    this.errorEmail.innerHTML = "Email incorrecto!";
+                    this.errorPassword.innerHTML = "";
+                    this.errorPassword.innerHTML = "Contraseña incorrecta!";
                 }
 
             }
