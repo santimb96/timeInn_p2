@@ -28,10 +28,9 @@ const validaciones = {
             let emailUser = true;
             let user = login.validarTodo(this.email.value,this.passwordLogIn.value);
             if (user[1]){
-
-                document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
+                document.cookie = `[username=${user[0]};max-age=3600]`; //la cookie durará 1h
                 location.href = 'index.html';
-                console.log('loggeado!');
+
             }
             else
             {

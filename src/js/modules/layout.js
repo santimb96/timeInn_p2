@@ -1,5 +1,24 @@
 const layout = {
     menu: ["home", "novedades", "cartelera", "promociones", "zona ocio"],
+    getUsername: function(){
+        let cookieArr = document.cookie.split(";");
+        let username = "";
+        let encontrado = false;
+        cookieArr.forEach(elem => {
+            let cookiePair = elem.split("=");
+            if ('username' === cookiePair[0].trim()){
+                username = decodeURIComponent(cookiePair[1]);
+                encontrado = true;
+            }
+        })
+
+        if (encontrado){
+            return username;
+        }
+        else{
+            return "";
+        }
+    },
     header: function () {
         let output = "";
         output+=`<div class="bar-menu">
@@ -9,7 +28,14 @@ const layout = {
         if (screen.width >= 1050){
             output +=
                 `<div class="login">
-                    <div class="logged-name"></div>
+                    <div class="logged-name">
+                    `
+                    if (this.getUsername() !== null || this.getUsername() !== ""){
+                        output += `Hola, ${this.getUsername()}`;
+                    }
+
+                    output+=`
+                    </div>
                     <a href="logIn.html">Log In</a>
                     <a href="signUp.html">Sign Up</a>
                 </div>`
