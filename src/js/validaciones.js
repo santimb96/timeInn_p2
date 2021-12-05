@@ -9,8 +9,14 @@ const validaciones = {
     passwordRepetida: document.querySelector('.password2'),
     login: document.querySelector('.login'),
     signUp: document.querySelector('.signUp'),
+
+    /*EYES FOR PASSWORD*/
     eyeOpen: document.querySelector('.eye-open'),
     eyeClosed: document.querySelector('.eye-closed'),
+    eyeOpenSignUp1: document.querySelector('.eye-openSignUp1'),
+    eyeClosedSignUp1: document.querySelector('.eye-closedSignUp1'),
+    eyeOpenSignUp2: document.querySelector('.eye-openSignUp2'),
+    eyeClosedSignUp2: document.querySelector('.eye-closedSignUp2'),
     /*DOM FOR LOGIN ERRORS*/
     errorEmail: document.querySelector('.error-email'),
     errorPassword : document.querySelector('.error-password'),
@@ -159,6 +165,7 @@ const validaciones = {
         }.bind(this));
     },
     eyesPassword : function (){
+        /*LOG IN PASSWORD*/
         this.eyeOpen.addEventListener('click',function(){
             event.preventDefault();
             this.eyeOpen.style.display = "none";
@@ -172,6 +179,40 @@ const validaciones = {
             this.eyeClosed.style.display = "none";
             this.passwordLogIn.type = "password"
         }.bind(this));
+    },
+
+    eyesSignUp : function(){
+        /*SIGN UP PASSWORD*/
+        this.eyeOpenSignUp1.addEventListener('click',function(){
+            console.log("hola");
+            event.preventDefault();
+            this.eyeOpenSignUp1.style.display = "none";
+            this.eyeClosedSignUp1.style.display = "block";
+            this.password.type = "text";
+        }.bind(this));
+
+        this.eyeClosedSignUp1.addEventListener('click',function (){
+            event.preventDefault();
+            console.log("hola");
+            this.eyeOpenSignUp1.style.display = "block";
+            this.eyeClosedSignUp1.style.display = "none";
+            this.password.type = "password"
+        }.bind(this));
+
+        /*SIGN UP PASSWORD 2*/
+        this.eyeOpenSignUp2.addEventListener('click',function(){
+            event.preventDefault();
+            this.eyeOpenSignUp2.style.display = "none";
+            this.eyeClosedSignUp2.style.display = "block";
+            this.passwordRepetida.type = "text";
+        }.bind(this));
+
+        this.eyeClosedSignUp2.addEventListener('click',function (){
+            event.preventDefault();
+            this.eyeOpenSignUp2.style.display = "block";
+            this.eyeClosedSignUp2.style.display = "none";
+            this.passwordRepetida.type = "password"
+        }.bind(this));
     }
 }
 
@@ -182,6 +223,7 @@ if (location.pathname === '/timeInn_p2/src/logIn.html'){
 }
 else if (location.pathname === '/timeInn_p2/src/signUp.html'){
     validaciones.registrar();
+    validaciones.eyesSignUp();
 
 }
 validaciones.validarRegistro();

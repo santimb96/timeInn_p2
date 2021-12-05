@@ -893,7 +893,7 @@ EYES
     background-color: transparent;
 }
 
-.eye-closed {
+.eye-closed, .eye-closedSignUp1, .eye-closedSignUp2 {
     display: none;
 }
 
