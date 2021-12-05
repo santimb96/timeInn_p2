@@ -160,4 +160,22 @@ a esa carta, observamos que tenemos un botón para volver atrás. Si _clickamos_
 y por tanto, perderemos todas las modificaciones y adiciones que hayamos hecho. En cambio, si _clickamos_ el botón para volver atrás, 
 nos llevará a la cartelera con todas las modificaciones y adiciones que hayamos hecho anteriormente.
 
-Por último, en mobile responsive el footer es un botón, de esta manera no molesta al cliente y solo verá el footer si lo _clickamos_.  
+Por último, en mobile responsive el footer es un botón, de esta manera no molesta al cliente y solo verá el footer si lo _clickamos_.
+
+
+
+
+
+### P3
+
+# Mejoras
+Bocadillo de error: 
+- LOG IN: muestra diferentes errores: 
+* email no coincide con ningún email.
+* contraseña incorrecta.
+// el bocadillo aparece al hacer submit y desaparece al hacer un focusin.
+  
+- SIGN UP: muestra diferentes errores:
+* email que no cumple.
+* contraseña que no cumple.
+* contraseña2 no coincide con la contraseña. 

@@ -9,6 +9,7 @@ const layout = {
         if (screen.width >= 1050){
             output +=
                 `<div class="login">
+                    <div class="logged-name"></div>
                     <a href="logIn.html">Log In</a>
                     <a href="signUp.html">Sign Up</a>
                 </div>`

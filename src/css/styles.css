@@ -6,7 +6,10 @@
     --gris-30: #666;
     --gris-40: #ddd;
     --rojo-10: #ff0000;
+    --pink-10: #ffb6c1;
     --verde-20: #008000;
+    --verde-10: #98fb98;
+    --yellow-10: #F2ECC6;
     --font-menu: 'Carrois Gothic SC', cursive;
     --font-frontPage-1: 'Carrois Gothic SC', sans-serif;
     --input-form: 'M PLUS 1 Code', sans-serif;
@@ -774,7 +777,7 @@ LOG IN
 .form{
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    gap: 4vh;
     align-items: center;
 }
 
@@ -798,6 +801,7 @@ LOG IN
     justify-content: flex-start;
     font-family: var(--font-menu);
     justify-content: center;
+    margin-top: 2vh;
 }
 
 .form > input[type="text"], .form > input[type="password"] {
@@ -845,8 +849,35 @@ hr {
     font-family: var(--font-frontPage-1);
     width: 60%;
 }
+
+
+/**
+ERRORES
+ */
+
+.error{
+    display: none;
+    position: relative;
+    font-size: 3vh;
+    border-radius: 10vh;
+    text-align-last: center;
+    width: 50vh;
+    box-shadow: 1px 12px 33px rgb(0 0 0 / 50%);
+    background: lightpink;
+}
+.error:before {
+border: 25px solid lightpink;
+content: '';
+border-left-color: transparent;
+border-bottom-color: transparent;
+border-right-color: transparent;
+position: absolute;
+bottom: -7vh;
+left: calc(10% - 25px);
+}
+
 @media only screen and (min-width: 1050px) {
-    /*HEADER*/
+/*HEADER*/
     .header {
         grid-area: header;
         overflow: hidden;
