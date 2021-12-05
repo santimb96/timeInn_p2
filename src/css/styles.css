@@ -876,6 +876,13 @@ bottom: -7vh;
 left: calc(10% - 25px);
 }
 
+.logOut{
+    background-color: transparent;
+    border: none;
+    font-family: var(--font-frontPage-1);
+    text-decoration: underline;
+}
+
 @media only screen and (min-width: 1050px) {
 /*HEADER*/
     .header {

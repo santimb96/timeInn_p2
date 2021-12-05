@@ -1,12 +1,12 @@
 const layout = {
     menu: ["home", "novedades", "cartelera", "promociones", "zona ocio"],
-    getUsername: function(){
+    getUsername: function(name){
         let cookieArr = document.cookie.split(";");
         let username = "";
         let encontrado = false;
         cookieArr.forEach(elem => {
             let cookiePair = elem.split("=");
-            if ('username' === cookiePair[0].trim()){
+            if (name === cookiePair[0].trim()){
                 username = decodeURIComponent(cookiePair[1]);
                 encontrado = true;
             }
@@ -26,19 +26,20 @@ const layout = {
                 <a href="index.html"><img src="img/logoPalmimax.png" alt="Logo"></a>`
 
         if (screen.width >= 1050){
-            output +=
-                `<div class="login">
-                    <div class="logged-name">
-                    `
-                    if (this.getUsername() !== null || this.getUsername() !== ""){
-                        output += `Hola, ${this.getUsername()}`;
-                    }
-
-                    output+=`
-                    </div>
-                    <a href="logIn.html">Log In</a>
-                    <a href="signUp.html">Sign Up</a>
-                </div>`
+            if (this.getUsername('username') !== ""){
+                output +=
+                    `<div class="login">
+                        <div class="logged-name">Hola, ${this.getUsername('username')}</div>
+                        <button class="logOut">Log Out</button>
+                    </div>`
+            }
+            else {
+                output +=
+                    `<div class="login">
+                        <a href="logIn.html">Log In</a>
+                        <a href="signUp.html">Sign Up</a>
+                    </div>`
+            }
         }
         output+=`</div>
             <button id="hamburger"><i class="fas fa-bars"></i></button>
@@ -146,7 +147,20 @@ const layout = {
             }
 
         });
+
+        if (location.pathname === '/timeInn_p2/src/index.html'){
+            if (this.getUsername() !== null || this.getUsername() !== ""){
+                this.cerrarSesion();
+            }
+        }
+
+
+    },
+
+    cerrarSesion : function (){
+        document.querySelector('.logOut').addEventListener('click', function(){
+            document.cookie = `username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; email=${this.getUsername('email')}`;
+            location.href="index.html";
+        }.bind(this));
     }
 }
-
-

@@ -28,7 +28,7 @@ const validaciones = {
             let emailUser = true;
             let user = login.validarTodo(this.email.value,this.passwordLogIn.value);
             if (user[1]){
-                document.cookie = `[username=${user[0]};max-age=3600]`; //la cookie durará 1h
+                document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
                 location.href = 'index.html';
 
             }
@@ -155,8 +155,7 @@ const validaciones = {
                 this.passwordRepetida.style.background = "#ffb6c1";
             }
         }.bind(this));
-    }
-
+    },
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){

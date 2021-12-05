@@ -53,7 +53,8 @@ const app = {
      */
     renderCalendario: function () {
         this.calendario.innerHTML += calendario.calendario();
-    }
+    },
+
 }
 app.renderNovedades();
 app.renderPromociones();
