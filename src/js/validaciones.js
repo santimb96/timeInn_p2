@@ -9,6 +9,8 @@ const validaciones = {
     passwordRepetida: document.querySelector('.password2'),
     login: document.querySelector('.login'),
     signUp: document.querySelector('.signUp'),
+    eyeOpen: document.querySelector('.eye-open'),
+    eyeClosed: document.querySelector('.eye-closed'),
     /*DOM FOR LOGIN ERRORS*/
     errorEmail: document.querySelector('.error-email'),
     errorPassword : document.querySelector('.error-password'),
@@ -156,11 +158,27 @@ const validaciones = {
             }
         }.bind(this));
     },
+    eyesPassword : function (){
+        this.eyeOpen.addEventListener('click',function(){
+            event.preventDefault();
+            this.eyeOpen.style.display = "none";
+            this.eyeClosed.style.display = "block";
+            this.passwordLogIn.type = "text";
+        }.bind(this));
+
+        this.eyeClosed.addEventListener('click',function (){
+            event.preventDefault();
+            this.eyeOpen.style.display = "block";
+            this.eyeClosed.style.display = "none";
+            this.passwordLogIn.type = "password"
+        }.bind(this));
+    }
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){
     validaciones.validarLogIn();
     validaciones.focusLogIn();
+    validaciones.eyesPassword();
 }
 else if (location.pathname === '/timeInn_p2/src/signUp.html'){
     validaciones.registrar();

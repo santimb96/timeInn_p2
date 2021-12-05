@@ -804,13 +804,13 @@ LOG IN
     margin-top: 2vh;
 }
 
-.form > input[type="text"], .form > input[type="password"] {
-    width: 80%;
+.form > input[type="text"], .form > input[type="password"], .password-div > input[type="password"] {
     padding: 2vh;
     margin-top: 1vh;
     font-family: var(--input-form);
     font-size: 3vh;
 }
+
 
 .form > input[type="button"] {
     width: 60%;
@@ -882,6 +882,23 @@ left: calc(10% - 25px);
     font-family: var(--font-frontPage-1);
     text-decoration: underline;
 }
+
+/**
+EYES
+ */
+.eye{
+    position: relative;
+    right: 10%;
+    border: none;
+    background-color: transparent;
+}
+
+.eye-closed {
+    display: none;
+}
+
+
+
 
 @media only screen and (min-width: 1050px) {
 /*HEADER*/

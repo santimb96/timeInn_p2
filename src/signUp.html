@@ -16,6 +16,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1+Code&display=swap" rel="stylesheet">
 
+    <!--FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/a87bd14a53.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="contenedor-logIn">
@@ -30,9 +32,19 @@
             <div class="error error-email-signUp"></div>
             <div class="fieldForm"><label for="mail">Email</label><input id="mail" class="email" type="text" placeholder="E-mail*"/></div>
             <div class="error error-password-signUp"></div>
-            <div class="fieldForm"><label for="password">Password</label><input id="password" class="password" type="password" placeholder="Password*"/></div>
+            <div class="password-div">
+                <div class="fieldForm"><label for="password">Password</label><input id="password" class="password" type="password" placeholder="Password*"/></div>
+                <button class="eye eye-open"><i class="fas fa-eye"></i></button>
+                <button class="eye eye-closed"><i class="fas fa-eye-slash"></i></button>
+            </div>
+
             <div class="error error-password2"></div>
-            <div class="fieldForm"><label for="password2">Re-type password</label><input id="password2" class="password2" type="password" placeholder="Re-type password"/></div>
+            <div class="password-div">
+                <div class="fieldForm"><label for="password2">Re-type password</label><input id="password2" class="password2" type="password" placeholder="Re-type password"/></div>
+                <button class="eye eye-open"><i class="fas fa-eye"></i></button>
+                <button class="eye eye-closed"><i class="fas fa-eye-slash"></i></button>
+            </div>
+
             <div class="fieldForm"><label for="register">Registrar</label><input id="register" class="signUp" type="button" value="registrar"/></div>
         </form>
     </div>
