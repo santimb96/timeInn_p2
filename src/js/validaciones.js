@@ -122,7 +122,8 @@ const validaciones = {
             else{
                 this.errorEmailSignUp.style.display = "block";
                 this.errorEmailSignUp.innerHTML = "";
-                this.errorEmailSignUp.innerHTML += "[A-Za-z]{1}[a-z]+@[a-z]{5,10}.(com|net|gov)";
+                this.errorEmailSignUp.innerHTML += "Patrón incorrecto: ha de tener @; 5-10 caracteres en subdominio" +
+                    "y acabar en .net, .com o .gov";
                 this.email.style.background = "#ffb6c1";
             }
         }.bind(this));
@@ -139,7 +140,8 @@ const validaciones = {
             else {
                 this.errorPasswordSignUp.style.display = "block";
                 this.errorPasswordSignUp.innerHTML = "";
-                this.errorPasswordSignUp.innerHTML += "[a-zA-Z]{1}[a-zA-Z0-9]{6,8}[0-9]{2}";
+                this.errorPasswordSignUp.innerHTML += "Patrón incorrecto: primera letra en mayúscula, 6-8 caracteres y " +
+                    "ha de acabar en 2 cifras";
                 this.password.style.background = "#ffb6c1";
             }
         }.bind(this));

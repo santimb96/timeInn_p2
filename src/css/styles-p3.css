@@ -130,9 +130,9 @@ hr {
 .form-signUp {
     display: flex;
     flex-direction: column;
-    gap: 5vh;
-    /* padding: 3vh; */
-    padding-left: 2vh;
+    align-self: center;
+    gap: 2vh;
+    padding: 1vh;
 }
 
 /**
@@ -142,32 +142,23 @@ ERRORES
 .error{
     display: none;
     position: relative;
-    font-size: 3vh;
+    font-size: 2vh;
     border-radius: 10vh;
     text-align-last: center;
-    width: 50vh;
-    box-shadow: 1px 12px 33px rgb(0 0 0 / 50%);
+    width: 44vh;
     background: lightpink;
-}
-.error:before {
-    border: 25px solid lightpink;
-    content: '';
-    border-left-color: transparent;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    position: absolute;
-    bottom: -7vh;
-    left: calc(10% - 25px);
+    padding: 1vh;
+    justify-content: center;
 }
 
 /**
 EYES
  */
 .eye{
-    position: fixed;
+    position: absolute;
     border: none;
     background-color: transparent;
-    right: 5%;
+    right: 10%;
     padding-top: 6vh;
 }
 
@@ -177,8 +168,6 @@ EYES
 
 @media only screen and (min-width: 500px) {
     /*FORM/REGISTER*/
-
-
     .logo-logIn{
         justify-content: center;
     }
@@ -192,9 +181,6 @@ EYES
         gap: 1vh;
     }
 
-    .error {
-        left: 40%;
-    }
     .login, .create-account, .signUp {
         border: 1px var(--negro) solid;
         border-radius: 3px;
@@ -212,8 +198,8 @@ EYES
     /* field-div */
     .field-div{
         display: flex;
-        flex-direction: row;
-        width: 100%;
+        flex-direction: column;
+        align-items: center;
         gap: 1vh;
     }
 
@@ -233,7 +219,7 @@ EYES
     }
 }
 
-@media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1200px) {
     body {
         display: grid;
         grid-template-columns: 100%;
@@ -241,40 +227,43 @@ EYES
         align-items: center;
         margin-top: 1%;
     }
-    .contenedor-logIn{
+
+    .contenedor-logIn {
         width: 40%;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
         padding-bottom: 1%;
     }
-    .logo-logIn{
+
+    .logo-logIn {
         justify-content: center;
         background: var(--blanco);
     }
-    .logo-logIn > a{
+
+    .logo-logIn > a {
         display: flex;
         justify-content: center;
     }
+
     .logo-logIn > a > img {
         height: 150px;
         width: 400px;
     }
-    .form-signUp {
-        gap: 7vh;
-    }
-    .field-div{
+
+    .field-div {
         justify-content: center;
         gap: 1vh;
     }
-    .error {
-        left: 40%;
-    }
+
+
     .login, .create-account, .signUp {
         border: 1px var(--negro) solid;
         border-radius: 3px;
         transition: 0.3s;
     }
+
     .login:hover, .create-account:hover, .signUp:hover {
-    background: var(--gris-30);
-    border: 1px var(--blanco) solid;
-    color: var(--blanco);
+        background: var(--gris-30);
+        border: 1px var(--blanco) solid;
+        color: var(--blanco);
+    }
 }
