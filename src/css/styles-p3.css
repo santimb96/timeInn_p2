@@ -176,6 +176,9 @@ EYES
 }
 
 @media only screen and (min-width: 500px) {
+    /*FORM/REGISTER*/
+
+
     .logo-logIn{
         justify-content: center;
     }
@@ -192,7 +195,11 @@ EYES
     .error {
         left: 40%;
     }
-
+    .login, .create-account, .signUp {
+        border: 1px var(--negro) solid;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
     /*EYE*/
     .eye{
         position: unset;
@@ -224,4 +231,50 @@ EYES
         padding: 2vh;
         font-family: var(--input-form);
     }
+}
+
+@media only screen and (min-width: 1200px){
+    body {
+        display: grid;
+        grid-template-columns: 100%;
+        justify-items: center;
+        align-items: center;
+        margin-top: 1%;
+    }
+    .contenedor-logIn{
+        width: 40%;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        padding-bottom: 1%;
+    }
+    .logo-logIn{
+        justify-content: center;
+        background: var(--blanco);
+    }
+    .logo-logIn > a{
+        display: flex;
+        justify-content: center;
+    }
+    .logo-logIn > a > img {
+        height: 150px;
+        width: 400px;
+    }
+    .form-signUp {
+        gap: 7vh;
+    }
+    .field-div{
+        justify-content: center;
+        gap: 1vh;
+    }
+    .error {
+        left: 40%;
+    }
+    .login, .create-account, .signUp {
+        border: 1px var(--negro) solid;
+        border-radius: 3px;
+        transition: 0.3s;
+    }
+    .login:hover, .create-account:hover, .signUp:hover {
+    background: var(--gris-30);
+    border: 1px var(--blanco) solid;
+    color: var(--blanco);
 }
