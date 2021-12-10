@@ -33,7 +33,6 @@ const validaciones = {
             this.errorEmail.innerHTML = "";
             this.errorPassword.innerHTML = "";
             let passwordUser = true;
-            let emailUser = true;
             let user = login.validarTodo(this.email.value,this.passwordLogIn.value);
             if (user[1]){
                 document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
@@ -47,16 +46,14 @@ const validaciones = {
                         passwordUser = false;
                     }
 
-                    if (!login.emailExiste(this.email)){
-                        emailUser = false;
-                    }
-                })
+                });
+
+                let emailUser = login.emailExiste(this.email.value);
 
                 if (!emailUser){
                     this.errorEmail.style.display = "block";
                     this.errorEmail.innerHTML += "Esta cuenta no existe. Regístrate!";
                 }
-
 
 
                 if (!passwordUser){
@@ -81,8 +78,8 @@ const validaciones = {
         this.signUp.addEventListener('click',function (event){
             event.preventDefault();
             if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
-                document.cookie = `username=${this.email.value};max-age=3600`;
-                location.href = 'index.html';
+                document.cookie = `username=${this.name.value};max-age=3600`;
+                location.href = 'mensaje.html';
             }
             else
             {
@@ -125,7 +122,8 @@ const validaciones = {
             else{
                 this.errorEmailSignUp.style.display = "block";
                 this.errorEmailSignUp.innerHTML = "";
-                this.errorEmailSignUp.innerHTML += "[A-Za-z]{1}[a-z]+@[a-z]{5,10}.(com|net|gov)";
+                this.errorEmailSignUp.innerHTML += "Patrón incorrecto: ha de tener @; 5-10 caracteres en subdominio" +
+                    "y acabar en .net, .com o .gov";
                 this.email.style.background = "#ffb6c1";
             }
         }.bind(this));
@@ -142,7 +140,8 @@ const validaciones = {
             else {
                 this.errorPasswordSignUp.style.display = "block";
                 this.errorPasswordSignUp.innerHTML = "";
-                this.errorPasswordSignUp.innerHTML += "[a-zA-Z]{1}[a-zA-Z0-9]{6,8}[0-9]{2}";
+                this.errorPasswordSignUp.innerHTML += "Patrón incorrecto: primera letra en mayúscula, 6-8 caracteres y " +
+                    "ha de acabar en 2 cifras";
                 this.password.style.background = "#ffb6c1";
             }
         }.bind(this));
@@ -166,54 +165,105 @@ const validaciones = {
     },
     eyesPassword : function (){
         /*LOG IN PASSWORD*/
-        this.eyeOpen.addEventListener('click',function(){
-            event.preventDefault();
-            this.eyeOpen.style.display = "none";
-            this.eyeClosed.style.display = "block";
-            this.passwordLogIn.type = "text";
-        }.bind(this));
+        if (screen.width>=1050){
+            this.eyeOpen.addEventListener('mousedown',function(){
+                event.preventDefault();
+                this.eyeOpen.style.display = "none";
+                this.eyeClosed.style.display = "block";
+                this.passwordLogIn.type = "text";
+            }.bind(this));
 
-        this.eyeClosed.addEventListener('click',function (){
-            event.preventDefault();
-            this.eyeOpen.style.display = "block";
-            this.eyeClosed.style.display = "none";
-            this.passwordLogIn.type = "password"
-        }.bind(this));
+            this.eyeClosed.addEventListener('mouseup',function (){
+                event.preventDefault();
+                this.eyeOpen.style.display = "block";
+                this.eyeClosed.style.display = "none";
+                this.passwordLogIn.type = "password"
+            }.bind(this));
+        }
+        else{
+            this.eyeOpen.addEventListener('click',function(){
+                event.preventDefault();
+                this.eyeOpen.style.display = "none";
+                this.eyeClosed.style.display = "block";
+                this.passwordLogIn.type = "text";
+            }.bind(this));
+
+            this.eyeClosed.addEventListener('click',function (){
+                event.preventDefault();
+                this.eyeOpen.style.display = "block";
+                this.eyeClosed.style.display = "none";
+                this.passwordLogIn.type = "password"
+            }.bind(this));
+        }
+
     },
-
     eyesSignUp : function(){
-        /*SIGN UP PASSWORD*/
-        this.eyeOpenSignUp1.addEventListener('click',function(){
-            console.log("hola");
-            event.preventDefault();
-            this.eyeOpenSignUp1.style.display = "none";
-            this.eyeClosedSignUp1.style.display = "block";
-            this.password.type = "text";
-        }.bind(this));
+        if (screen.width>=1050){
+            /*SIGN UP PASSWORD*/
+            this.eyeOpenSignUp1.addEventListener('mousedown',function(){
+                event.preventDefault();
+                this.eyeOpenSignUp1.style.display = "none";
+                this.eyeClosedSignUp1.style.display = "block";
+                this.password.type = "text";
+            }.bind(this));
 
-        this.eyeClosedSignUp1.addEventListener('click',function (){
-            event.preventDefault();
-            console.log("hola");
-            this.eyeOpenSignUp1.style.display = "block";
-            this.eyeClosedSignUp1.style.display = "none";
-            this.password.type = "password"
-        }.bind(this));
+            this.eyeClosedSignUp1.addEventListener('mouseup',function (){
+                event.preventDefault();
+                this.eyeOpenSignUp1.style.display = "block";
+                this.eyeClosedSignUp1.style.display = "none";
+                this.password.type = "password"
+            }.bind(this));
 
-        /*SIGN UP PASSWORD 2*/
-        this.eyeOpenSignUp2.addEventListener('click',function(){
-            event.preventDefault();
-            this.eyeOpenSignUp2.style.display = "none";
-            this.eyeClosedSignUp2.style.display = "block";
-            this.passwordRepetida.type = "text";
-        }.bind(this));
+            /*SIGN UP PASSWORD 2*/
+            this.eyeOpenSignUp2.addEventListener('mousedown',function(){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "none";
+                this.eyeClosedSignUp2.style.display = "block";
+                this.passwordRepetida.type = "text";
+            }.bind(this));
 
-        this.eyeClosedSignUp2.addEventListener('click',function (){
-            event.preventDefault();
-            this.eyeOpenSignUp2.style.display = "block";
-            this.eyeClosedSignUp2.style.display = "none";
-            this.passwordRepetida.type = "password"
-        }.bind(this));
-    }
+            this.eyeClosedSignUp2.addEventListener('mouseup',function (){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "block";
+                this.eyeClosedSignUp2.style.display = "none";
+                this.passwordRepetida.type = "password"
+            }.bind(this));
+
+        }
+        else {
+            this.eyeOpenSignUp1.addEventListener('click',function(){
+                console.log("hola");
+                event.preventDefault();
+                this.eyeOpenSignUp1.style.display = "none";
+                this.eyeClosedSignUp1.style.display = "block";
+                this.password.type = "text";
+            }.bind(this));
+
+            this.eyeClosedSignUp1.addEventListener('click',function (){
+                event.preventDefault();
+                console.log("hola");
+                this.eyeOpenSignUp1.style.display = "block";
+                this.eyeClosedSignUp1.style.display = "none";
+                this.password.type = "password"
+            }.bind(this));
+
+            /*SIGN UP PASSWORD 2*/
+            this.eyeOpenSignUp2.addEventListener('click',function(){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "none";
+                this.eyeClosedSignUp2.style.display = "block";
+                this.passwordRepetida.type = "text";
+            }.bind(this));
+
+            this.eyeClosedSignUp2.addEventListener('click',function (){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "block";
+                this.eyeClosedSignUp2.style.display = "none";
+                this.passwordRepetida.type = "password"
+            }.bind(this));
+        }
+
+    },
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){
