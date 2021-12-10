@@ -166,16 +166,22 @@ Por último, en mobile responsive el footer es un botón, de esta manera no mole
 
 
 
-### P3
+# P3: FORMS
 
-# Mejoras
-Bocadillo de error: 
-- LOG IN: muestra diferentes errores: 
-* email no coincide con ningún email.
-* contraseña incorrecta.
-// el bocadillo aparece al hacer submit y desaparece al hacer un focusin.
-  
-- SIGN UP: muestra diferentes errores:
-* email que no cumple.
-* contraseña que no cumple.
-* contraseña2 no coincide con la contraseña. 
+## EXPRESIONES REGULARES
+
+
+## MEJORAS AÑADIDAS
+Hemos añadido las siguientes mejoras en nuestra aplicación: 
+
+Mostramos los errores en forma de bocadillo y nos los mostrará en los dos formularios, log in y sign up. 
+Los bocadillos aparecen al hacer submit y desaparecen cuando hacemos focusin en el input correspondiente.
+En el formulario log in, mostrará los siguientes errores:
+1. El e-mail no coincide con ningún email que se encuentre dentro de la "base de datos", en nuestro caso, dentro del objeto.
+2. La contraseña sea incorrecta, es decir, no coincida con la contraseña de la "base de datos".
+
+En el formulario sign up, mostrará los siguientes errores:
+1. El e-mail no cumple con el patrón de la expresión regular que hemos definido.
+2. La contraseña no cumple con el patrón de la expresión regular que hemos definido.
+3. La contraseña reescrita no coincide con la anterior.
+
