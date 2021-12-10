@@ -46,6 +46,7 @@ body {
     list-style: none;
     margin-left: 3vh;
     font-size: 3vh;
+    color: var(--blanco);
 }
 
 
@@ -119,6 +120,7 @@ font-size: 5vh;
     border: none;
     font-family: var(--font-frontPage-1);
     text-decoration: underline;
+    color: var(--blanco);
 }
 
 
@@ -1093,6 +1095,10 @@ DATA PICKER
         margin-top: 0;
     }
 
+    .login{
+        list-style: none;
+    }
+
     /*LOGIN*/
     .login {
         display: flex;
@@ -1109,6 +1115,14 @@ DATA PICKER
         margin-right: 4vh;
         /* justify-content: center; */
         margin-top: 3vh;
+    }
+
+    .log{
+        color: var(--negro);
+    }
+
+    .logOut{
+        color: var(--negro);
     }
 
 }

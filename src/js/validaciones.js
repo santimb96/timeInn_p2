@@ -78,8 +78,8 @@ const validaciones = {
         this.signUp.addEventListener('click',function (event){
             event.preventDefault();
             if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
-                document.cookie = `username=${this.email.value};max-age=3600`;
-                location.href = 'index.html';
+                document.cookie = `username=${this.name.value};max-age=3600`;
+                location.href = 'mensaje.html';
             }
             else
             {
@@ -163,54 +163,107 @@ const validaciones = {
     },
     eyesPassword : function (){
         /*LOG IN PASSWORD*/
-        this.eyeOpen.addEventListener('click',function(){
-            event.preventDefault();
-            this.eyeOpen.style.display = "none";
-            this.eyeClosed.style.display = "block";
-            this.passwordLogIn.type = "text";
-        }.bind(this));
+        if (screen.width>=1050){
+            this.eyeOpen.addEventListener('mousedown',function(){
+                event.preventDefault();
+                this.eyeOpen.style.display = "none";
+                this.eyeClosed.style.display = "block";
+                this.passwordLogIn.type = "text";
+            }.bind(this));
 
-        this.eyeClosed.addEventListener('click',function (){
-            event.preventDefault();
-            this.eyeOpen.style.display = "block";
-            this.eyeClosed.style.display = "none";
-            this.passwordLogIn.type = "password"
-        }.bind(this));
+            this.eyeClosed.addEventListener('mouseup',function (){
+                event.preventDefault();
+                this.eyeOpen.style.display = "block";
+                this.eyeClosed.style.display = "none";
+                this.passwordLogIn.type = "password"
+            }.bind(this));
+        }
+        else{
+            this.eyeOpen.addEventListener('click',function(){
+                event.preventDefault();
+                this.eyeOpen.style.display = "none";
+                this.eyeClosed.style.display = "block";
+                this.passwordLogIn.type = "text";
+            }.bind(this));
+
+            this.eyeClosed.addEventListener('click',function (){
+                event.preventDefault();
+                this.eyeOpen.style.display = "block";
+                this.eyeClosed.style.display = "none";
+                this.passwordLogIn.type = "password"
+            }.bind(this));
+        }
+
     },
-
     eyesSignUp : function(){
-        /*SIGN UP PASSWORD*/
-        this.eyeOpenSignUp1.addEventListener('click',function(){
-            console.log("hola");
-            event.preventDefault();
-            this.eyeOpenSignUp1.style.display = "none";
-            this.eyeClosedSignUp1.style.display = "block";
-            this.password.type = "text";
-        }.bind(this));
+        if (screen.width>=1050){
+            /*SIGN UP PASSWORD*/
+            this.eyeOpenSignUp1.addEventListener('mousedown',function(){
+                console.log("hola");
+                event.preventDefault();
+                this.eyeOpenSignUp1.style.display = "none";
+                this.eyeClosedSignUp1.style.display = "block";
+                this.password.type = "text";
+            }.bind(this));
 
-        this.eyeClosedSignUp1.addEventListener('click',function (){
-            event.preventDefault();
-            console.log("hola");
-            this.eyeOpenSignUp1.style.display = "block";
-            this.eyeClosedSignUp1.style.display = "none";
-            this.password.type = "password"
-        }.bind(this));
+            this.eyeClosedSignUp1.addEventListener('mouseup',function (){
+                event.preventDefault();
+                console.log("hola");
+                this.eyeOpenSignUp1.style.display = "block";
+                this.eyeClosedSignUp1.style.display = "none";
+                this.password.type = "password"
+            }.bind(this));
 
-        /*SIGN UP PASSWORD 2*/
-        this.eyeOpenSignUp2.addEventListener('click',function(){
-            event.preventDefault();
-            this.eyeOpenSignUp2.style.display = "none";
-            this.eyeClosedSignUp2.style.display = "block";
-            this.passwordRepetida.type = "text";
-        }.bind(this));
+            /*SIGN UP PASSWORD 2*/
+            this.eyeOpenSignUp2.addEventListener('mousedown',function(){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "none";
+                this.eyeClosedSignUp2.style.display = "block";
+                this.passwordRepetida.type = "text";
+            }.bind(this));
 
-        this.eyeClosedSignUp2.addEventListener('click',function (){
-            event.preventDefault();
-            this.eyeOpenSignUp2.style.display = "block";
-            this.eyeClosedSignUp2.style.display = "none";
-            this.passwordRepetida.type = "password"
-        }.bind(this));
-    }
+            this.eyeClosedSignUp2.addEventListener('mouseup',function (){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "block";
+                this.eyeClosedSignUp2.style.display = "none";
+                this.passwordRepetida.type = "password"
+            }.bind(this));
+
+        }
+        else {
+            this.eyeOpenSignUp1.addEventListener('click',function(){
+                console.log("hola");
+                event.preventDefault();
+                this.eyeOpenSignUp1.style.display = "none";
+                this.eyeClosedSignUp1.style.display = "block";
+                this.password.type = "text";
+            }.bind(this));
+
+            this.eyeClosedSignUp1.addEventListener('click',function (){
+                event.preventDefault();
+                console.log("hola");
+                this.eyeOpenSignUp1.style.display = "block";
+                this.eyeClosedSignUp1.style.display = "none";
+                this.password.type = "password"
+            }.bind(this));
+
+            /*SIGN UP PASSWORD 2*/
+            this.eyeOpenSignUp2.addEventListener('click',function(){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "none";
+                this.eyeClosedSignUp2.style.display = "block";
+                this.passwordRepetida.type = "text";
+            }.bind(this));
+
+            this.eyeClosedSignUp2.addEventListener('click',function (){
+                event.preventDefault();
+                this.eyeOpenSignUp2.style.display = "block";
+                this.eyeClosedSignUp2.style.display = "none";
+                this.passwordRepetida.type = "password"
+            }.bind(this));
+        }
+
+    },
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){

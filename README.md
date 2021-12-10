@@ -178,4 +178,13 @@ Bocadillo de error:
 - SIGN UP: muestra diferentes errores:
 * email que no cumple.
 * contraseña que no cumple.
-* contraseña2 no coincide con la contraseña. 
+* contraseña2 no coincide con la contraseña.
+
+
+//Añadir el patrón de las REGEXP
+
+//Añadir el máx char permitidos del Name al registrarse (REGEXP)
+
+//Al registrar, nos redirecciona a una página con un mensaje y después de 3s nos lleva al index.html
+con el mensaje "Hola, nombre_del_nuevo_usuario"
+

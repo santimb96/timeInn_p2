@@ -99,11 +99,16 @@ const layout = {
         output += `</ul>`;
 
         if (screen.width < 1050){
-            output += `<div class="log">`;
-            output += `<a href="logIn.html" class="buts"><li>log in</li></a>`;
-            output += `<a href="signUp.html" class="buts"><li>sign up</li></a></div>`;
-        }
-
+            if (this.getUsername('username') !== ""){
+                    output += `<div class="log">`;
+                    output += `<div class="logged-name">Hola, ${this.getUsername('username')}</div>`;
+                    output += `<button class="logOut">Log Out</button>`;}
+            else{
+                output += `<div class="log">`;
+                output += `<a href="logIn.html" class="buts"><li>log in</li></a>`;
+                output += `<a href="signUp.html" class="buts"><li>sign up</li></a></div>`;
+                }
+            }
 
         return output;
     },
