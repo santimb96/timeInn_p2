@@ -166,8 +166,8 @@ Por último, en mobile responsive el footer es un botón, de esta manera no mole
 
 
 
-### P3
-
+# P3 + PC3 - FORMS
+##  EXPRESIONES REGULARES 
 # Mejoras
 Bocadillo de error: 
 - LOG IN: muestra diferentes errores: 
