@@ -152,7 +152,7 @@ a la cartelera, se encuentra en el día actual.
 Entrando a la cartelera podemos ver el _filter_, con el cual podemos filtrar por título, año o género y si no encuentra ninguno, muestra
 un mensaje.
 
-Con el botón editar, hemos implementado la siguiente mejora: obtener todos los valores de la película en cada input del formulario y de esta manera,
+Con el botón editar, hemos implementado la siguiente mejora: obtener todos los v:alores de la película en cada input del formulario y de esta manera,
 solo editamos el campo que deseamos y no toda la carta.
 
 Por otra parte, si hacemos _click_ a una imagen de la cartelera nos llevará a la descripción de esa película. Una vez que nos lleva
@@ -169,7 +169,19 @@ Por último, en mobile responsive el footer es un botón, de esta manera no mole
 # P3: FORMS
 
 ## EXPRESIONES REGULARES
+Las expresiones regulares evalúan los diferentes patrones que han de cumplir determinados campos para poder así
+validar la integridad de la información introducida.
 
+En el caso del correo electrónico, responde el patrón designado por la práctica: primer carácter en mayúscula;
+una serie de caracteres (número indeterminado por la práctica), en minúscula; un @ y a su continuación un subdominio que
+contenga entre 5 y 10 caracteres y para finalizar ha de acabar en .com, .net o .gov de manera obligatoria.
+
+En el caso de la contraseña, decidimos crear una contraseña segura pero un tanto diferente a lo convencional:
+el primer carácter ha de ser en mayúsculas, le siguen 6-8 más caracteres y los dos últimos han de ser números, de esta 
+manera obligamos a que se introduzca al menos una mayúscula, una serie de minúsculas y una serie de cifras.
+
+Para finalizar, en el campo del nombre sugeriste que nos inventáramos un patrón y hemos hecho uno básico que limite
+la longitud del nombre: puede incluir mayúsculas, minúsculas y cifras en ujn rango de 4 a 12 caracteres como máximo.
 
 ## MEJORAS AÑADIDAS
 Hemos añadido las siguientes mejoras en nuestra aplicación:
@@ -184,4 +196,6 @@ En el formulario sign up, mostrará los siguientes errores:
 1. El e-mail no cumple con el patrón de la expresión regular que hemos definido.
 2. La contraseña no cumple con el patrón de la expresión regular que hemos definido.
 3. La contraseña reescrita no coincide con la anterior.
+4. Cuando registramos un usuario, hemos hecho una pantalla de carga para que simule el acceso a una base de datos; cuando el usuario se registra, aparece una pantalla que le indica que ha iniciado
+sesión satisfactoriamente (_mensaje.html_), y mediante un setTimeout() hacemos que posteriormente redirija al _index.html_ y que cargue la página con el nombre del usuario.
 
