@@ -33,7 +33,6 @@ const validaciones = {
             this.errorEmail.innerHTML = "";
             this.errorPassword.innerHTML = "";
             let passwordUser = true;
-            let emailUser = true;
             let user = login.validarTodo(this.email.value,this.passwordLogIn.value);
             if (user[1]){
                 document.cookie = `username=${user[0]};max-age=3600`; //la cookie durará 1h
@@ -47,16 +46,14 @@ const validaciones = {
                         passwordUser = false;
                     }
 
-                    if (!login.emailExiste(this.email)){
-                        emailUser = false;
-                    }
-                })
+                });
+
+                let emailUser = login.emailExiste(this.email.value);
 
                 if (!emailUser){
                     this.errorEmail.style.display = "block";
                     this.errorEmail.innerHTML += "Esta cuenta no existe. Regístrate!";
                 }
-
 
 
                 if (!passwordUser){

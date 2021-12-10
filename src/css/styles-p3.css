@@ -1,0 +1,290 @@
+:root {
+    --blanco: #ffffff;
+    --negro: #000000;
+    --gris-10: #777;
+    --gris-20: #eee;
+    --gris-30: #666;
+    --gris-40: #ddd;
+    --rojo-10: #ff0000;
+    --pink-10: #ffb6c1;
+    --verde-20: #008000;
+    --verde-10: #98fb98;
+    --yellow-10: #F2ECC6;
+    --font-menu: 'Carrois Gothic SC', cursive;
+    --font-frontPage-1: 'Carrois Gothic SC', sans-serif;
+    --input-form: 'M PLUS 1 Code', sans-serif;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+/**
+LOG IN
+ */
+
+.contenedor-logIn{
+    display: flex;
+    flex-direction: column;
+}
+
+/*LOGO*/
+
+.logo-logIn {
+    display: flex;
+    text-align: center;
+    background-color: var(--negro);
+}
+
+.logo-logIn > a > img{
+    width: 50%;
+}
+
+h1{
+    font-family: var(--font-frontPage-1);
+    display: flex;
+    align-self: center;
+}
+
+/*FORM*/
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    padding: 3vh;
+}
+
+/* EMAIL DIV (LOG IN) --> We will try it also for Sign up */
+.field-div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1vh;
+}
+
+.field-div > label {
+    align-self: center;
+    font-family: var(--font-frontPage-1);
+}
+
+.field-div > input[type="text"]{
+    padding: 2vh;
+    font-family: var(--input-form);
+}
+
+.field-div > input[type="password"] {
+    padding: 2vh;
+    font-family: var(--input-form);
+}
+
+
+/* Submit-div */
+.submit-div{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 2vh;
+}
+
+.submit-div > a{
+    font-family: var(--font-frontPage-1);
+}
+
+
+/*HR LINE*/
+.hr-line {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+}
+
+hr {
+    width: 20%;
+}
+
+
+/* - "CREAR NUEVA CUENTA" + "FORM BUTTON" - */
+.new-account{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.new-account > button, .submit-div > input[type="button"]{
+    padding: 2vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+}
+
+
+/**
+ SIGN UP
+ */
+
+.form-signUp {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    /* padding: 3vh; */
+    padding-left: 2vh;
+}
+
+/*.contenedor-logIn{
+    display: flex;
+    flex-direction: column;
+}
+.signUp{
+    display: flex;
+    justify-content: center;
+    margin: 2vh;
+    font-family: var(--font-frontPage-1);
+    font-size: 3vh;
+    padding: 2vh;
+    width: 60%;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 4vh;
+    align-items: center;
+}
+
+.form > a {
+    margin-right: 15vh;
+    font-family: var(--font-frontPage-1);
+}
+
+.logo-logIn {
+    display: flex;
+    text-align: center;
+    background-color: var(--negro);
+}
+
+.logo-logIn > a > img{
+    width: 50%;
+}
+
+.contenedor-logIn > h1{
+    display: flex;
+    justify-content: flex-start;
+    font-family: var(--font-menu);
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.form > input[type="text"], .form > input[type="password"], .password-div > input[type="password"] {
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--input-form);
+    font-size: 3vh;
+}
+
+
+.form > input[type="button"] {
+    width: 60%;
+    padding: 2vh;
+    margin-top: 1vh;
+    font-family: var(--font-frontPage-1);
+    font-size: 3vh;
+    margin-bottom: -1vh;
+    justify-content: center;
+    align-self: center;
+}
+
+.hr-line {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+}
+
+hr {
+    width: 20%;
+}
+
+.new-account{
+    display: flex;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.new-account > button {
+    padding: 2vh;
+    font-size: 3vh;
+    font-family: var(--font-frontPage-1);
+    width: 60%;
+}*/
+
+/**
+ERRORES
+*/
+
+.error{
+    display: none;
+    position: relative;
+    font-size: 3vh;
+    border-radius: 10vh;
+    text-align-last: center;
+    width: 50vh;
+    box-shadow: 1px 12px 33px rgb(0 0 0 / 50%);
+    background: lightpink;
+}
+.error:before {
+    border: 25px solid lightpink;
+    content: '';
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    position: absolute;
+    bottom: -7vh;
+    left: calc(10% - 25px);
+}
+
+/**
+EYES
+ */
+.eye{
+    /*position: absolute;*/
+    border: none;
+    background-color: transparent;
+    /*right: 8%;*/
+    /*margin-top: 4%;*/
+}
+
+.eye-closed, .eye-closedSignUp1, .eye-closedSignUp2 {
+    display: none;
+}
+
+@media only screen and (min-width: 1050px) {
+    .logo-logIn{
+        justify-content: center;
+    }
+    .logo-logIn > a{
+        display: flex;
+        justify-content: center;
+    }
+
+    .field-div{
+        justify-content: center;
+        gap: 1vh;
+    }
+
+    .field-div{
+        display: flex;
+    }
+
+    .error {
+        left: 40%;
+    }
+}

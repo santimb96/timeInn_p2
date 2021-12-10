@@ -114,6 +114,14 @@ border: none;
 font-size: 5vh;
 }
 
+.logOut{
+    background-color: transparent;
+    border: none;
+    font-family: var(--font-frontPage-1);
+    text-decoration: underline;
+}
+
+
 /*CONTENEDOR*/
 .contenedorPadre {
     font-weight: bold;
@@ -755,150 +763,6 @@ DATA PICKER
     z-index: 1;
     display: block;
 }
-
-/**
-LOG IN
- */
-.contenedor-logIn{
-    display: flex;
-    flex-direction: column;
-}
-.signUp{
-    display: flex;
-    justify-content: center;
-    margin: 2vh;
-    font-family: var(--font-frontPage-1);
-    font-size: 3vh;
-    padding: 2vh;
-    width: 60%;
-
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 4vh;
-    align-items: center;
-}
-
-.form > a {
-    margin-right: 15vh;
-    font-family: var(--font-frontPage-1);
-}
-
-.logo-logIn {
-    display: flex;
-    text-align: center;
-    background-color: var(--negro);
-}
-
-.logo-logIn > a > img{
-    width: 50%;
-}
-
-.contenedor-logIn > h1{
-    display: flex;
-    justify-content: flex-start;
-    font-family: var(--font-menu);
-    justify-content: center;
-    margin-top: 2vh;
-}
-
-.form > input[type="text"], .form > input[type="password"], .password-div > input[type="password"] {
-    padding: 2vh;
-    margin-top: 1vh;
-    font-family: var(--input-form);
-    font-size: 3vh;
-}
-
-
-.form > input[type="button"] {
-    width: 60%;
-    padding: 2vh;
-    margin-top: 1vh;
-    font-family: var(--font-frontPage-1);
-    font-size: 3vh;
-    margin-bottom: -1vh;
-    justify-content: center;
-    align-self: center;
-}
-
-.hr-line {
-    display: flex;
-    flex-direction: row;
-    text-align: left;
-    margin-left: 0;
-    margin-top: 5vh;
-    font-size: 3vh;
-    font-family: var(--font-frontPage-1);
-}
-
-hr {
-    width: 20%;
-}
-
-.new-account{
-    display: flex;
-    justify-content: center;
-    margin-top: 3vh;
-}
-
-.new-account > button {
-    padding: 2vh;
-    font-size: 3vh;
-    font-family: var(--font-frontPage-1);
-    width: 60%;
-}
-
-
-/**
-ERRORES
- */
-
-.error{
-    display: none;
-    position: relative;
-    font-size: 3vh;
-    border-radius: 10vh;
-    text-align-last: center;
-    width: 50vh;
-    box-shadow: 1px 12px 33px rgb(0 0 0 / 50%);
-    background: lightpink;
-}
-.error:before {
-border: 25px solid lightpink;
-content: '';
-border-left-color: transparent;
-border-bottom-color: transparent;
-border-right-color: transparent;
-position: absolute;
-bottom: -7vh;
-left: calc(10% - 25px);
-}
-
-.logOut{
-    background-color: transparent;
-    border: none;
-    font-family: var(--font-frontPage-1);
-    text-decoration: underline;
-}
-
-/**
-EYES
- */
-.eye{
-    position: relative;
-    right: 10%;
-    border: none;
-    background-color: transparent;
-}
-
-.eye-closed, .eye-closedSignUp1, .eye-closedSignUp2 {
-    display: none;
-}
-
-
-
 
 @media only screen and (min-width: 1050px) {
 /*HEADER*/

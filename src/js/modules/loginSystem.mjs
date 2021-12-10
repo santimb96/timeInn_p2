@@ -44,7 +44,6 @@ export const login = {
                 existe = true;
             }
         });
-
         return existe;
     },
     register: function (name,email,password,password2){
