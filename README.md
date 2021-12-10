@@ -26,17 +26,17 @@ llamadas a cargadores, etc.
 
 En este proyecto se trata de recrear un emplazamiento web orientado al cine, ofreciendo las novedades,
 promociones y demás. Además, también se añade una página específica para la cartelera,
-en donde se imprimen objetos mediante estructura web y de estilos. Por lo tanto, se pone en práctica 
-la implementación de webs dinámicas, en donde se separan las estructuras del almacenamiento y 
+en donde se imprimen objetos mediante estructura web y de estilos. Por lo tanto, se pone en práctica
+la implementación de webs dinámicas, en donde se separan las estructuras del almacenamiento y
 estas acceden a los ficheros mediante llamadas (_callbacks_).
 
 ## EXPERIENCIA DE USUARIO
 
-Es importante recrear una web sencilla para el usuario, que sea amigable 
+Es importante recrear una web sencilla para el usuario, que sea amigable
 para su uso diario. Para ello, hemos cogido como referencia la web de www.aficine.com,
 haciendo uso de algunas de sus promociones y referencias varias pero dándole nuestro toque personal.
 
-Por otra parte, la web se denomina Palmimax, en referencia a Ocimax, un centro de ocio situado en 
+Por otra parte, la web se denomina Palmimax, en referencia a Ocimax, un centro de ocio situado en
 Palma de Mallorca. Sin embargo, tanto paleta de colores como fuentes son totalmente distintas, así como el
 contenedor padre, que tiene un background determinado que Aficine, por ejemplo, lo establece como imagen y contenedor.
 En nuestro caso, usamos una paleta minimalista porque encontramos que se mantiene con esta
@@ -53,7 +53,7 @@ múltiples plataformas web del sector.
 ### Fonts template
 ![Image text](https://github.com/santimb96/timeInn_p2/blob/feature/kimDevelop/src/docs/fuentes/font-templates.PNG)
 
-## FRONT PAGE 
+## FRONT PAGE
 
 En este encontramos un nav bar el cual contiene una serie de secciones (enlaces) a visitar,
 las cuales solo funcionarán aquellos que redirigen al _index.html_ y al que redirige a la _cartelera.html_.
@@ -65,13 +65,13 @@ no desee tal vez escuchar.
 
 En cuanto a la sección de novedades, hemos decidido que tratará sobre las películas que se esperan
 en el cine, por estrenar independientemente del año de creación de esta.
-Se han hecho una serie de cartas con una temática limpia y minimalista basada en blancos y negros, 
+Se han hecho una serie de cartas con una temática limpia y minimalista basada en blancos y negros,
 con ligeros toques de sombra al hacer una transición al eje Y hacia arriba.
 
 Las promociones constan de 6 cartas las cuales muestran las distintas ofertas que ofrece
 el cine, con mensajes sugerentes en tono humorístico.
 
-Por otra parte, el calendario es dinámico: se posiciona en el día en el que nos encontramos y, además, 
+Por otra parte, el calendario es dinámico: se posiciona en el día en el que nos encontramos y, además,
 enlaza este mismo con la cartelera.
 
 Por último, el footer consta de un _Sobre nosotros_ y demás campos usuales. En nuestro caso, en la versión móvil está comprimido
@@ -143,7 +143,7 @@ isn poder hacer, por desgracia, un `fetch('uri');`.
 Para finalizar, la creación de las cookies está basada en la explicación de [W3Schools](https://www.w3schools.com/js/js_cookies.asp),
 con pequeñas ediciones acomodando el código a nuestras necesidades y exigencias de la práctica.
 
-## MEJORAS IMPLEMENTADAS 
+## MEJORAS IMPLEMENTADAS
 La primera mejora que encontramos es el menú, cada campo está _linkeado_ a un apartado de la página o a otro html.
 
 Otra de las mejoras que hemos implementado es el calendario funcional: coge el mes, el año y la fecha actual. Además, el link a los eventos, en nuestro caso
@@ -157,7 +157,7 @@ solo editamos el campo que deseamos y no toda la carta.
 
 Por otra parte, si hacemos _click_ a una imagen de la cartelera nos llevará a la descripción de esa película. Una vez que nos lleva
 a esa carta, observamos que tenemos un botón para volver atrás. Si _clickamos_ la 'cartelera' del menú, nos refrescará la página
-y por tanto, perderemos todas las modificaciones y adiciones que hayamos hecho. En cambio, si _clickamos_ el botón para volver atrás, 
+y por tanto, perderemos todas las modificaciones y adiciones que hayamos hecho. En cambio, si _clickamos_ el botón para volver atrás,
 nos llevará a la cartelera con todas las modificaciones y adiciones que hayamos hecho anteriormente.
 
 Por último, en mobile responsive el footer es un botón, de esta manera no molesta al cliente y solo verá el footer si lo _clickamos_.
@@ -166,16 +166,22 @@ Por último, en mobile responsive el footer es un botón, de esta manera no mole
 
 
 
-### P3
+# P3: FORMS
 
-# Mejoras
-Bocadillo de error: 
-- LOG IN: muestra diferentes errores: 
-* email no coincide con ningún email.
-* contraseña incorrecta.
-// el bocadillo aparece al hacer submit y desaparece al hacer un focusin.
-  
-- SIGN UP: muestra diferentes errores:
-* email que no cumple.
-* contraseña que no cumple.
-* contraseña2 no coincide con la contraseña. 
+## EXPRESIONES REGULARES
+
+
+## MEJORAS AÑADIDAS
+Hemos añadido las siguientes mejoras en nuestra aplicación:
+
+Mostramos los errores en forma de bocadillo y nos los mostrará en los dos formularios, log in y sign up.
+Los bocadillos aparecen al hacer submit y desaparecen cuando hacemos focusin en el input correspondiente.
+En el formulario log in, mostrará los siguientes errores:
+1. El e-mail no coincide con ningún email que se encuentre dentro de la "base de datos", en nuestro caso, dentro del objeto.
+2. La contraseña sea incorrecta, es decir, no coincida con la contraseña de la "base de datos".
+
+En el formulario sign up, mostrará los siguientes errores:
+1. El e-mail no cumple con el patrón de la expresión regular que hemos definido.
+2. La contraseña no cumple con el patrón de la expresión regular que hemos definido.
+3. La contraseña reescrita no coincide con la anterior.
+
