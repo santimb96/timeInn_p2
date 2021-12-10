@@ -199,7 +199,6 @@ const validaciones = {
         if (screen.width>=1050){
             /*SIGN UP PASSWORD*/
             this.eyeOpenSignUp1.addEventListener('mousedown',function(){
-                console.log("hola");
                 event.preventDefault();
                 this.eyeOpenSignUp1.style.display = "none";
                 this.eyeClosedSignUp1.style.display = "block";
@@ -208,7 +207,6 @@ const validaciones = {
 
             this.eyeClosedSignUp1.addEventListener('mouseup',function (){
                 event.preventDefault();
-                console.log("hola");
                 this.eyeOpenSignUp1.style.display = "block";
                 this.eyeClosedSignUp1.style.display = "none";
                 this.password.type = "password"
