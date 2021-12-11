@@ -150,6 +150,32 @@ ERRORES
     padding: 1vh;
     justify-content: center;
 }
+/**
+    MENSAJE.HTML
+     */
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+    font-size: 1vh;
+    text-align: center;
+    border: 2px black solid;
+    border-radius: 5px;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.mensaje {
+    padding: 5%;
+    font-family: var(--input-form);
+}
+
+.container > img {
+    width: 50vm;
+    height: 15vh;
+}
 
 /**
 EYES
@@ -219,6 +245,17 @@ EYES
     }
 }
 
+@media only screen and (min-width: 600px) {
+    .container {
+        font-size: 1.5vh;
+        margin-top: 20%;
+    }
+    .container > img {
+        width: 60vm;
+        height: 20vh;
+    }
+}
+
 @media only screen and (min-width: 1200px) {
     body {
         display: grid;
@@ -265,5 +302,18 @@ EYES
         background: var(--gris-30);
         border: 1px var(--blanco) solid;
         color: var(--blanco);
+    }
+
+    /**
+    MENSAJE.HTML
+     */
+    .container {
+        font-size: 2vh;
+        margin-top: 10%;
+    }
+
+    .container > img {
+        width: 90vm;
+        height: 30vh;
     }
 }
