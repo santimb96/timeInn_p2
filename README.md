@@ -198,4 +198,6 @@ En el formulario sign up, mostrará los siguientes errores:
 3. La contraseña reescrita no coincide con la anterior.
 4. Cuando registramos un usuario, hemos hecho una pantalla de carga para que simule el acceso a una base de datos; cuando el usuario se registra, aparece una pantalla que le indica que ha iniciado
 sesión satisfactoriamente (_mensaje.html_), y mediante un setTimeout() hacemos que posteriormente redirija al _index.html_ y que cargue la página con el nombre del usuario.
+   
+Además de estas mejoras, hemos añadido el botón log out el cual borra la cookie.
 
