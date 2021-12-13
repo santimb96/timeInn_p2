@@ -28,6 +28,14 @@ const validaciones = {
     errorPasswordSignUp : document.querySelector('.error-password-signUp'),
     errorPassword2 : document.querySelector('.error-password2'),
 
+    insertarUsuario: function () {
+      localStorage.setItem('usuarios', JSON.stringify({
+          email: 'adminadmin@adminer.com',
+          name: 'admin',
+          password: 'AdminAd123'
+      }));
+    },
+
     validarLogIn: function (){
         this.login.addEventListener('click',function (){
             this.errorEmail.innerHTML = "";
@@ -267,14 +275,15 @@ const validaciones = {
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){
+    validaciones.insertarUsuario();
     validaciones.validarLogIn();
     validaciones.focusLogIn();
     validaciones.eyesPassword();
 }
 else if (location.pathname === '/timeInn_p2/src/signUp.html'){
+    validaciones.insertarUsuario();
     validaciones.registrar();
     validaciones.eyesSignUp();
-
 }
 validaciones.validarRegistro();
 
