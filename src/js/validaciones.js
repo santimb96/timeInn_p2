@@ -29,11 +29,11 @@ const validaciones = {
     errorPassword2 : document.querySelector('.error-password2'),
 
     insertarUsuario: function () {
-      localStorage.setItem('usuarios', JSON.stringify({
+      localStorage.setItem('usuarios', JSON.stringify([{
           email: 'adminadmin@adminer.com',
           name: 'admin',
           password: 'AdminAd123'
-      }));
+      }]));
     },
 
     validarLogIn: function (){
@@ -86,6 +86,14 @@ const validaciones = {
         this.signUp.addEventListener('click',function (event){
             event.preventDefault();
             if (login.register(this.name.value,this.email.value,this.password.value,this.passwordRepetida.value)){
+                usuarios.push({
+                    email: this.email.value,
+                    name: this.name.value,
+                    password: this.password.value
+                });
+
+                usuarios.pop();
+                localStorage.setItem('usuarios', JSON.stringify(usuarios));
                 document.cookie = `username=${this.name.value};max-age=3600`;
                 location.href = 'mensaje.html';
             }
@@ -275,7 +283,6 @@ const validaciones = {
 }
 
 if (location.pathname === '/timeInn_p2/src/logIn.html'){
-    validaciones.insertarUsuario();
     validaciones.validarLogIn();
     validaciones.focusLogIn();
     validaciones.eyesPassword();
@@ -285,6 +292,7 @@ else if (location.pathname === '/timeInn_p2/src/signUp.html'){
     validaciones.registrar();
     validaciones.eyesSignUp();
 }
+
 validaciones.validarRegistro();
 
 

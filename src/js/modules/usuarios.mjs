@@ -1,1 +1,1 @@
-export let usuarios = localStorage.getItem('usuarios');
+export let usuarios = JSON.parse(localStorage.getItem('usuarios'));
