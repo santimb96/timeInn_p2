@@ -2,6 +2,7 @@ import {login} from "./modules/loginSystem.mjs";
 import {usuarios} from "./modules/usuarios.mjs";
 
 const validaciones = {
+    recargado: false,
     name : document.querySelector('.name'),
     email: document.querySelector('.email'),
     passwordLogIn: document.querySelector('.passwordLogIn'),
@@ -92,7 +93,7 @@ const validaciones = {
                     password: this.password.value
                 });
 
-                usuarios.pop();
+                //usuarios.pop();
                 localStorage.setItem('usuarios', JSON.stringify(usuarios));
                 document.cookie = `username=${this.name.value};max-age=3600`;
                 location.href = 'mensaje.html';
@@ -289,6 +290,9 @@ if (location.pathname === '/timeInn_p2/src/logIn.html'){
 }
 else if (location.pathname === '/timeInn_p2/src/signUp.html'){
     validaciones.insertarUsuario();
+    if(usuarios === null) {
+        location.reload();
+    }
     validaciones.registrar();
     validaciones.eyesSignUp();
 }

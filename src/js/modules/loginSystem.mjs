@@ -51,7 +51,7 @@ export const login = {
 
         if (password === password2){
             if (this.validarPassword(password) && this.validarEmail(email) && this.validarName(name)){
-                usuarios.push(user);
+                //usuarios.push(user);
                 return true;
             }
             else
